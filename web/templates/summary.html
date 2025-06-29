@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Readiness Summary</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .fade-in {
+      animation: fadeIn 0.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body class="p-5">
+  <div class="container">
+    <div class="card shadow-lg fade-in">
+      <div class="card-body">
+        <h1 class="card-title text-center mb-4">Your AI Readiness Summary</h1>
+        <p class="mt-4">Email: <strong>{{ assessment.email }}</strong></p>
+        <p class="mt-2">Total Readiness Score: <strong>{{ assessment.score }}</strong>/10</p>
+        <p class="mt-4">We'll send you a downloadable PDF shortly.</p>
+        <a href="/ai-opportunity-compass" class="btn btn-primary btn-block mt-4">Continue to Stage 2 →</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

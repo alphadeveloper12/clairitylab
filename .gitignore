@@ -1,0 +1,6 @@
+.env
+.venv
+.idea/
+/clairityLab/__pycache__/
+db.sqlite3
+/web/__pycache__/*
