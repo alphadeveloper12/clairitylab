@@ -9,10 +9,17 @@ from dotenv import load_dotenv
 import os
 import json
 import requests
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 # Load environment variables from .env file
 load_dotenv()
-
+smtp_server = 'mail.clairitylab.ai'
+smtp_port = 465
+smtp_user = 'Okka.fraile@clairitylab.ai'
+smtp_password = 'Clairitylab123-'  # 🔐 Consider using environment variable in production
+receiver_email = 'Okka.fraile@clairitylab.ai'
 API_KEY = os.getenv("SYSTEM_API_KEY")
 TAG_NAME = os.getenv("TAG_NAME")
 CLICKUP_ACCESS_TOKEN = os.getenv("CLICKUP_ACCESS_TOKEN")
@@ -156,7 +163,7 @@ def create_clickup_task(request):
         try:
             data = json.loads(request.body.decode('utf-8'))
 
-            # 🔍 Extract required fields
+            # Extract required fields
             name = data.get('name', 'Anonymous')
             email = data.get('email')
             score = data.get('score')
@@ -165,11 +172,11 @@ def create_clickup_task(request):
             data_score = data.get('data')
             governance = data.get('governance')
 
-            # ❗ Validate required fields
+            # Validate required fields
             if not all([email, score, strategy, people, data_score, governance]):
                 return JsonResponse({'error': 'Missing one or more required fields.'}, status=400)
 
-            # 📝 Build task description
+            # Build task description (for both ClickUp and Email)
             task_description = (
                 f"📩 Email: {email}\n"
                 f"📊 Overall Score: {score}/20\n\n"
@@ -179,28 +186,43 @@ def create_clickup_task(request):
                 f"🛡️ Governance: {governance}/20\n"
             )
 
-            # 🧾 Task payload
+            # Send Email
+            try:
+                msg = MIMEMultipart()
+                msg['From'] = smtp_user
+                msg['To'] = receiver_email
+                msg['Subject'] = f'New AI Readiness Lead - {email}'
+                msg.attach(MIMEText(task_description, 'plain'))
+
+                with smtplib.SMTP_SSL(smtp_server, smtp_port) as server:
+                    server.login(smtp_user, smtp_password)
+                    server.sendmail(smtp_user, receiver_email, msg.as_string())
+            except Exception as e:
+                return JsonResponse({
+                    'error': 'Failed to send email',
+                    'exception': str(e)
+                }, status=500)
+
+            # ClickUp Task Payload
             task_payload = {
                 "name": f"AI Readiness Lead - {email}",
                 "description": task_description,
-                "status": "to do",   # Make sure "to do" exists in your list's statuses
-                "priority": 3        # Normal priority
+                "status": "to do",
+                "priority": 3
             }
 
-            # 🔗 ClickUp API endpoint
+            # ClickUp API request
             url = f'https://api.clickup.com/api/v2/list/{CLICKUP_LIST_ID}/task'
             headers = {
                 "Authorization": CLICKUP_ACCESS_TOKEN,
                 "Content-Type": "application/json"
             }
-
-            # 📡 Send request to ClickUp
             response = requests.post(url, headers=headers, json=task_payload)
 
-            # ✅ Handle response
+            # Return response
             if response.status_code in [200, 201]:
                 return JsonResponse({
-                    'message': '✅ Task created successfully!',
+                    'message': '✅ Task created and email sent successfully!',
                     'clickup_response': response.json()
                 }, status=201)
             else:

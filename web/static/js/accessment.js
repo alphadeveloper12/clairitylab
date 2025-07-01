@@ -1,5 +1,3 @@
-
-
 const categories = [
     "Strategy", "Strategy", "Strategy", "Strategy",
     "People", "People", "People", "People",
