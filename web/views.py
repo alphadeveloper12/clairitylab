@@ -16,7 +16,7 @@ from email.mime.multipart import MIMEMultipart
 # Load environment variables from .env file
 load_dotenv()
 smtp_server = 'smtp.postmarkapp.com'
-smtp_port = 587
+smtp_port = 2525
 smtp_user = '2e6d54f1-833b-4260-86d2-1cb16b32c50e'  # Server API token
 smtp_password = '2e6d54f1-833b-4260-86d2-1cb16b32c50e'
 sender_email = 'Okka.fraile@clairitylab.ai'  # Must be verified
