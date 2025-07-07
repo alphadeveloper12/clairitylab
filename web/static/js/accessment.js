@@ -76,22 +76,23 @@ function renderQuestion(index) {
     } else {
         const savedAnswer = answers[index];
         questionContainer.innerHTML = `
-            <label class="form-label question__number">Question ${index + 1} of ${questions.length}</label><br>
-            <p class="category__p">
-                ${categories[index]} <span class="category__wight">${getCategoryWeight(categories[index])}% weight</span>
-            </p>
-            <p class="mb-3 " style="color:#fff;">${questions[index]}</p>
-            ${[1, 2, 3, 4, 5].map(val => `
-                <label class="form-check ${savedAnswer == val ? 'selected' : ''}">
-                    <input class="form-check-input" type="radio" name="answer" value="${val}" ${savedAnswer == val ? 'checked' : ''} required>
-                    <span class="form-check-label">
-                      ${val === 1 ? 'Strongly Disagree' :
+    <label class="form-label question__number">Question ${index + 1} of ${questions.length}</label><br>
+    <p class="category__p">
+        ${categories[index]} <span class="category__wight">${getCategoryWeight(categories[index])}% weight</span>
+    </p>
+    <p class="mb-3 " style="color:#fff;">${questions[index]}</p>
+    ${[5, 4, 3, 2, 1].map(val => `
+        <label class="form-check ${savedAnswer == val ? 'selected' : ''}">
+            <input class="form-check-input" type="radio" name="answer" value="${val}" ${savedAnswer == val ? 'checked' : ''} required>
+            <span class="form-check-label">
+                ${val === 1 ? 'Strongly Disagree' :
             val === 2 ? 'Disagree' :
                 val === 3 ? 'Neutral' :
                     val === 4 ? 'Agree' : 'Strongly Agree'}
-                    </span>
-                </label>`).join('')}
-        `;
+            </span>
+        </label>`).join('')}
+`;
+
 
         document.querySelectorAll('input[name="answer"]').forEach(input => {
             input.addEventListener('change', () => {
