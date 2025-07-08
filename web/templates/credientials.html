@@ -5662,6 +5662,632 @@
             }
         });
     </script>
+    <style>
+        :root {
+            --gap: 1.25rem;
+            --speed: 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --closed: 5rem;
+            --open: 50rem;
+            --accent: #ff6b35;
+        }
+
+        .project-card__details {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            padding: 15px;
+            margin-top: 10px;
+
+            /* Glassmorphism effect */
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            color: #fff;
+        }
+
+        .project-card__details p {
+            color: #000 !important;
+        }
+
+
+        .project-card.show-details .project-card__details {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-card.show-details .project-card__title {
+            display: none;
+        }
+
+        body {
+            font-family: Inter, sans-serif;
+            background: #07090d;
+            color: #c5c7ce;
+        }
+
+        .head {
+            max-width: 1400px;
+            margin: auto;
+            padding: 70px 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 2rem;
+        }
+
+        .head h2 {
+            font: 400 1.5rem/1.2 Inter, sans-serif;
+            color: #fff;
+        }
+
+        @media (min-width: 1024px) {
+            .head h2 {
+                font-size: 2.25rem;
+            }
+        }
+
+        .nav-btn {
+            width: 2.5rem;
+            height: 2.5rem;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: var(--accent);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: default;
+        }
+
+        .slider {
+            max-width: 1400px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+        }
+
+        .track {
+            display: flex;
+            gap: var(--gap);
+            align-items: flex-start;
+            justify-content: center;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 40px;
+        }
+
+        .track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .project-card {
+            position: relative;
+            flex: 0 0 var(--closed);
+            border-radius: 1rem;
+            overflow: hidden;
+            cursor: pointer;
+            transition: flex-basis var(--speed), transform var(--speed);
+            height: 900px;
+        }
+
+        .project-card[active] {
+            flex-basis: var(--open);
+            transform: translateY(-6px);
+            box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+            height: 900px;
+        }
+
+        .project-card[active] .project-card__bg {
+            object-fit: fill !important;
+        }
+
+        .project-card__bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100% !important;
+            object-fit: cover;
+            filter: brightness(0.75) saturate(75%);
+            transition: filter 0.3s, transform var(--speed);
+        }
+
+        .project-card:hover .project-card__bg {
+            filter: brightness(0.9) saturate(100%);
+            transform: scale(1.06);
+        }
+
+        .project-card__content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0;
+            background: linear-gradient(transparent 40%, rgba(0, 0, 0, 0.85) 100%);
+            z-index: 2;
+        }
+
+        .project-card__title {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.35rem;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+        }
+
+        .project-card__thumb,
+        .project-card__desc,
+        .project-card__btn {
+            display: none;
+        }
+
+
+        .project-card[active] .project-card__content {
+            flex-direction: row;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            gap: 1.1rem;
+        }
+
+        .project-card[active] .project-card__title {
+            writing-mode: horizontal-tb;
+            transform: none;
+            font-size: 2.4rem;
+        }
+
+        .project-card[active] .project-card__thumb,
+        .project-card[active] .project-card__desc,
+        .project-card[active] .project-card__btn {
+            display: block;
+        }
+
+        .project-card__thumb {
+            width: 133px;
+            height: 269px;
+            border-radius: 0.45rem;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-card__desc {
+            color: #ddd;
+            font-size: 1rem;
+            line-height: 1.4;
+            max-width: 16rem;
+        }
+
+        .project-card__btn {
+            padding: 0.55rem 1.3rem;
+            border: none;
+            border-radius: 9999px;
+            background: #4682B4;
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .dots {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .dot {
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .dot.active {
+            background: #4682B4;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 767px) {
+            :root {
+                --closed: 4rem;
+                --open: 22rem;
+            }
+
+            .head {
+                padding: 50px 20px 30px;
+            }
+
+            .track {
+                flex-direction: column;
+                scroll-snap-type: y mandatory;
+                align-items: center;
+                justify-content: flex-start;
+                padding-bottom: 0;
+            }
+
+            .project-card {
+                height: 20rem;
+            }
+
+            .project-card__title {
+                font-size: 1.1rem;
+                writing-mode: horizontal-tb;
+                transform: none;
+                text-align: center;
+                padding-inline: 0.3rem;
+            }
+
+            .nav-btn {
+                width: 2rem;
+                height: 2rem;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            :root {
+                --closed: 100%;
+                --open: 100%;
+                --gap: 0.8rem;
+            }
+
+            .head {
+                padding: 30px 15px 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .slider {
+                padding: 0 15px;
+            }
+
+            .track {
+                flex-direction: column;
+                scroll-snap-type: y mandatory;
+                gap: 0.8rem;
+                padding-bottom: 20px;
+            }
+
+            .project-card {
+                height: auto;
+                min-height: 80px;
+                flex: 0 0 auto;
+                width: 100%;
+                scroll-snap-align: start;
+            }
+
+            .project-card[active] {
+                min-height: 300px;
+                transform: none;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            }
+
+            .project-card__content {
+                flex-direction: row;
+                justify-content: flex-start;
+                padding: 1rem;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .project-card__title {
+                writing-mode: horizontal-tb;
+                transform: none;
+                font-size: 1.2rem;
+                margin-right: auto;
+            }
+
+            .project-card__thumb,
+            .project-card__desc,
+            .project-card__btn {
+                display: none;
+            }
+
+            .project-card[active] .project-card__content {
+                align-items: flex-start;
+                padding: 1.5rem;
+            }
+
+            .project-card[active] .project-card__title {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+                margin-top: 2rem;
+            }
+
+            .project-card[active] .project-card__thumb {
+                width: 200px;
+                height: 267px;
+                border-radius: 0.35rem;
+                margin-bottom: 1rem;
+            }
+
+            .project-card[active] .project-card__desc {
+                font-size: 0.95rem;
+                max-width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .project-card[active] .project-card__btn {
+                align-self: center;
+                width: 100%;
+                text-align: center;
+                padding: 0.7rem;
+            }
+
+            .dots {
+                display: none;
+            }
+
+            .controls {
+                width: 100%;
+                justify-content: space-between;
+                padding: 0 15px 20px;
+            }
+
+            .nav-btn {
+                position: static;
+                transform: none;
+            }
+        }
+
+    </style>
+    <style>
+        :root {
+            --gap: 1.25rem;
+            --speed: 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --closed: 5rem;
+            --open: 50rem;
+            --accent: #ff6b35;
+        }
+
+        body {
+            font-family: Inter, sans-serif;
+            background: #07090d;
+            color: #c5c7ce;
+            margin: 0;
+            padding: 0;
+        }
+
+        .proslider__head {
+            max-width: 1400px;
+            margin: auto;
+            padding: 70px 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 2rem;
+        }
+
+        .proslider__head h2 {
+            font: 400 1.5rem/1.2 Inter, sans-serif;
+            color: #fff;
+        }
+
+        .proslider__controls {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .proslider__nav-btn {
+            width: 2.5rem;
+            height: 2.5rem;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .proslider__nav-btn:hover {
+            background: var(--accent);
+        }
+
+        .proslider__nav-btn:disabled {
+            opacity: 0.3;
+            cursor: default;
+        }
+
+        .proslider__container {
+            max-width: 1400px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .proslider__track {
+            display: flex;
+            gap: var(--gap);
+            align-items: flex-start;
+            justify-content: center;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 40px;
+        }
+
+        .proslider__track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .proslider__card {
+            position: relative;
+            flex: 0 0 var(--closed);
+            border-radius: 1rem;
+            overflow: hidden;
+            cursor: pointer;
+            transition: flex-basis var(--speed), transform var(--speed);
+            height: 700px;
+        }
+
+        .proslider__card[active] {
+            flex-basis: var(--open);
+            transform: translateY(-6px);
+            box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+        }
+
+        .proslider__card[active] .proslider__bg {
+            object-fit: fill !important;
+        }
+
+        .proslider__bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100% !important;
+            object-fit: cover;
+            filter: brightness(0.75) saturate(75%);
+            transition: filter 0.3s, transform var(--speed);
+        }
+
+        .proslider__card:hover .proslider__bg {
+            filter: brightness(0.9) saturate(100%);
+            transform: scale(1.06);
+        }
+
+        .proslider__content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0;
+            background: linear-gradient(transparent 40%, rgba(0, 0, 0, 0.85) 100%);
+            z-index: 2;
+        }
+
+        .proslider__title {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.35rem;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+        }
+
+        .proslider__thumb,
+        .proslider__desc,
+        .proslider__btn {
+            display: none;
+        }
+
+        .proslider__card[active] .proslider__content {
+            flex-direction: row;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            gap: 1.1rem;
+        }
+
+        .proslider__card[active] .proslider__title {
+            writing-mode: horizontal-tb;
+            transform: none;
+            font-size: 2.4rem;
+        }
+
+        .proslider__card[active] .proslider__thumb,
+        .proslider__card[active] .proslider__desc,
+        .proslider__card[active] .proslider__btn {
+            display: block;
+        }
+
+        .proslider__thumb {
+            width: 133px;
+            height: 269px;
+            border-radius: 0.45rem;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .proslider__desc {
+            color: #ddd;
+            font-size: 1rem;
+            line-height: 1.4;
+            max-width: 16rem;
+        }
+
+        .proslider__btn {
+            padding: 0.55rem 1.3rem;
+            border: none;
+            border-radius: 9999px;
+            background: #4682B4;
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .proslider__dots {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .dot {
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .dot.active {
+            background: #000!important;
+            transform: scale(1.2);
+        }
+
+        .proslider__card .proslider__details {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            padding: 15px;
+            margin-top: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+.proslider__card .proslider__details p{
+    color: #000!important;
+}
+        .proslider__card.show-details .proslider__details {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 
 <body class="wp-singular page-template-default page page-id-4170 wp-custom-logo wp-theme-aizan eio-default   pxl-redux-page  body-default-font   heading-default-font   bd-px-header--default  woocommerce-layout-grid elementor-default elementor-kit-7 elementor-page elementor-page-4170">
@@ -5836,583 +6462,437 @@
                                             </div>
                                         </div>
                                     </section>
-                                    <section
-                                            class="elementor-section elementor-top-section elementor-element elementor-element-622b782 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none"
-                                            data-id="622b782"
-                                            style="padding-top: 100px"
-                                            data-element_type="section"
-                                            data-settings='{"stretch_section":"section-stretched","background_background":"classic"}'>
 
 
-                                        <div class="elementor-container elementor-column-gap-extended ">
-                                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-c8a530e pxl-column-none"
-                                                 data-id="c8a530e" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated">
+                                    <section style="background: #4682B4">
+                                        <div class="head">
 
-                                                    <div class="elementor-element elementor-element-cf46b01 elementor-widget__width-initial elementor-invisible elementor-widget elementor-widget-pxl_image"
-                                                         data-id="cf46b01" data-element_type="widget"
-                                                         data-settings='{"_animation":"bounceIn"}'
-                                                         data-widget_type="pxl_image.default">
-                                                        <div class="elementor-widget-container">
-                                                            <div id="pxl_image-cf46b01-1212"
-                                                                 class="pxl-image-single  style-default "
-                                                                 data-wow-delay="ms">
-                                                                <div class="pxl-item--inner " data-wow-delay="120ms">
-
-                                                                    <div class="pxl-item--image" data-parallax-value="">
-                                                                        <img loading="lazy" decoding="async"
-                                                                             width="1809" height="2560"
-                                                                             src="{% static 'images/media/CR__Okka Fraile-Ordonez_Part2_1.png' %}?fit=1809%2C2560&amp;ssl=1"
-                                                                             class="no-lazyload attachment-full"
-                                                                             alt="AI Manager Certification"></div>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-3af3ecb pxl-column-none"
-                                                 data-id="3af3ecb" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated">
-
-                                                    <div class="elementor-element elementor-element-566a6d1 elementor-invisible elementor-widget elementor-widget-pxl_text_editor"
-                                                         data-id="566a6d1" data-element_type="widget"
-                                                         data-settings='{"_animation":"fadeInDown"}'
-                                                         data-widget_type="pxl_text_editor.default">
-                                                        <div class="elementor-widget-container" style="margin-top: 0px">
-                                                            <div class="pxl-text-editor">
-                                                                <div class="pxl-item--inner  " data-wow-delay="ms">
-                                                                    <p>Independent Validation. Industry-Grade Trust.
-                                                                        Enterprise-Ready Results.</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="elementor-element elementor-element-a4d4834 elementor-invisible elementor-widget elementor-widget-text-editor"
-                                                         data-id="a4d4834" data-element_type="widget"
-                                                         data-settings='{"_animation":"fadeInUp"}'
-                                                         data-widget_type="text-editor.default">
-                                                        <div class="elementor-widget-container">
-                                                            <p style="color:#fff;">In a landscape where AI
-                                                                experimentation is rapidly evolving, trust is paramount
-                                                                — especially in regulated industries. That's why
-                                                                ClairityLab offers AI consulting services with a focus
-                                                                on technical safety, compliance and quality.<br>
-
-                                                                As an AI consultant in the GCC with *TÜV certification*,
-                                                                I aim to provide clients with a strong foundation for
-                                                                their AI initiatives. This means:</p>
-                                                            <ul>
-                                                                <li dir="auto" style="color: aliceblue;"> Helping to
-                                                                    ensure AI strategies can align with
-                                                                    regulatory expectations.
-                                                                </li>
-                                                                <li dir="auto" style="color: aliceblue;">
-                                                                    Guiding deployments to meet relevant *international
-                                                                    standards for safety and governance.
-                                                                </li>
-                                                                <li dir="auto" style="color: aliceblue;">Supporting
-                                                                    innovation while aiming to *minimize
-                                                                    potential liabilities.
-                                                                </li>
-
-                                                            </ul>
-
-                                                            <p style="color: #fff">For SMEs integrating AI into products, workflows, or
-                                                                customer interactions — particularly those considering
-                                                                expansion into the EU or other highly regulated markets
-                                                                — this level of guidance can offer *peace of mind,
-                                                                potentially **faster time to market, and fewer
-                                                                **compliance challenges. <br>
-
-                                                                This consulting is designed to be *operational-grade*,
-                                                                built for businesses where getting it right is
-                                                                crucial.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div class="controls">
+                                                <button id="prev" class="nav-btn" aria-label="Prev">‹</button>
+                                                <button id="next" class="nav-btn" aria-label="Next">›</button>
                                             </div>
                                         </div>
-                                    </section>
-                                    <section
-                                            class="elementor-section elementor-top-section elementor-element elementor-element-6db3680 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none"
-                                            data-id="6db3680"
-                                            data-element_type="section"
-                                            data-settings='{"stretch_section":"section-stretched","background_background":"classic"}'>
 
+                                        <div class="slider">
+                                            <div class="track" id="track" style="padding-top: 45px">
 
-                                        <div class="elementor-container elementor-column-gap-extended ">
-                                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-384bd84 pxl-column-none"
-                                                 data-id="384bd84" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated">
+                                                <article class="project-card" active>
+                                                    <img class="project-card__bg"
+                                                         src="{% static 'images/media/CR__Okka Fraile-Ordonez_Part2_1.png' %}"
+                                                         alt="">
+                                                    <div class="project-card__content">
 
-                                                    <div class="elementor-element elementor-element-c3b67f3 elementor-invisible elementor-widget elementor-widget-pxl_text_editor"
-                                                         data-id="c3b67f3" data-element_type="widget"
-                                                         data-settings='{"_animation":"fadeInDown"}'
-                                                         data-widget_type="pxl_text_editor.default">
-                                                        <div class="elementor-widget-container">
-                                                            <div class="pxl-text-editor">
-                                                                <div class="pxl-item--inner  " data-wow-delay="ms">
-                                                                    <p>AI Consultant Certification</p>
+                                                        <div>
+                                                            <h3 class="project-card__title"
+                                                                data-full-title="Independent Validation. Industry-Grade Trust. Enterprise-Ready Results.">
+                                                                Independent Validation.Industry-Grade
+                                                                Trust.Enterprise-Ready Results.</h3>
+                                                            <div class="project-card__details">
+                                                                <!-- initially hidden -->
+                                                                <div class="elementor-widget-container">
+                                                                    <p style="color:#fff;">In a landscape where AI
+                                                                        experimentation is rapidly evolving, trust is
+                                                                        paramount
+                                                                        — especially in regulated industries. That's why
+                                                                        ClairityLab offers AI consulting services with a
+                                                                        focus
+                                                                        on technical safety, compliance and quality.<br>
+
+                                                                        As an AI consultant in the GCC with *TÜV
+                                                                        certification*,
+                                                                        I aim to provide clients with a strong
+                                                                        foundation for
+                                                                        their AI initiatives. This means:</p>
+                                                                    <ul>
+                                                                        <li dir="auto" style="color: aliceblue;">
+                                                                            Helping to
+                                                                            ensure AI strategies can align with
+                                                                            regulatory expectations.
+                                                                        </li>
+                                                                        <li dir="auto" style="color: aliceblue;">
+                                                                            Guiding deployments to meet relevant
+                                                                            *international
+                                                                            standards for safety and governance.
+                                                                        </li>
+                                                                        <li dir="auto" style="color: aliceblue;">
+                                                                            Supporting
+                                                                            innovation while aiming to *minimize
+                                                                            potential liabilities.
+                                                                        </li>
+
+                                                                    </ul>
+
+                                                                    <p style="color: #fff">For SMEs integrating AI into
+                                                                        products, workflows, or
+                                                                        customer interactions — particularly those
+                                                                        considering
+                                                                        expansion into the EU or other highly regulated
+                                                                        markets
+                                                                        — this level of guidance can offer *peace of
+                                                                        mind,
+                                                                        potentially **faster time to market, and fewer
+                                                                        **compliance challenges. <br>
+
+                                                                        This consulting is designed to be
+                                                                        *operational-grade*,
+                                                                        built for businesses where getting it right is
+                                                                        crucial.</p>
                                                                 </div>
                                                             </div>
+
+                                                            <button class="project-card__btn">Details</button>
                                                         </div>
                                                     </div>
-                                                    <div class="elementor-element elementor-element-b2b1cb2 elementor-invisible elementor-widget elementor-widget-text-editor"
-                                                         data-id="b2b1cb2" data-element_type="widget"
-                                                         data-settings='{"_animation":"fadeInUp"}'
-                                                         data-widget_type="text-editor.default">
-                                                        <div class="elementor-widget-container">
-                                                            <p style="color:#fff;" class="" data-start="148"
-                                                               data-end="435">Certified AI Consultant – AI Training
-                                                                Institute (TÜV Rheinland-Aligned Curriculum) Earned
-                                                                through the AI Training Institute in Germany, this
-                                                                certification reflects my mastery of a curriculum
-                                                                aligned with TÜV Rheinland’s globally respected
-                                                                standards for quality and safety. This rigorous
-                                                                training—backed by hundreds of hours of theoretical
-                                                                study and hands-on practice—equips
-                                                                me to deliver AI solutions that drive real business
-                                                                impact. Clients benefit from my ability to design and
-                                                                implement innovative, secure, and ethical AI systems
-                                                                tailored to their needs.
-                                                                From building RAGs to deploying chatbots, my practical
-                                                                experience ensures your AI initiatives are robust,
-                                                                compliant, and future proof, giving you confidence in
-                                                                transformative results.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4b3621e pxl-column-none"
-                                                 data-id="4b3621e" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated">
+                                                </article>
+                                                <article class="project-card">
+                                                    <img class="project-card__bg"
+                                                         src="{% static 'images/media/Consultant-Zertifikat-Okka-Fraile-Ordonez-1.png' %}"
+                                                         alt="">
+                                                    <div class="project-card__content">
 
-                                                    <div class="elementor-element elementor-element-1c34203 elementor-widget__width-initial elementor-invisible elementor-widget elementor-widget-pxl_image"
-                                                         data-id="1c34203" data-element_type="widget"
-                                                         data-settings='{"_animation":"bounceIn"}'
-                                                         data-widget_type="pxl_image.default">
-                                                        <div class="elementor-widget-container">
-                                                            <div id="pxl_image-1c34203-3935"
-                                                                 class="pxl-image-single  style-default "
-                                                                 data-wow-delay="ms">
-                                                                <div class="pxl-item--inner " data-wow-delay="120ms">
-
-                                                                    <div class="pxl-item--image" data-parallax-value="">
-                                                                        <img decoding="async" width="2340" height="1655"
-                                                                             src="{% static 'images/media/Consultant-Zertifikat-Okka-Fraile-Ordonez-1.png' %}?fit=2340%2C1655&amp;ssl=1"
-                                                                             class="no-lazyload attachment-full"
-                                                                             alt="AI Consultant Certification"></div>
-
+                                                        <div>
+                                                            <h3 class="project-card__title"
+                                                                data-full-title="AI Consultant Certification">
+                                                                AI Consultant Certification</h3>
+                                                            <div class="project-card__details">
+                                                                <div class="elementor-widget-container">
+                                                                    <p style="color:#fff;" class="" data-start="148"
+                                                                       data-end="435">Certified AI Consultant – AI
+                                                                        Training
+                                                                        Institute (TÜV Rheinland-Aligned Curriculum)
+                                                                        Earned
+                                                                        through the AI Training Institute in Germany,
+                                                                        this
+                                                                        certification reflects my mastery of a
+                                                                        curriculum
+                                                                        aligned with TÜV Rheinland’s globally respected
+                                                                        standards for quality and safety. This rigorous
+                                                                        training—backed by hundreds of hours of
+                                                                        theoretical
+                                                                        study and hands-on practice—equips
+                                                                        me to deliver AI solutions that drive real
+                                                                        business
+                                                                        impact. Clients benefit from my ability to
+                                                                        design and
+                                                                        implement innovative, secure, and ethical AI
+                                                                        systems
+                                                                        tailored to their needs.
+                                                                        From building RAGs to deploying chatbots, my
+                                                                        practical
+                                                                        experience ensures your AI initiatives are
+                                                                        robust,
+                                                                        compliant, and future proof, giving you
+                                                                        confidence in
+                                                                        transformative results.</p>
                                                                 </div>
                                                             </div>
+
+                                                            <button class="project-card__btn">Details</button>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section
-                                            class="elementor-section elementor-top-section elementor-element elementor-element-7563cad elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none"
-                                            data-id="7563cad"
-                                            data-element_type="section"
-                                            data-settings='{"stretch_section":"section-stretched","background_background":"classic"}'>
+                                                </article>
+                                                <article class="project-card">
+                                                    <img class="project-card__bg"
+                                                         src="{% static 'images/media/Zertifikat-AI-Agent-Builder-ENGLISCH-1.png' %}"
+                                                         alt="">
+                                                    <div class="project-card__content">
 
+                                                        <div>
+                                                            <h3 class="project-card__title"
+                                                                data-full-title="AI Agent Builder Certification – Automation Meets Strategic Intelligence">
+                                                                AI Agent Builder Certification – Automation Meets
+                                                                Strategic Intelligence</h3>
+                                                            <div class="project-card__details">
+                                                                <div class="elementor-widget-container">
+                                                                    <p style="color:#fff;" dir="auto">This certification
+                                                                        represents hands-on mastery in designing,
+                                                                        deploying, and
+                                                                        orchestrating AI agents tailored for real-world
+                                                                        business
+                                                                        use. With deep practical training in tools like
+                                                                        n8n,
+                                                                        OpenAI APIs, and agentic automation workflows, I
+                                                                        now
+                                                                        build intelligent AI systems that actually do
+                                                                        things —
+                                                                        not just chat, but act, sort, classify, route,
+                                                                        and
+                                                                        execute across departments.</p>
+                                                                    <p dir="auto" style="font-weight: bold;">Clients
+                                                                        benefit
+                                                                        from:</p>
 
-                                        <div class="elementor-container elementor-column-gap-extended ">
-                                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-1d1c857 pxl-column-none"
-                                                 data-id="1d1c857" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated">
-
-                                                    <div class="elementor-element elementor-element-b964c54 elementor-widget__width-initial elementor-invisible elementor-widget elementor-widget-pxl_image"
-                                                         data-id="b964c54" data-element_type="widget"
-                                                         data-settings='{"_animation":"bounceIn"}'
-                                                         data-widget_type="pxl_image.default">
-                                                        <div class="elementor-widget-container">
-                                                            <div id="pxl_image-b964c54-3960"
-                                                                 class="pxl-image-single  style-default "
-                                                                 data-wow-delay="ms">
-                                                                <div class="pxl-item--inner " data-wow-delay="120ms">
-
-                                                                    <div class="pxl-item--image" data-parallax-value="">
-                                                                        <img decoding="async" width="2340" height="1655"
-                                                                             src="{% static 'images/media/Zertifikat-AI-Agent-Builder-ENGLISCH-1.png' %}?fit=2340%2C1655&amp;ssl=1"
-                                                                             class="no-lazyload attachment-full"
-                                                                             alt="Zertifikat AI Agent Builder - ENGLISCH-1">
-                                                                    </div>
-
+                                                                    <ul>
+                                                                        <li dir="auto" style="color: aliceblue;">Agentic
+                                                                            Automation Expertise: From email
+                                                                            classification to
+                                                                            invoice routing and content generation, I
+                                                                            design
+                                                                            systems that handle what teams shouldn’t
+                                                                            have to
+                                                                            touch twice.
+                                                                        </li>
+                                                                        <li dir="auto" style="color: aliceblue;">
+                                                                            Human-in-the-Loop Design: Compliance?
+                                                                            Precision?
+                                                                            Oversight? I build AI systems where human
+                                                                            decision
+                                                                            points are embedded — the sweet spot of
+                                                                            control and
+                                                                            scale.
+                                                                        </li>
+                                                                        <li dir="auto" style="color: aliceblue;">
+                                                                            Multi-Agent
+                                                                            Orchestration: Need one AI to manage a task?
+                                                                            Easy.
+                                                                            Need five collaborating? Done. Your business
+                                                                            processes, but smarter.
+                                                                        </li>
+                                                                        <li style="color: aliceblue;">Data Privacy &amp;
+                                                                            Error
+                                                                            Handling Built-In: From authentication to
+                                                                            GDPR-aware
+                                                                            design and robust API use, systems are
+                                                                            secure,
+                                                                            recoverable, and future-ready.
+                                                                        </li>
+                                                                        <li style="color: aliceblue;">Real-World
+                                                                            Results, Not
+                                                                            Theory: Think Gmail automation, SEO blog
+                                                                            drafting,
+                                                                            executive agents, and Microsoft Copilot
+                                                                            workflows —
+                                                                            tested, built, and working in
+                                                                            production-like
+                                                                            environments.
+                                                                        </li>
+                                                                    </ul>
+                                                                    <p style="color:#fff;" dir="auto">This certification
+                                                                        means
+                                                                        you’re not hiring someone who “understands AI” —
+                                                                        you’re
+                                                                        bringing in someone who understands
+                                                                        „business-ready
+                                                                        agents“, with German engineering precision and a
+                                                                        strategic
+                                                                        mind behind the tech.</p>
                                                                 </div>
                                                             </div>
+
+                                                            <button class="project-card__btn">Details</button>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-ca83955 pxl-column-none"
-                                                 data-id="ca83955" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated">
+                                                </article>
+                                                <article class="project-card">
+                                                    <img class="project-card__bg"
+                                                         src="{% static 'images/media/certificate-20250421190849.png' %}"
+                                                         alt="">
+                                                    <div class="project-card__content">
 
-                                                    <div class="elementor-element elementor-element-a705e23 elementor-invisible elementor-widget elementor-widget-pxl_text_editor"
-                                                         data-id="a705e23" data-element_type="widget"
-                                                         data-settings='{"_animation":"fadeInDown"}'
-                                                         data-widget_type="pxl_text_editor.default">
-                                                        <div class="elementor-widget-container">
-                                                            <div class="pxl-text-editor">
-                                                                <div class="pxl-item--inner  " data-wow-delay="ms">
-                                                                    <h3 dir="auto">AI Agent Builder Certification –
-                                                                        Automation Meets Strategic Intelligence</h3>
+                                                        <div>
+                                                            <h3 class="project-card__title"
+                                                                data-full-title="AI Thought Leader Bootcamp Certificate of Completion">
+                                                                AI Thought Leader Bootcamp Certificate of
+                                                                Completion</h3>
+                                                            <div class="project-card__details">
+                                                                <div class="elementor-widget-container">
+                                                                    <p style="color:#fff;" class="" data-start="74"
+                                                                       data-end="554">Trained under Isabella Bedoya, a
+                                                                        Forbes-featured AI authority, I completed the AI
+                                                                        Thought
+                                                                        Leader Bootcamp, mastering strategies to harness
+                                                                        AI for
+                                                                        business leadership. This wasn’t just
+                                                                        theory—many late nights and practical projects
+                                                                        sharpened
+                                                                        my ability to create smart systems that elevate
+                                                                        brands.
+                                                                        Clients gain a competitive edge through
+                                                                        AI-driven
+                                                                        insights that amplify
+                                                                        market presence, streamline operations, and
+                                                                        attract
+                                                                        high-value opportunities. With my expertise,
+                                                                        your
+                                                                        business can lead its industry, leveraging AI to
+                                                                        achieve
+                                                                        scalable, impactful</p>
+                                                                    <p class="" data-start="556" data-end="619"></p>
                                                                 </div>
                                                             </div>
+
+                                                            <button class="project-card__btn">Details</button>
                                                         </div>
                                                     </div>
-                                                    <div class="elementor-element elementor-element-06402ad elementor-invisible elementor-widget elementor-widget-text-editor"
-                                                         data-id="06402ad" data-element_type="widget"
-                                                         data-settings='{"_animation":"fadeInUp"}'
-                                                         data-widget_type="text-editor.default">
-                                                        <div class="elementor-widget-container">
-                                                            <p style="color:#fff;" dir="auto">This certification
-                                                                represents hands-on mastery in designing, deploying, and
-                                                                orchestrating AI agents tailored for real-world business
-                                                                use. With deep practical training in tools like n8n,
-                                                                OpenAI APIs, and agentic automation workflows, I now
-                                                                build intelligent AI systems that actually do things —
-                                                                not just chat, but act, sort, classify, route, and
-                                                                execute across departments.</p>
-                                                            <p dir="auto" style="font-weight: bold;">Clients benefit
-                                                                from:</p>
+                                                </article>
+                                                <article class="project-card">
+                                                    <img class="project-card__bg"
+                                                         src="{% static 'images/media/Zertifikat_AIImageMasterclass_Fraile-Ordonez-1.png' %}"
+                                                         alt="">
+                                                    <div class="project-card__content">
 
-                                                            <ul>
-                                                                <li dir="auto" style="color: aliceblue;">Agentic
-                                                                    Automation Expertise: From email classification to
-                                                                    invoice routing and content generation, I design
-                                                                    systems that handle what teams shouldn’t have to
-                                                                    touch twice.
-                                                                </li>
-                                                                <li dir="auto" style="color: aliceblue;">
-                                                                    Human-in-the-Loop Design: Compliance? Precision?
-                                                                    Oversight? I build AI systems where human decision
-                                                                    points are embedded — the sweet spot of control and
-                                                                    scale.
-                                                                </li>
-                                                                <li dir="auto" style="color: aliceblue;">Multi-Agent
-                                                                    Orchestration: Need one AI to manage a task? Easy.
-                                                                    Need five collaborating? Done. Your business
-                                                                    processes, but smarter.
-                                                                </li>
-                                                                <li style="color: aliceblue;">Data Privacy &amp; Error
-                                                                    Handling Built-In: From authentication to GDPR-aware
-                                                                    design and robust API use, systems are secure,
-                                                                    recoverable, and future-ready.
-                                                                </li>
-                                                                <li style="color: aliceblue;">Real-World Results, Not
-                                                                    Theory: Think Gmail automation, SEO blog drafting,
-                                                                    executive agents, and Microsoft Copilot workflows —
-                                                                    tested, built, and working in production-like
-                                                                    environments.
-                                                                </li>
-                                                            </ul>
-                                                            <p style="color:#fff;" dir="auto">This certification means
-                                                                you’re not hiring someone who “understands AI” — you’re
-                                                                bringing in someone who understands „business-ready
-                                                                agents“, with German engineering precision and a
-                                                                strategic
-                                                                mind behind the tech.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section
-                                            class="elementor-section elementor-top-section elementor-element elementor-element-6ea4e11 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none"
-                                            data-id="6ea4e11"
-                                            data-element_type="section"
-                                            data-settings='{"stretch_section":"section-stretched","background_background":"classic"}'>
-
-
-                                        <div class="elementor-container elementor-column-gap-extended ">
-                                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-e2802e8 pxl-column-none"
-                                                 data-id="e2802e8" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated">
-
-                                                    <div class="elementor-element elementor-element-df98013 elementor-invisible elementor-widget elementor-widget-pxl_text_editor"
-                                                         data-id="df98013" data-element_type="widget"
-                                                         data-settings='{"_animation":"fadeInDown"}'
-                                                         data-widget_type="pxl_text_editor.default">
-                                                        <div class="elementor-widget-container">
-                                                            <div class="pxl-text-editor">
-                                                                <div class="pxl-item--inner  " data-wow-delay="ms">
-                                                                    <p>AI Thought Leader Bootcamp Certificate of
-                                                                        Completion</p>
+                                                        <div>
+                                                            <h3 class="project-card__title"
+                                                                data-full-title="AI Image Masterclass Completion Certificate">
+                                                                AI Image Masterclass Completion Certificate</h3>
+                                                            <div class="project-card__details">
+                                                                <div class="elementor-widget-container">
+                                                                    <p style="color: #fff;">The AI Image Masterclass has
+                                                                        armed
+                                                                        me with skills in AI-driven image creation and
+                                                                        processing, honed through practical projects
+                                                                        that went
+                                                                        well beyond theory. Clients benefit from
+                                                                        visually
+                                                                        stunning, AI-generated assets that elevate
+                                                                        marketing
+                                                                        campaigns, product designs, and user
+                                                                        experiences. My
+                                                                        expertise ensures your brand captivates
+                                                                        audiences in
+                                                                        today’s visual-first
+                                                                        world, delivering memorable, high-impact results
+                                                                        that
+                                                                        set you apart.</p>
                                                                 </div>
                                                             </div>
+
+                                                            <button class="project-card__btn">Details</button>
                                                         </div>
                                                     </div>
-                                                    <div class="elementor-element elementor-element-3c18a38 elementor-invisible elementor-widget elementor-widget-text-editor"
-                                                         data-id="3c18a38" data-element_type="widget"
-                                                         data-settings='{"_animation":"fadeInUp"}'
-                                                         data-widget_type="text-editor.default">
-                                                        <div class="elementor-widget-container">
-                                                            <p style="color:#fff;" class="" data-start="74"
-                                                               data-end="554">Trained under Isabella Bedoya, a
-                                                                Forbes-featured AI authority, I completed the AI Thought
-                                                                Leader Bootcamp, mastering strategies to harness AI for
-                                                                business leadership. This wasn’t just
-                                                                theory—many late nights and practical projects sharpened
-                                                                my ability to create smart systems that elevate brands.
-                                                                Clients gain a competitive edge through AI-driven
-                                                                insights that amplify
-                                                                market presence, streamline operations, and attract
-                                                                high-value opportunities. With my expertise, your
-                                                                business can lead its industry, leveraging AI to achieve
-                                                                scalable, impactful</p>
-                                                            <p class="" data-start="556" data-end="619"></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-3725b00 pxl-column-none"
-                                                 data-id="3725b00" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated">
+                                                </article>
+                                                <article class="project-card">
+                                                    <img class="project-card__bg"
+                                                         src="{% static 'images/media/Zertifikat_ChatGPTPowerUser_Fraile-Ordonez-1.png' %}"
+                                                         alt="">
+                                                    <div class="project-card__content">
 
-                                                    <div class="elementor-element elementor-element-a8a25ea elementor-widget__width-initial elementor-invisible elementor-widget elementor-widget-pxl_image"
-                                                         data-id="a8a25ea" data-element_type="widget"
-                                                         data-settings='{"_animation":"bounceIn"}'
-                                                         data-widget_type="pxl_image.default">
-                                                        <div class="elementor-widget-container">
-                                                            <div id="pxl_image-a8a25ea-2771"
-                                                                 class="pxl-image-single  style-default "
-                                                                 data-wow-delay="ms">
-                                                                <div class="pxl-item--inner " data-wow-delay="120ms">
-
-                                                                    <div class="pxl-item--image" data-parallax-value="">
-                                                                        <img loading="lazy" decoding="async"
-                                                                             width="1504" height="1204"
-                                                                             src="{% static 'images/media/certificate-20250421190849.png' %}?fit=1504%2C1204&amp;ssl=1"
-                                                                             class="no-lazyload attachment-full"
-                                                                             alt="AI Thought Leader Bootcamp Certificate of Completion">
-                                                                    </div>
-
+                                                        <div>
+                                                            <h3 class="project-card__title"
+                                                                data-full-title="Certificate of Achievement – ChatGPT Power User">
+                                                                Certificate of Achievement – ChatGPT Power User</h3>
+                                                            <div class="project-card__details">
+                                                                <div class="elementor-widget-container">
+                                                                    <p style="color:#fff;">My ChatGPT Power User
+                                                                        Certification
+                                                                        reflects advanced expertise in deploying this
+                                                                        powerful
+                                                                        AI tool to solve complex challenges. Through
+                                                                        hands-on
+                                                                        experience—not just tutorials—I’ve built
+                                                                        and fine-tuned bots that deliver results. For
+                                                                        clients,
+                                                                        this means customized AI solutions that boost
+                                                                        productivity, enhance customer engagement, and
+                                                                        drive
+                                                                        smarter decision-making.
+                                                                        Whether automating workflows or crafting dynamic
+                                                                        content, I’ll tailor ChatGPT to fit your unique
+                                                                        goals,
+                                                                        saving you time and unlocking new
+                                                                        efficiencies.</p>
                                                                 </div>
                                                             </div>
+
+                                                            <button class="project-card__btn">Details</button>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section
-                                            class="elementor-section elementor-top-section elementor-element elementor-element-17caf43 elementor-section-stretched elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none"
-                                            data-id="17caf43" data-element_type="section"
-                                            data-settings='{"stretch_section":"section-stretched","background_background":"classic"}'>
+                                                </article>
 
-
-                                        <div class="elementor-container elementor-column-gap-extended ">
-                                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-2ae96d5 pxl-column-none"
-                                                 data-id="2ae96d5" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated">
-
-                                                    <div class="elementor-element elementor-element-3160919 elementor-widget__width-initial elementor-widget elementor-widget-pxl_image"
-                                                         data-id="3160919" data-element_type="widget"
-                                                         data-widget_type="pxl_image.default">
-                                                        <div class="elementor-widget-container">
-                                                            <div id="pxl_image-3160919-5322"
-                                                                 class="pxl-image-single  style-default "
-                                                                 data-wow-delay="ms">
-                                                                <div class="pxl-item--inner " data-wow-delay="120ms">
-
-                                                                    <div class="pxl-item--image" data-parallax-value="">
-                                                                        <img loading="lazy" decoding="async"
-                                                                             width="2339" height="1653"
-                                                                             src="{% static 'images/media/Zertifikat_AIImageMasterclass_Fraile-Ordonez-1.png' %}?fit=2339%2C1653&amp;ssl=1"
-                                                                             class="no-lazyload attachment-full"
-                                                                             alt="AI Image Masterclass Completion Certificate">
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-a42ef7b pxl-column-none"
-                                                 data-id="a42ef7b" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated">
-
-                                                    <div class="elementor-element elementor-element-ad36155 elementor-widget elementor-widget-pxl_text_editor"
-                                                         data-id="ad36155" data-element_type="widget"
-                                                         data-widget_type="pxl_text_editor.default">
-                                                        <div class="elementor-widget-container">
-                                                            <div class="pxl-text-editor">
-                                                                <div class="pxl-item--inner  " data-wow-delay="ms">
-                                                                    <p>AI Image Masterclass Completion Certificate</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="elementor-element elementor-element-dde5fa9 elementor-widget elementor-widget-text-editor"
-                                                         data-id="dde5fa9" data-element_type="widget"
-                                                         data-widget_type="text-editor.default">
-                                                        <div class="elementor-widget-container">
-                                                            <p style="color: #fff;">The AI Image Masterclass has armed
-                                                                me with skills in AI-driven image creation and
-                                                                processing, honed through practical projects that went
-                                                                well beyond theory. Clients benefit from visually
-                                                                stunning, AI-generated assets that elevate marketing
-                                                                campaigns, product designs, and user experiences. My
-                                                                expertise ensures your brand captivates audiences in
-                                                                today’s visual-first
-                                                                world, delivering memorable, high-impact results that
-                                                                set you apart.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
+
+                                        <div class="dots" id="dots"></div>
                                     </section>
+
                                     <section
-                                            class="elementor-section elementor-top-section elementor-element elementor-element-84fd748 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none"
-                                            data-id="84fd748"
-                                            data-element_type="section"
-                                            data-settings='{"stretch_section":"section-stretched","background_background":"classic"}'>
+                                            class="elementor-section elementor-top-section elementor-element elementor-element-162605a elementor-section-stretched elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none"
+                                            data-id="162605a" data-element_type="section"
+                                            data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}"
+                                            style="width: 1905px; left: 0px;">
 
 
                                         <div class="elementor-container elementor-column-gap-extended ">
-                                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-a149ef2 pxl-column-none"
-                                                 data-id="a149ef2" data-element_type="column">
+                                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-06888ab pxl-column-none"
+                                                 data-id="06888ab" data-element_type="column">
                                                 <div class="elementor-widget-wrap elementor-element-populated">
 
-                                                    <div class="elementor-element elementor-element-cf94aa1 elementor-invisible elementor-widget elementor-widget-pxl_text_editor"
-                                                         data-id="cf94aa1" data-element_type="widget"
-                                                         data-settings='{"_animation":"fadeInDown"}'
+                                                    <div class="elementor-element elementor-element-44bbf3a elementor-widget elementor-widget-heading animated fadeInLeft"
+                                                         data-id="44bbf3a" data-element_type="widget"
+                                                         data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;}"
+                                                         data-widget_type="heading.default">
+                                                        <div class="elementor-widget-container">
+                                                            <h2 class="elementor-heading-title elementor-size-default">
+                                                                Why our experience matters for you</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elementor-element elementor-element-9525cf2 elementor-widget elementor-widget-pxl_text_editor"
+                                                         data-id="9525cf2" data-element_type="widget"
                                                          data-widget_type="pxl_text_editor.default">
                                                         <div class="elementor-widget-container">
                                                             <div class="pxl-text-editor">
                                                                 <div class="pxl-item--inner  " data-wow-delay="ms">
-                                                                    <p>Certificate of Achievement – ChatGPT Power
-                                                                        User</p>
+                                                                    <p>As an AI & Project Manager at next system
+                                                                        Vertriebsges.m.b.H., I leverage my expertise in
+                                                                        AI-based technical applications to empower
+                                                                        organizations through business evolution. With
+                                                                        over 10 years of experience in digital IoT
+                                                                        transformation, energy & e-mobility business
+                                                                        development, and professional business
+                                                                        networking, I have a proven track record of
+                                                                        delivering successful projects and enhancing
+                                                                        processes and workflows. I hold an Executive MBA
+                                                                        in Business Administration and Management from
+                                                                        Universität für Weiterbildung Krems and a short
+                                                                        course in Computer Technology from TU Wien. I am
+                                                                        also certified in ChatGPT Masterclass, Eigene
+                                                                        GPTs bauen für produktivere Workflows, and
+                                                                        Midjourney Masterclass from Udemy. My mission is
+                                                                        to provide professional consulting on AI
+                                                                        integration within organizations, identify
+                                                                        opportunities for enhancing processes and
+                                                                        workflows, and plan AI projects with defined
+                                                                        requirements. I address legal, regulatory, and
+                                                                        ethical challenges associated with AI, ensuring
+                                                                        compliance with Article 4 of the EU AI
+                                                                        Regulation (Regulation (EU) 2024/1689).</p>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="elementor-element elementor-element-b39aa8e elementor-invisible elementor-widget elementor-widget-text-editor"
-                                                         data-id="b39aa8e" data-element_type="widget"
-                                                         data-settings='{"_animation":"fadeInUp"}'
-                                                         data-widget_type="text-editor.default">
-                                                        <div class="elementor-widget-container">
-                                                            <p style="color:#fff;">My ChatGPT Power User Certification
-                                                                reflects advanced expertise in deploying this powerful
-                                                                AI tool to solve complex challenges. Through hands-on
-                                                                experience—not just tutorials—I’ve built
-                                                                and fine-tuned bots that deliver results. For clients,
-                                                                this means customized AI solutions that boost
-                                                                productivity, enhance customer engagement, and drive
-                                                                smarter decision-making.
-                                                                Whether automating workflows or crafting dynamic
-                                                                content, I’ll tailor ChatGPT to fit your unique goals,
-                                                                saving you time and unlocking new efficiencies.</p>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-f04fda8 pxl-column-none"
-                                                 data-id="f04fda8" data-element_type="column">
+                                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-5313e9a pxl-column-none"
+                                                 data-id="5313e9a" data-element_type="column">
                                                 <div class="elementor-widget-wrap elementor-element-populated">
 
-                                                    <div class="elementor-element elementor-element-a40205d elementor-widget__width-initial elementor-invisible elementor-widget elementor-widget-pxl_image"
-                                                         data-id="a40205d" data-element_type="widget"
-                                                         data-settings='{"_animation":"bounceIn"}'
+                                                    <div class="elementor-element elementor-element-1b0cc16 elementor-widget elementor-widget-pxl_image"
+                                                         data-id="1b0cc16" data-element_type="widget"
                                                          data-widget_type="pxl_image.default">
                                                         <div class="elementor-widget-container">
-                                                            <div id="pxl_image-a40205d-8513"
+                                                            <div id="pxl_image-1b0cc16-1257"
                                                                  class="pxl-image-single  style-default "
                                                                  data-wow-delay="ms">
                                                                 <div class="pxl-item--inner " data-wow-delay="120ms">
 
                                                                     <div class="pxl-item--image" data-parallax-value="">
-                                                                        <img loading="lazy" decoding="async"
-                                                                             width="2339" height="1653"
-                                                                             src="{% static 'images/media/Zertifikat_ChatGPTPowerUser_Fraile-Ordonez-1.png' %}?fit=2339%2C1653&amp;ssl=1"
+                                                                        <img fetchpriority="high" decoding="async"
+                                                                             width="764" height="1198"
+                                                                             src="/static/images/media/george-500x500.webp?fit=764%2C1198&amp;ssl=1"
                                                                              class="no-lazyload attachment-full"
-                                                                             alt="Certificate of Achievement – ChatGPT Power User">
-                                                                    </div>
+                                                                             alt="okkaServices"></div>
 
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section
-                                            class="elementor-section elementor-top-section elementor-element elementor-element-2bf689a elementor-section-stretched elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none"
-                                            data-id="2bf689a" data-element_type="section"
-                                            data-settings='{"stretch_section":"section-stretched","background_background":"classic"}'>
-
-
-                                        <div class="elementor-container elementor-column-gap-extended ">
-                                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-77062b8 pxl-column-none"
-                                                 data-id="77062b8" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated">
-
-                                                    <div class="elementor-element elementor-element-1f13e3d elementor-widget__width-initial elementor-widget elementor-widget-pxl_image"
-                                                         data-id="1f13e3d" data-element_type="widget"
-                                                         data-widget_type="pxl_image.default">
-                                                        <div class="elementor-widget-container">
-                                                            <div id="pxl_image-1f13e3d-2542"
-                                                                 class="pxl-image-single  style-default "
-                                                                 data-wow-delay="ms">
-                                                                <div class="pxl-item--inner " data-wow-delay="120ms">
-
-                                                                    <div class="pxl-item--image" data-parallax-value="">
-                                                                        <img loading="lazy" decoding="async"
-                                                                             width="2340" height="1655"
-                                                                             src="{% static 'images/media/AITI-AI-Consultant_Georg-Sima_EN-1.png' %}?fit=2340%2C1655&amp;ssl=1"
-                                                                             class="no-lazyload attachment-full"
-                                                                             alt="AI Consultant Certification"></div>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-a0ea411 pxl-column-none"
-                                                 data-id="a0ea411" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated">
-
-                                                    <div class="elementor-element elementor-element-9bbccb5 elementor-widget elementor-widget-pxl_text_editor"
-                                                         data-id="9bbccb5" data-element_type="widget"
-                                                         data-widget_type="pxl_text_editor.default">
-                                                        <div class="elementor-widget-container">
-                                                            <div class="pxl-text-editor">
-                                                                <div class="pxl-item--inner  " data-wow-delay="ms">
-                                                                    <p>AI Consultant Certification</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="elementor-element elementor-element-45bfcdd elementor-widget elementor-widget-text-editor"
-                                                         data-id="45bfcdd" data-element_type="widget"
-                                                         data-widget_type="text-editor.default">
-                                                        <div class="elementor-widget-container">
-                                                            <p style="color:#fff;">This certificate verifies the
-                                                                successful completion of the AI Consultant training
-                                                                program, equipping the participant with the skills to
-                                                                support companies in implementing AI solutions
-                                                                and developing automated processes. Issued by Georg
-                                                                Sima, CEO, on May 7, 2025.</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="elementor-element elementor-element-33bf1c2 elementor-widget elementor-widget-html"
-                                                         data-id="33bf1c2" data-element_type="widget"
+                                                    <div class="elementor-element elementor-element-d47718a elementor-widget elementor-widget-html"
+                                                         data-id="d47718a" data-element_type="widget"
                                                          data-widget_type="html.default">
                                                         <div class="elementor-widget-container">
                                                             <style>
-                                                                .elementor-313 {
-                                                                    display: none !important;
+                                                                .elementor-element-162605a img {
+                                                                    border-radius: 20px
                                                                 }
                                                             </style>
                                                         </div>
@@ -6421,84 +6901,263 @@
                                             </div>
                                         </div>
                                     </section>
-                                    <section
-                                            class="elementor-section elementor-top-section elementor-element elementor-element-622b782 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none"
-                                            data-id="622b782"
-                                            data-element_type="section"
-                                            data-settings='{"stretch_section":"section-stretched","background_background":"classic"}'>
-
-
-                                        <div class="elementor-container elementor-column-gap-extended ">
-                                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-3af3ecb pxl-column-none"
-                                                 data-id="3af3ecb" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated">
-
-                                                    <div class="elementor-element elementor-element-566a6d1 elementor-invisible elementor-widget elementor-widget-pxl_text_editor"
-                                                         data-id="566a6d1" data-element_type="widget"
-                                                         data-settings='{"_animation":"fadeInDown"}'
-                                                         data-widget_type="pxl_text_editor.default">
-                                                        <div class="elementor-widget-container">
-                                                            <div class="pxl-text-editor">
-                                                                <div class="pxl-item--inner  " data-wow-delay="ms">
-                                                                    <p>AI Manager Certification</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="elementor-element elementor-element-a4d4834 elementor-invisible elementor-widget elementor-widget-text-editor"
-                                                         data-id="a4d4834" data-element_type="widget"
-                                                         data-settings='{"_animation":"fadeInUp"}'
-                                                         data-widget_type="text-editor.default">
-                                                        <div class="elementor-widget-container">
-                                                            <p style="color:#fff;">This certificate is awarded to Ing.
-                                                                Georg Sima, MBA, confirming that he has met the
-                                                                competency requirements outlined in the AS+C
-                                                                Certification program P85:2024-10-23. The certification
-                                                                recognizes his expertise in the fundamentals and
-                                                                functionalities of artificial intelligence (AI)
-                                                                applications. Ing. Sima is equipped to support and
-                                                                advise on AI usage, identify potential
-                                                                applications within organizations, plan AI projects, and
-                                                                navigate the legal, regulatory, and ethical challenges
-                                                                associated with AI. This certification serves as proof
-                                                                of his qualifications
-                                                                as a project manager for AI initiatives, in accordance
-                                                                with the AI Regulation (Regulation (EU) 2024/1689). The
-                                                                certificate is valid from December 12, 2024, to December
-                                                                12, 2027.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-c8a530e pxl-column-none"
-                                                 data-id="c8a530e" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated">
-
-                                                    <div class="elementor-element elementor-element-cf46b01 elementor-widget__width-initial elementor-invisible elementor-widget elementor-widget-pxl_image"
-                                                         data-id="cf46b01" data-element_type="widget"
-                                                         data-settings='{"_animation":"bounceIn"}'
-                                                         data-widget_type="pxl_image.default">
-                                                        <div class="elementor-widget-container">
-                                                            <div id="pxl_image-cf46b01-1212"
-                                                                 class="pxl-image-single  style-default "
-                                                                 data-wow-delay="ms">
-                                                                <div class="pxl-item--inner " data-wow-delay="120ms">
-
-                                                                    <div class="pxl-item--image" data-parallax-value="">
-                                                                        <img loading="lazy" decoding="async"
-                                                                             width="1809" height="2560"
-                                                                             src="{% static 'images/media/Georg-Certificate-AS-P-011401-20241212-EN-GB-scaled.png' %}?fit=1809%2C2560&amp;ssl=1"
-                                                                             class="no-lazyload attachment-full"
-                                                                             alt="AI Manager Certification"></div>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                    <section style="background: #4682B4">
+                                        <div class="proslider__head">
+                                            <div class="proslider__controls">
+                                                <button id="proslider_prev" class="proslider__nav-btn"
+                                                        aria-label="Prev">‹
+                                                </button>
+                                                <button id="proslider_next" class="proslider__nav-btn"
+                                                        aria-label="Next">›
+                                                </button>
                                             </div>
                                         </div>
+
+                                        <div class="proslider__container">
+                                            <div class="proslider__track" id="proslider_track" style="padding-top: 45px">
+
+                                                <!-- Card 1 -->
+                                                <article class="proslider__card" active>
+                                                    <img class="proslider__bg"
+                                                         src="{% static 'images/media/AITI-AI-Consultant_Georg-Sima_EN-1.png' %}"
+                                                         alt="">
+                                                    <div class="proslider__content">
+
+                                                        <div>
+                                                            <h3 class="proslider__title"
+                                                                data-full-title="AI Consultant Certification">AI
+                                                                Consultant Certification</h3>
+                                                            <button class="proslider__btn">Details</button>
+                                                            <div class="proslider__details">
+                                                                <div class="elementor-widget-container">
+                                                                    <p style="color:#fff;">This certificate verifies the
+                                                                        successful completion of the AI Consultant
+                                                                        training
+                                                                        program, equipping the participant with the
+                                                                        skills to
+                                                                        support companies in implementing AI solutions
+                                                                        and developing automated processes. Issued by
+                                                                        Georg
+                                                                        Sima, CEO, on May 7, 2025.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                                <article class="proslider__card">
+                                                    <img class="proslider__bg"
+                                                         src="{% static 'images/media/Georg-Certificate-AS-P-011401-20241212-EN-GB-scaled.png' %}"
+                                                         alt="">
+                                                    <div class="proslider__content">
+
+                                                        <div>
+                                                            <h3 class="proslider__title"
+                                                                data-full-title="AI Manager Certification">AI Manager
+                                                                Certification</h3>
+                                                            <button class="proslider__btn">Details</button>
+                                                            <div class="proslider__details">
+                                                                <div class="elementor-widget-container">
+                                                                    <p style="color:#fff;">This certificate is awarded
+                                                                        to Ing.
+                                                                        Georg Sima, MBA, confirming that he has met the
+                                                                        competency requirements outlined in the AS+C
+                                                                        Certification program P85:2024-10-23. The
+                                                                        certification
+                                                                        recognizes his expertise in the fundamentals and
+                                                                        functionalities of artificial intelligence (AI)
+                                                                        applications. Ing. Sima is equipped to support
+                                                                        and
+                                                                        advise on AI usage, identify potential
+                                                                        applications within organizations, plan AI
+                                                                        projects, and
+                                                                        navigate the legal, regulatory, and ethical
+                                                                        challenges
+                                                                        associated with AI. This certification serves as
+                                                                        proof
+                                                                        of his qualifications
+                                                                        as a project manager for AI initiatives, in
+                                                                        accordance
+                                                                        with the AI Regulation (Regulation (EU)
+                                                                        2024/1689). The
+                                                                        certificate is valid from December 12, 2024, to
+                                                                        December
+                                                                        12, 2027.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </article>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="proslider__dots" id="proslider_dots"></div>
                                     </section>
+
+                                    <script>
+                                        (() => {
+                                            const sliders = [
+                                                {
+                                                    prefix: "proslider",
+                                                    cardClass: "proslider__card",
+                                                    titleClass: "proslider__title",
+                                                    btnClass: "proslider__btn",
+                                                    detailClass: "proslider__details",
+                                                },
+                                                {
+                                                    prefix: "project",
+                                                    cardClass: "project-card",
+                                                    titleClass: "project-card__title",
+                                                    btnClass: "project-card__btn",
+                                                    detailClass: "project-card__details",
+                                                }
+                                            ];
+
+                                            sliders.forEach(slider => {
+                                                const {
+                                                    prefix, cardClass, titleClass, btnClass, detailClass
+                                                } = slider;
+
+                                                const track = document.getElementById(`${prefix}_track`) || document.getElementById("track");
+                                                const wrap = track?.parentElement;
+                                                const cards = Array.from(track?.children || []);
+                                                const prev = document.getElementById(`${prefix}_prev`) || document.getElementById("prev");
+                                                const next = document.getElementById(`${prefix}_next`) || document.getElementById("next");
+                                                const dotsBox = document.getElementById(`${prefix}_dots`) || document.getElementById("dots");
+
+                                                if (!track || !wrap || cards.length === 0) return;
+
+                                                const isMobile = () => matchMedia("(max-width:767px)").matches;
+
+                                                cards.forEach((_, i) => {
+                                                    const dot = document.createElement("span");
+                                                    dot.className = "dot";
+                                                    dot.onclick = () => activate(i, true);
+                                                    dotsBox?.appendChild(dot);
+                                                });
+
+                                                const dots = Array.from(dotsBox?.children || []);
+                                                let current = 0;
+
+                                                function center(i) {
+                                                    const card = cards[i];
+                                                    const axis = isMobile() ? "top" : "left";
+                                                    const size = isMobile() ? "clientHeight" : "clientWidth";
+                                                    const start = isMobile() ? card.offsetTop : card.offsetLeft;
+                                                    wrap.scrollTo({
+                                                        [axis]: start - (wrap[size] / 2 - card[size] / 2),
+                                                        behavior: "smooth"
+                                                    });
+                                                }
+
+                                                function toggleUI(i) {
+                                                    cards.forEach((card, k) => {
+                                                        const isActive = k === i;
+                                                        const isDetailShown = card.classList.contains("show-details");
+
+                                                        card.toggleAttribute("active", isActive);
+
+                                                        const title = card.querySelector(`.${titleClass}`);
+                                                        const btn = card.querySelector(`.${btnClass}`);
+
+                                                        // Remove detail class from all other cards
+                                                        if (!isActive) {
+                                                            card.classList.remove("show-details");
+                                                            if (title) title.style.display = "block";
+                                                            if (btn) btn.style.display = "none";  // Hide details button for inactive
+                                                        } else {
+                                                            if (isDetailShown) {
+                                                                if (title) title.style.display = "none";
+                                                                if (btn) btn.style.display = "none"; // Hide details button when showing details
+                                                            } else {
+                                                                if (title) title.style.display = "block";
+                                                                if (btn) btn.style.display = "inline-block"; // Show only for active and not in detail
+                                                            }
+                                                        }
+                                                    });
+
+                                                    dots.forEach((dot, k) => dot.classList.toggle("active", k === i));
+                                                    if (prev && next) {
+                                                        prev.disabled = i === 0;
+                                                        next.disabled = i === cards.length - 1;
+                                                    }
+                                                }
+
+
+                                                function activate(i, scroll) {
+                                                    if (i === current) return;
+                                                    current = i;
+                                                    toggleUI(i);
+                                                    if (scroll) center(i);
+                                                }
+
+                                                function go(step) {
+                                                    activate(Math.min(Math.max(current + step, 0), cards.length - 1), true);
+                                                }
+
+                                                prev?.addEventListener("click", () => go(-1));
+                                                next?.addEventListener("click", () => go(1));
+
+                                                document.addEventListener("keydown", (e) => {
+                                                    if (["ArrowRight", "ArrowDown"].includes(e.key)) go(1);
+                                                    if (["ArrowLeft", "ArrowUp"].includes(e.key)) go(-1);
+                                                });
+
+                                                cards.forEach((card, i) => {
+                                                    card.addEventListener("mouseenter", () => matchMedia("(hover:hover)").matches && activate(i, true));
+                                                    card.addEventListener("click", () => activate(i, true));
+
+                                                    const btn = card.querySelector(`.${btnClass}`);
+                                                    btn?.addEventListener("click", (e) => {
+                                                        e.stopPropagation();
+
+                                                        cards.forEach((c, idx) => {
+                                                            const cTitle = c.querySelector(`.${titleClass}`);
+                                                            const cBtn = c.querySelector(`.${btnClass}`);
+
+                                                            if (idx !== i) {
+                                                                // Hide details & buttons on non-active cards
+                                                                c.classList.remove("show-details");
+                                                                if (cTitle) cTitle.style.display = "block";
+                                                                if (cBtn) cBtn.style.display = "none";
+                                                            }
+                                                        });
+
+                                                        // Show detail for current card
+                                                        card.classList.add("show-details");
+
+                                                        const title = card.querySelector(`.${titleClass}`);
+                                                        const button = card.querySelector(`.${btnClass}`);
+
+                                                        if (title) title.style.display = "none";
+                                                        if (button) button.style.display = "none";
+                                                    });
+
+                                                });
+
+                                                // Optional: Swipe gesture for mobile
+                                                let sx = 0, sy = 0;
+                                                track.addEventListener("touchstart", (e) => {
+                                                    sx = e.touches[0].clientX;
+                                                    sy = e.touches[0].clientY;
+                                                }, {passive: true});
+
+                                                track.addEventListener("touchend", (e) => {
+                                                    const dx = e.changedTouches[0].clientX - sx;
+                                                    const dy = e.changedTouches[0].clientY - sy;
+                                                    if (isMobile() ? Math.abs(dy) > 60 : Math.abs(dx) > 60)
+                                                        go((isMobile() ? dy : dx) > 0 ? -1 : 1);
+                                                }, {passive: true});
+
+                                                if (isMobile()) dotsBox.hidden = true;
+                                                window.addEventListener("resize", () => center(current));
+
+                                                toggleUI(0);
+                                                center(0);
+                                            });
+                                        })();
+                                    </script>
+
 
                                 </div>
                                 </body>
