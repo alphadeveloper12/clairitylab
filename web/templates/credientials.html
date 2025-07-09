@@ -6145,6 +6145,20 @@
             animation: slideUp 0.3s ease forwards;
         }
 
+        .proslider__details {
+            height: 300px;
+            overflow-y: scroll;
+
+            /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .proslider__details::-webkit-scrollbar {
+            display: none; /* Webkit browsers */
+        }
+
+
         /* Show when active */
         .proslider__details.active {
             display: block;
