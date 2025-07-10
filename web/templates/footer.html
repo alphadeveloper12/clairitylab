@@ -1,4 +1,24 @@
 {% load static %}
+<style>
+    #menu-menu-primary-3 {
+        display: flex !important;
+    }
+
+    @media screen and (max-width: 767px) {
+        #menu-menu-primary-3 {
+            display: grid !important;
+        }
+    }
+
+    @media screen and (min-width: 767px) {
+        .pxl-menu-primary li.menu-item > a {
+            line-height: 120px;
+            font-size: 16px;
+            font-weight: 700;
+            display: inline-block;
+        }
+    }
+</style>
 <footer id="pxl-footer-elementor">
     <div class="footer-elementor-inner">
         <div class="container">
@@ -43,39 +63,31 @@
                                                         <ul id="menu-menu-primary-3"
                                                             class="pxl-menu-primary clearfix">
                                                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-3522">
-                                                                <a href="{% url 'home' %}"><span>Home<i
-                                                                        class="fal fa-chevron-down pxl-hide"></i></span></a>
+                                                                <a href="{% url 'home' %}"><span>Home</span></a>
                                                             </li>
                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3691">
-                                                                <a href="{% url 'about' %}"><span>About<i
-                                                                        class="fal fa-chevron-down pxl-hide"></i></span></a>
+                                                                <a href="{% url 'about' %}"><span>About</span></a>
                                                                 <ul class="sub-menu">
                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4875">
-                                                                        <a href="https://clairitylab.ai/industries/"><span>Industries<i
-                                                                                class="fal fa-chevron-down pxl-hide"></i></span></a>
+                                                                        <a href="https://clairitylab.ai/industries/"><span>Industries</span></a>
                                                                     </li>
                                                                 </ul>
                                                             </li>
                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-19 current_page_item menu-item-3534">
                                                                 <a href="{% url 'services' %}"
-                                                                   aria-current="page"><span>Services<i
-                                                                        class="fal fa-chevron-down pxl-hide"></i></span></a>
+                                                                   aria-current="page"><span>Services</span></a>
                                                             </li>
                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4202">
-                                                                <a href="{% url 'credentials' %}"><span>Credentials<i
-                                                                        class="fal fa-chevron-down pxl-hide"></i></span></a>
+                                                                <a href="{% url 'credentials' %}"><span>Credentials</span></a>
                                                             </li>
                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3657">
-                                                                <a href="{% url 'blog' %}"><span>Blog<i
-                                                                        class="fal fa-chevron-down pxl-hide"></i></span></a>
+                                                                <a href="{% url 'blog' %}"><span>Blog</span></a>
                                                             </li>
                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3533">
-                                                                <a href="{% url 'contact' %}"><span>Contact<i
-                                                                        class="fal fa-chevron-down pxl-hide"></i></span></a>
+                                                                <a href="{% url 'contact' %}"><span>Contact</span></a>
                                                             </li>
                                                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4395">
-                                                                <a><span>Language<i
-                                                                        class="fal fa-chevron-down pxl-hide"></i></span></a>
+                                                                <a><span>Language</span></a>
                                                                 <ul class="sub-menu">
                                                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4396">
                                                                         <a href='#'
@@ -494,19 +506,7 @@
                                      data-id="c531f2d" data-element_type="column">
                                     <div class="elementor-widget-wrap elementor-element-populated">
 
-                                        <div class="elementor-element elementor-element-7e30071 elementor-widget elementor-widget-html"
-                                             data-id="7e30071" data-element_type="widget"
-                                             data-widget_type="html.default">
-                                            <div class="elementor-widget-container">
-                                                <script>
-                                                    // Select all anchor tags within elements that match your class pattern
-                                                    document.querySelectorAll('.elementor-element-b4718ee a, .elementor-element-c1312c8 a').forEach(link => {
-                                                        link.setAttribute('target', '_blank');
-                                                        link.setAttribute('rel', 'noopener noreferrer'); // for security
-                                                    });
-                                                </script>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
