@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -6,15 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="profile" href="//gmpg.org/xfn/11">
     <title>Blog - ClairityLab</title>
-    <meta name='robots' content='index, max-snippet:-1, max-image-preview:large, max-video-preview:-1, follow' />
+    <meta name='robots' content='index, max-snippet:-1, max-image-preview:large, max-video-preview:-1, follow'/>
     <style>
         img:is([sizes="auto" i], [sizes^="auto," i]) {
             contain-intrinsic-size: 3000px 1500px
         }
     </style>
     <meta name="google" content="nositelinkssearchbox">
-    <link rel="canonical" href="https://clairitylab.ai/blog/" />
-    <meta name="description" content="AI May,09 2025 Humanizing AI: How ClairityLab Empowers SMEs in the Digital Era AI May,06 2025 Ethical AI Use in SMEs Building Trust in GCC and Europe AI May,...">
+    <link rel="canonical" href="https://clairitylab.ai/blog/"/>
+    <meta name="description"
+          content="AI May,09 2025 Humanizing AI: How ClairityLab Empowers SMEs in the Digital Era AI May,06 2025 Ethical AI Use in SMEs Building Trust in GCC and Europe AI May,...">
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -25,24 +27,28 @@
             "description": "ClairityLab"
         }
     </script>
-    <meta property="og:url" content="https://clairitylab.ai/blog/" />
-    <meta property="og:site_name" content="ClairityLab" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Blog - ClairityLab" />
-    <meta property="og:description" content="AI May,09 2025 Humanizing AI: How ClairityLab Empowers SMEs in the Digital Era AI May,06 2025 Ethical AI Use in SMEs Building Trust in GCC and Europe AI May,..." />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:locale" content="en_US" />
-    <meta name="twitter:title" content="Blog - ClairityLab" />
-    <meta name="twitter:description" content="AI May,09 2025 Humanizing AI: How ClairityLab Empowers SMEs in the Digital Era AI May,06 2025 Ethical AI Use in SMEs Building Trust in GCC and Europe AI May,..." />
-    <meta name="twitter:url" content="https://clairitylab.ai/blog/" />
-    <meta name="twitter:site" content="@ClairityLab" />
-    <link rel='dns-prefetch' href='//translate.google.com' />
-    <link rel='dns-prefetch' href='//stats.wp.com' />
-    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
-    <link rel='preconnect' href='//i0.wp.com' />
-    <link rel="alternate" type="application/rss+xml" title="ClairityLab &raquo; Feed" href="https://clairitylab.ai/feed/" />
-    <link rel="alternate" type="application/rss+xml" title="ClairityLab &raquo; Comments Feed" href="https://clairitylab.ai/comments/feed/" />
+    <meta property="og:url" content="https://clairitylab.ai/blog/"/>
+    <meta property="og:site_name" content="ClairityLab"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Blog - ClairityLab"/>
+    <meta property="og:description"
+          content="AI May,09 2025 Humanizing AI: How ClairityLab Empowers SMEs in the Digital Era AI May,06 2025 Ethical AI Use in SMEs Building Trust in GCC and Europe AI May,..."/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:locale" content="en_US"/>
+    <meta name="twitter:title" content="Blog - ClairityLab"/>
+    <meta name="twitter:description"
+          content="AI May,09 2025 Humanizing AI: How ClairityLab Empowers SMEs in the Digital Era AI May,06 2025 Ethical AI Use in SMEs Building Trust in GCC and Europe AI May,..."/>
+    <meta name="twitter:url" content="https://clairitylab.ai/blog/"/>
+    <meta name="twitter:site" content="@ClairityLab"/>
+    <link rel='dns-prefetch' href='//translate.google.com'/>
+    <link rel='dns-prefetch' href='//stats.wp.com'/>
+    <link rel='dns-prefetch' href='//fonts.googleapis.com'/>
+    <link rel='preconnect' href='//i0.wp.com'/>
+    <link rel="alternate" type="application/rss+xml" title="ClairityLab &raquo; Feed"
+          href="https://clairitylab.ai/feed/"/>
+    <link rel="alternate" type="application/rss+xml" title="ClairityLab &raquo; Comments Feed"
+          href="https://clairitylab.ai/comments/feed/"/>
     <script type="text/javascript">
         /* <![CDATA[ */
         window._wpemojiSettings = {
@@ -55,7 +61,7 @@
             }
         };
         /*! This file is auto-generated */
-        ! function(i, n) {
+        !function (i, n) {
             var o, s, e;
 
             function c(e) {
@@ -65,14 +71,15 @@
                         timestamp: (new Date).valueOf()
                     };
                     sessionStorage.setItem(o, JSON.stringify(t))
-                } catch (e) {}
+                } catch (e) {
+                }
             }
 
             function p(e, t, n) {
                 e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0);
                 var t = new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data),
                     r = (e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(n, 0, 0), new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data));
-                return t.every(function(e, t) {
+                return t.every(function (e, t) {
                     return e === r[t]
                 })
             }
@@ -93,7 +100,7 @@
                         willReadFrequently: !0
                     }),
                     o = (a.textBaseline = "top", a.font = "600 32px Arial", {});
-                return e.forEach(function(e) {
+                return e.forEach(function (e) {
                     o[e] = t(a, e, n)
                 }), o
             }
@@ -102,19 +109,21 @@
                 var t = i.createElement("script");
                 t.src = e, t.defer = !0, i.head.appendChild(t)
             }
+
             "undefined" != typeof Promise && (o = "wpEmojiSettingsSupports", s = ["flag", "emoji"], n.supports = {
                 everything: !0,
                 everythingExceptFlag: !0
-            }, e = new Promise(function(e) {
+            }, e = new Promise(function (e) {
                 i.addEventListener("DOMContentLoaded", e, {
                     once: !0
                 })
-            }), new Promise(function(t) {
-                var n = function() {
+            }), new Promise(function (t) {
+                var n = function () {
                     try {
                         var e = JSON.parse(sessionStorage.getItem(o));
                         if ("object" == typeof e && "number" == typeof e.timestamp && (new Date).valueOf() < e.timestamp + 604800 && "object" == typeof e.supportTests) return e.supportTests
-                    } catch (e) {}
+                    } catch (e) {
+                    }
                     return null
                 }();
                 if (!n) {
@@ -126,29 +135,29 @@
                             a = new Worker(URL.createObjectURL(r), {
                                 name: "wpTestEmojiSupports"
                             });
-                        return void(a.onmessage = function(e) {
+                        return void (a.onmessage = function (e) {
                             c(n = e.data), a.terminate(), t(n)
                         })
-                    } catch (e) {}
+                    } catch (e) {
+                    }
                     c(n = f(s, u, p))
                 }
                 t(n)
-            }).then(function(e) {
+            }).then(function (e) {
                 for (var t in e) n.supports[t] = e[t], n.supports.everything = n.supports.everything && n.supports[t], "flag" !== t && (n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && n.supports[t]);
-                n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && !n.supports.flag, n.DOMReady = !1, n.readyCallback = function() {
+                n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && !n.supports.flag, n.DOMReady = !1, n.readyCallback = function () {
                     n.DOMReady = !0
                 }
-            }).then(function() {
+            }).then(function () {
                 return e
-            }).then(function() {
+            }).then(function () {
                 var e;
                 n.supports.everything || (n.readyCallback(), (e = n.source || {}).concatemoji ? t(e.concatemoji) : e.wpemoji && e.twemoji && (t(e.twemoji), t(e.wpemoji)))
             }))
         }((window, document), window._wpemojiSettings);
         /* ]]> */
     </script>
-    <link rel='stylesheet' id='pxl-main-css-css' href='https://clairitylab.ai/wp-content/plugins/tnex-addons/assets/css/main.css?ver=1.0.0' type='text/css' media='all' />
-    <link rel='stylesheet' id='font-awesome-pro-css' href='https://clairitylab.ai/wp-content/plugins/tnex-addons/assets/libs/font-awesome-pro/css/all.min.css?ver=5.15.4-pro' type='text/css' media='all' />
+
     <style id='wp-emoji-styles-inline-css' type='text/css'>
         img.wp-smiley,
         img.emoji {
@@ -182,8 +191,7 @@
             text-decoration: none
         }
     </style>
-    <link rel='stylesheet' id='mediaelement-css' href='https://clairitylab.ai/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17' type='text/css' media='all' />
-    <link rel='stylesheet' id='wp-mediaelement-css' href='https://clairitylab.ai/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.8.1' type='text/css' media='all' />
+
     <style id='jetpack-sharing-buttons-style-inline-css' type='text/css'>
         .jetpack-sharing-buttons__services-list {
             display: flex;
@@ -294,7 +302,7 @@
             align-items: center;
         }
 
-        .is-layout-flex> :is(*, div) {
+        .is-layout-flex > :is(*, div) {
             margin: 0;
         }
 
@@ -302,7 +310,7 @@
             display: grid;
         }
 
-        .is-layout-grid> :is(*, div) {
+        .is-layout-grid > :is(*, div) {
             margin: 0;
         }
 
@@ -551,28 +559,25 @@
             line-height: 1.6;
         }
     </style>
-    <link rel='stylesheet' id='contact-form-7-css' href='https://clairitylab.ai/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.1' type='text/css' media='all' />
     <style id='contact-form-7-inline-css' type='text/css'>
         .wpcf7 .wpcf7-recaptcha iframe {
             margin-bottom: 0;
         }
 
-        .wpcf7 .wpcf7-recaptcha[data-align="center"]>div {
+        .wpcf7 .wpcf7-recaptcha[data-align="center"] > div {
             margin: 0 auto;
         }
 
-        .wpcf7 .wpcf7-recaptcha[data-align="right"]>div {
+        .wpcf7 .wpcf7-recaptcha[data-align="right"] > div {
             margin: 0 0 0 auto;
         }
     </style>
-    <link rel='stylesheet' id='google-language-translator-css' href='https://clairitylab.ai/wp-content/plugins/google-language-translator/css/style.css?ver=6.0.20' type='text/css' media='' />
-    <link rel='stylesheet' id='preloader-plus-css' href='https://clairitylab.ai/wp-content/plugins/preloader-plus/assets/css/preloader-plus.min.css?ver=2.2.1' type='text/css' media='all' />
     <style id='preloader-plus-inline-css' type='text/css'>
         .preloader-plus {
             background-color: #020f1d;
         }
 
-        body.complete>*:not(.preloader-plus),
+        body.complete > *:not(.preloader-plus),
         .preloader-plus {
             transition-duration: 1000ms, 1000ms, 0s;
         }
@@ -630,9 +635,6 @@
             width: 100%;
         }
     </style>
-    <link rel='stylesheet' id='wp-ulike-css' href='https://clairitylab.ai/wp-content/plugins/wp-ulike/assets/css/wp-ulike.min.css?ver=4.7.9.1' type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-icons-css' href='https://clairitylab.ai/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.40.0' type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-frontend-css' href='https://clairitylab.ai/wp-content/uploads/elementor/css/custom-frontend.min.css?ver=1750960085' type='text/css' media='all' />
     <style id='elementor-frontend-inline-css' type='text/css'>
         .elementor-kit-7 {
             --e-global-color-primary: #4682B4;
@@ -654,7 +656,7 @@
             background-color: #FFBC7D;
         }
 
-        .elementor-section.elementor-section-boxed>.elementor-container {
+        .elementor-section.elementor-section-boxed > .elementor-container {
             max-width: 1320px;
         }
 
@@ -672,25 +674,28 @@
             --widgets-spacing-column: 20px;
         }
 
-        {}
+        {
+        }
 
         h1.entry-title {
             display: var(--page-title-display);
         }
 
-        @media(max-width:1024px) {
-            .elementor-section.elementor-section-boxed>.elementor-container {
+        @media (max-width: 1024px) {
+            .elementor-section.elementor-section-boxed > .elementor-container {
                 max-width: 1024px;
             }
+
             .e-con {
                 --container-max-width: 1024px;
             }
         }
 
-        @media(max-width:767px) {
-            .elementor-section.elementor-section-boxed>.elementor-container {
+        @media (max-width: 767px) {
+            .elementor-section.elementor-section-boxed > .elementor-container {
                 max-width: 767px;
             }
+
             .e-con {
                 --container-max-width: 767px;
             }
@@ -701,17 +706,17 @@
             margin-bottom: 50px;
         }
 
-        .elementor-1523 .elementor-element.elementor-element-81ef803>.elementor-container>.elementor-column>.elementor-widget-wrap {
+        .elementor-1523 .elementor-element.elementor-element-81ef803 > .elementor-container > .elementor-column > .elementor-widget-wrap {
             align-content: center;
             align-items: center;
         }
 
         .elementor-1523 .elementor-element.elementor-element-81ef803:not(.elementor-motion-effects-element-type-background),
-        .elementor-1523 .elementor-element.elementor-element-81ef803>.elementor-motion-effects-container>.elementor-motion-effects-layer {
+        .elementor-1523 .elementor-element.elementor-element-81ef803 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
             background-color: #000D1B;
         }
 
-        .elementor-1523 .elementor-element.elementor-element-81ef803>.elementor-container {
+        .elementor-1523 .elementor-element.elementor-element-81ef803 > .elementor-container {
             max-width: 1440px;
         }
 
@@ -719,15 +724,15 @@
             transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
         }
 
-        .elementor-1523 .elementor-element.elementor-element-81ef803>.elementor-background-overlay {
+        .elementor-1523 .elementor-element.elementor-element-81ef803 > .elementor-background-overlay {
             transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
         }
 
-        .elementor-1523 .elementor-element.elementor-element-cb8a9d8.elementor-column>.elementor-widget-wrap {
+        .elementor-1523 .elementor-element.elementor-element-cb8a9d8.elementor-column > .elementor-widget-wrap {
             justify-content: space-between;
         }
 
-        .elementor-1523 .elementor-element.elementor-element-cb8a9d8>.elementor-element-populated {
+        .elementor-1523 .elementor-element.elementor-element-cb8a9d8 > .elementor-element-populated {
             padding: 0px 15px 0px 15px;
         }
 
@@ -745,72 +750,73 @@
             max-width: auto;
         }
 
-        .elementor-1523 .elementor-element.elementor-element-d846272>.elementor-widget-container {
+        .elementor-1523 .elementor-element.elementor-element-d846272 > .elementor-widget-container {
             margin: 0px 0px 0px -14px;
         }
 
-        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary>li:hover>a {
+        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary > li:hover > a {
             color: #4682B4;
         }
 
-        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary>li.current-menu-parent>a:not(.is-one-page),
-        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary>li.current_page_item>a:not(.is-one-page),
-        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary>li>a.pxl-onepage-active {
+        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary > li.current-menu-parent > a:not(.is-one-page),
+        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary > li.current_page_item > a:not(.is-one-page),
+        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary > li > a.pxl-onepage-active {
             color: #4682B4;
         }
 
-        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary>li>a {
+        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary > li > a {
             font-size: 14px;
             text-transform: uppercase;
             line-height: 80px;
             letter-spacing: 1.4px;
         }
 
-        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary>li {
+        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary > li {
             margin: 0px 14px 0px 14px;
         }
 
-        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary>li>a span::before {
+        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary > li > a span::before {
             background-color: #4682B4;
         }
 
         .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu li.pxl-megamenu,
-        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary li .sub-menu li>a {
+        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary li .sub-menu li > a {
             color: #000000;
         }
 
-        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary li .sub-menu li:hover>a,
-        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary li .sub-menu li.current_page_item>a,
-        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary li .sub-menu li.current-menu-item>a,
-        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary li .sub-menu li.current_page_ancestor>a,
-        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary li .sub-menu li.current-menu-ancestor>a {
+        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary li .sub-menu li:hover > a,
+        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary li .sub-menu li.current_page_item > a,
+        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary li .sub-menu li.current-menu-item > a,
+        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary li .sub-menu li.current_page_ancestor > a,
+        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-nav-menu .pxl-menu-primary li .sub-menu li.current-menu-ancestor > a {
             color: #7D3CF3;
         }
 
-        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-menu-primary .sub-menu li+li {
+        .elementor-1523 .elementor-element.elementor-element-d846272 .pxl-menu-primary .sub-menu li + li {
             margin-top: 0px;
         }
 
-        .elementor-1523 .elementor-element.elementor-element-57fe8c7.elementor-column>.elementor-widget-wrap {
+        .elementor-1523 .elementor-element.elementor-element-57fe8c7.elementor-column > .elementor-widget-wrap {
             justify-content: flex-end;
         }
 
-        @media(min-width:768px) {
+        @media (min-width: 768px) {
             .elementor-1523 .elementor-element.elementor-element-cb8a9d8 {
                 width: 72.472%;
             }
+
             .elementor-1523 .elementor-element.elementor-element-57fe8c7 {
                 width: 27.528%;
             }
         }
 
-        .elementor-69 .elementor-element.elementor-element-c3d6a02>.elementor-container>.elementor-column>.elementor-widget-wrap {
+        .elementor-69 .elementor-element.elementor-element-c3d6a02 > .elementor-container > .elementor-column > .elementor-widget-wrap {
             align-content: center;
             align-items: center;
         }
 
         .elementor-69 .elementor-element.elementor-element-c3d6a02:not(.elementor-motion-effects-element-type-background),
-        .elementor-69 .elementor-element.elementor-element-c3d6a02>.elementor-motion-effects-container>.elementor-motion-effects-layer {
+        .elementor-69 .elementor-element.elementor-element-c3d6a02 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
             background-color: #000D1B;
         }
 
@@ -819,7 +825,7 @@
             padding: 40px 0px 0px 0px;
         }
 
-        .elementor-69 .elementor-element.elementor-element-c3d6a02>.elementor-background-overlay {
+        .elementor-69 .elementor-element.elementor-element-c3d6a02 > .elementor-background-overlay {
             transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
         }
 
@@ -836,11 +842,11 @@
             text-align: center;
         }
 
-        .elementor-69 .elementor-element.elementor-element-5ab56b9 .pxl-nav-menu .pxl-menu-primary>li {
+        .elementor-69 .elementor-element.elementor-element-5ab56b9 .pxl-nav-menu .pxl-menu-primary > li {
             float: none;
         }
 
-        .elementor-69 .elementor-element.elementor-element-5ab56b9 .pxl-nav-menu .pxl-menu-primary>li>a {
+        .elementor-69 .elementor-element.elementor-element-5ab56b9 .pxl-nav-menu .pxl-menu-primary > li > a {
             color: #C1C1C1;
         }
 
@@ -849,16 +855,16 @@
             text-transform: uppercase;
         }
 
-        .elementor-69 .elementor-element.elementor-element-5ab56b9 .pxl-menu-primary .sub-menu li+li {
+        .elementor-69 .elementor-element.elementor-element-5ab56b9 .pxl-menu-primary .sub-menu li + li {
             margin-top: 0px;
         }
 
-        .elementor-69 .elementor-element.elementor-element-bdd8d00.elementor-column>.elementor-widget-wrap {
+        .elementor-69 .elementor-element.elementor-element-bdd8d00.elementor-column > .elementor-widget-wrap {
             justify-content: flex-end;
         }
 
         .elementor-69 .elementor-element.elementor-element-a65ce65 .elementor-repeater-item-fc93dde.elementor-social-icon {
-            background-color: var( --e-global-color-primary);
+            background-color: var(--e-global-color-primary);
         }
 
         .elementor-69 .elementor-element.elementor-element-a65ce65 .elementor-repeater-item-fc93dde.elementor-social-icon i {
@@ -870,7 +876,7 @@
         }
 
         .elementor-69 .elementor-element.elementor-element-a65ce65 .elementor-repeater-item-8d17bfa.elementor-social-icon {
-            background-color: var( --e-global-color-primary);
+            background-color: var(--e-global-color-primary);
         }
 
         .elementor-69 .elementor-element.elementor-element-a65ce65 .elementor-repeater-item-8d17bfa.elementor-social-icon i {
@@ -897,7 +903,7 @@
         }
 
         .elementor-69 .elementor-element.elementor-element-656baa0:not(.elementor-motion-effects-element-type-background),
-        .elementor-69 .elementor-element.elementor-element-656baa0>.elementor-motion-effects-container>.elementor-motion-effects-layer {
+        .elementor-69 .elementor-element.elementor-element-656baa0 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
             background-color: #000D1B;
         }
 
@@ -907,7 +913,7 @@
             margin-bottom: 0px;
         }
 
-        .elementor-69 .elementor-element.elementor-element-656baa0>.elementor-background-overlay {
+        .elementor-69 .elementor-element.elementor-element-656baa0 > .elementor-background-overlay {
             transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
         }
 
@@ -915,29 +921,29 @@
             align-items: center;
         }
 
-        .elementor-69 .elementor-element.elementor-element-547144f.elementor-column.elementor-element[data-element_type="column"]>.elementor-widget-wrap.elementor-element-populated {
+        .elementor-69 .elementor-element.elementor-element-547144f.elementor-column.elementor-element[data-element_type="column"] > .elementor-widget-wrap.elementor-element-populated {
             align-content: center;
             align-items: center;
         }
 
-        .elementor-69 .elementor-element.elementor-element-547144f.elementor-column>.elementor-widget-wrap {
+        .elementor-69 .elementor-element.elementor-element-547144f.elementor-column > .elementor-widget-wrap {
             justify-content: center;
         }
 
         .elementor-widget-text-editor {
-            font-family: var( --e-global-typography-text-font-family), Sans-serif;
-            font-weight: var( --e-global-typography-text-font-weight);
-            color: var( --e-global-color-text);
+            font-family: var(--e-global-typography-text-font-family), Sans-serif;
+            font-weight: var(--e-global-typography-text-font-weight);
+            color: var(--e-global-color-text);
         }
 
         .elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap {
-            background-color: var( --e-global-color-primary);
+            background-color: var(--e-global-color-primary);
         }
 
         .elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap,
         .elementor-widget-text-editor.elementor-drop-cap-view-default .elementor-drop-cap {
-            color: var( --e-global-color-primary);
-            border-color: var( --e-global-color-primary);
+            color: var(--e-global-color-primary);
+            border-color: var(--e-global-color-primary);
         }
 
         .elementor-69 .elementor-element.elementor-element-e0965dc {
@@ -945,7 +951,7 @@
         }
 
         .elementor-69 .elementor-element.elementor-element-15c6dc3:not(.elementor-motion-effects-element-type-background),
-        .elementor-69 .elementor-element.elementor-element-15c6dc3>.elementor-motion-effects-container>.elementor-motion-effects-layer {
+        .elementor-69 .elementor-element.elementor-element-15c6dc3 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
             background-color: #000D1B;
         }
 
@@ -955,7 +961,7 @@
             margin-bottom: 0px;
         }
 
-        .elementor-69 .elementor-element.elementor-element-15c6dc3>.elementor-background-overlay {
+        .elementor-69 .elementor-element.elementor-element-15c6dc3 > .elementor-background-overlay {
             transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
         }
 
@@ -963,12 +969,12 @@
             align-items: center;
         }
 
-        .elementor-69 .elementor-element.elementor-element-8eef889.elementor-column.elementor-element[data-element_type="column"]>.elementor-widget-wrap.elementor-element-populated {
+        .elementor-69 .elementor-element.elementor-element-8eef889.elementor-column.elementor-element[data-element_type="column"] > .elementor-widget-wrap.elementor-element-populated {
             align-content: center;
             align-items: center;
         }
 
-        .elementor-69 .elementor-element.elementor-element-8eef889.elementor-column>.elementor-widget-wrap {
+        .elementor-69 .elementor-element.elementor-element-8eef889.elementor-column > .elementor-widget-wrap {
             justify-content: center;
         }
 
@@ -977,7 +983,7 @@
             max-width: auto;
         }
 
-        .elementor-69 .elementor-element.elementor-element-0361233>.elementor-widget-container {
+        .elementor-69 .elementor-element.elementor-element-0361233 > .elementor-widget-container {
             margin: 0px 018px 0px 18px;
             padding: 0px 18px 0px 18px;
             border-style: solid;
@@ -1022,7 +1028,7 @@
             max-width: auto;
         }
 
-        .elementor-69 .elementor-element.elementor-element-fcc760e>.elementor-widget-container {
+        .elementor-69 .elementor-element.elementor-element-fcc760e > .elementor-widget-container {
             padding: 0px 0px 0px 0px;
         }
 
@@ -1059,7 +1065,7 @@
         }
 
         .elementor-69 .elementor-element.elementor-element-a97c509:not(.elementor-motion-effects-element-type-background),
-        .elementor-69 .elementor-element.elementor-element-a97c509>.elementor-motion-effects-container>.elementor-motion-effects-layer {
+        .elementor-69 .elementor-element.elementor-element-a97c509 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
             background-color: #000D1B;
         }
 
@@ -1068,7 +1074,7 @@
             padding: 14px 0px 0px 0px;
         }
 
-        .elementor-69 .elementor-element.elementor-element-a97c509>.elementor-background-overlay {
+        .elementor-69 .elementor-element.elementor-element-a97c509 > .elementor-background-overlay {
             transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
         }
 
@@ -1076,12 +1082,12 @@
             align-items: center;
         }
 
-        .elementor-69 .elementor-element.elementor-element-61a8ce0.elementor-column.elementor-element[data-element_type="column"]>.elementor-widget-wrap.elementor-element-populated {
+        .elementor-69 .elementor-element.elementor-element-61a8ce0.elementor-column.elementor-element[data-element_type="column"] > .elementor-widget-wrap.elementor-element-populated {
             align-content: center;
             align-items: center;
         }
 
-        .elementor-69 .elementor-element.elementor-element-61a8ce0>.elementor-element-populated {
+        .elementor-69 .elementor-element.elementor-element-61a8ce0 > .elementor-element-populated {
             border-style: solid;
             border-width: 1px 0px 0px 0px;
             border-color: #FFFFFF1A;
@@ -1116,23 +1122,23 @@
         }
 
         .elementor-69 .elementor-element.elementor-element-310bbcb .pxl-text-editor a {
-            color: var( --e-global-color-primary);
+            color: var(--e-global-color-primary);
         }
 
         .elementor-bc-flex-widget .elementor-69 .elementor-element.elementor-element-6d648d7.elementor-column .elementor-widget-wrap {
             align-items: center;
         }
 
-        .elementor-69 .elementor-element.elementor-element-6d648d7.elementor-column.elementor-element[data-element_type="column"]>.elementor-widget-wrap.elementor-element-populated {
+        .elementor-69 .elementor-element.elementor-element-6d648d7.elementor-column.elementor-element[data-element_type="column"] > .elementor-widget-wrap.elementor-element-populated {
             align-content: center;
             align-items: center;
         }
 
-        .elementor-69 .elementor-element.elementor-element-6d648d7.elementor-column>.elementor-widget-wrap {
+        .elementor-69 .elementor-element.elementor-element-6d648d7.elementor-column > .elementor-widget-wrap {
             justify-content: flex-end;
         }
 
-        .elementor-69 .elementor-element.elementor-element-6d648d7>.elementor-element-populated {
+        .elementor-69 .elementor-element.elementor-element-6d648d7 > .elementor-element-populated {
             border-style: solid;
             border-width: 1px 0px 0px 0px;
             border-color: #FFFFFF1A;
@@ -1166,7 +1172,7 @@
         }
 
         .elementor-69 .elementor-element.elementor-element-be019dc .pxl-text-editor a:hover {
-            color: var( --e-global-color-primary);
+            color: var(--e-global-color-primary);
         }
 
         .elementor-69 .elementor-element.elementor-element-d678f77 {
@@ -1174,7 +1180,7 @@
             max-width: auto;
         }
 
-        .elementor-69 .elementor-element.elementor-element-d678f77>.elementor-widget-container {
+        .elementor-69 .elementor-element.elementor-element-d678f77 > .elementor-widget-container {
             margin: 0px 9px 0px 9px;
             padding: 0px 9px 0px 9px;
             border-style: solid;
@@ -1201,7 +1207,7 @@
         }
 
         .elementor-69 .elementor-element.elementor-element-d678f77 .pxl-text-editor a:hover {
-            color: var( --e-global-color-primary);
+            color: var(--e-global-color-primary);
         }
 
         .elementor-69 .elementor-element.elementor-element-18a79d8 {
@@ -1220,7 +1226,7 @@
         }
 
         .elementor-69 .elementor-element.elementor-element-18a79d8 .pxl-text-editor a:hover {
-            color: var( --e-global-color-primary);
+            color: var(--e-global-color-primary);
         }
 
         .elementor-69 .elementor-element.elementor-element-134a3f8 {
@@ -1229,7 +1235,7 @@
         }
 
         .elementor-69 .elementor-element.elementor-element-11326e3c:not(.elementor-motion-effects-element-type-background),
-        .elementor-69 .elementor-element.elementor-element-11326e3c>.elementor-motion-effects-container>.elementor-motion-effects-layer {
+        .elementor-69 .elementor-element.elementor-element-11326e3c > .elementor-motion-effects-container > .elementor-motion-effects-layer {
             background-color: #000D1B;
         }
 
@@ -1239,7 +1245,7 @@
             margin-bottom: 0px;
         }
 
-        .elementor-69 .elementor-element.elementor-element-11326e3c>.elementor-background-overlay {
+        .elementor-69 .elementor-element.elementor-element-11326e3c > .elementor-background-overlay {
             transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
         }
 
@@ -1247,12 +1253,12 @@
             align-items: center;
         }
 
-        .elementor-69 .elementor-element.elementor-element-3bcac994.elementor-column.elementor-element[data-element_type="column"]>.elementor-widget-wrap.elementor-element-populated {
+        .elementor-69 .elementor-element.elementor-element-3bcac994.elementor-column.elementor-element[data-element_type="column"] > .elementor-widget-wrap.elementor-element-populated {
             align-content: center;
             align-items: center;
         }
 
-        .elementor-69 .elementor-element.elementor-element-3bcac994.elementor-column>.elementor-widget-wrap {
+        .elementor-69 .elementor-element.elementor-element-3bcac994.elementor-column > .elementor-widget-wrap {
             justify-content: center;
         }
 
@@ -1261,7 +1267,7 @@
             max-width: auto;
         }
 
-        .elementor-69 .elementor-element.elementor-element-68387724>.elementor-widget-container {
+        .elementor-69 .elementor-element.elementor-element-68387724 > .elementor-widget-container {
             margin: 0px 018px 0px 18px;
             padding: 0px 18px 0px 18px;
             border-style: solid;
@@ -1291,14 +1297,14 @@
         }
 
         .elementor-69 .elementor-element.elementor-element-68387724 .pxl-icon-box .pxl-item--icon i {
-            color: var( --e-global-color-primary);
-            text-fill-color: var( --e-global-color-primary);
-            -webkit-text-fill-color: var( --e-global-color-primary);
-            background-image: var( --e-global-color-primary);
+            color: var(--e-global-color-primary);
+            text-fill-color: var(--e-global-color-primary);
+            -webkit-text-fill-color: var(--e-global-color-primary);
+            background-image: var(--e-global-color-primary);
         }
 
         .elementor-69 .elementor-element.elementor-element-68387724 .pxl-icon-box svg path {
-            stroke: var( --e-global-color-primary);
+            stroke: var(--e-global-color-primary);
         }
 
         .elementor-69 .elementor-element.elementor-element-4db7b12 {
@@ -1306,7 +1312,7 @@
             max-width: auto;
         }
 
-        .elementor-69 .elementor-element.elementor-element-4db7b12>.elementor-widget-container {
+        .elementor-69 .elementor-element.elementor-element-4db7b12 > .elementor-widget-container {
             margin: 0px 018px 0px 18px;
             padding: 0px 18px 0px 18px;
             border-style: solid;
@@ -1336,18 +1342,18 @@
         }
 
         .elementor-69 .elementor-element.elementor-element-4db7b12 .pxl-icon-box .pxl-item--icon i {
-            color: var( --e-global-color-primary);
-            text-fill-color: var( --e-global-color-primary);
-            -webkit-text-fill-color: var( --e-global-color-primary);
-            background-image: var( --e-global-color-primary);
+            color: var(--e-global-color-primary);
+            text-fill-color: var(--e-global-color-primary);
+            -webkit-text-fill-color: var(--e-global-color-primary);
+            background-image: var(--e-global-color-primary);
         }
 
         .elementor-69 .elementor-element.elementor-element-4db7b12 .pxl-icon-box svg path {
-            stroke: var( --e-global-color-primary);
+            stroke: var(--e-global-color-primary);
         }
 
         .elementor-69 .elementor-element.elementor-element-221c9393:not(.elementor-motion-effects-element-type-background),
-        .elementor-69 .elementor-element.elementor-element-221c9393>.elementor-motion-effects-container>.elementor-motion-effects-layer {
+        .elementor-69 .elementor-element.elementor-element-221c9393 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
             background-color: #000D1B;
         }
 
@@ -1356,7 +1362,7 @@
             padding: 14px 0px 0px 0px;
         }
 
-        .elementor-69 .elementor-element.elementor-element-221c9393>.elementor-background-overlay {
+        .elementor-69 .elementor-element.elementor-element-221c9393 > .elementor-background-overlay {
             transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
         }
 
@@ -1364,12 +1370,12 @@
             align-items: center;
         }
 
-        .elementor-69 .elementor-element.elementor-element-3f1872c5.elementor-column.elementor-element[data-element_type="column"]>.elementor-widget-wrap.elementor-element-populated {
+        .elementor-69 .elementor-element.elementor-element-3f1872c5.elementor-column.elementor-element[data-element_type="column"] > .elementor-widget-wrap.elementor-element-populated {
             align-content: center;
             align-items: center;
         }
 
-        .elementor-69 .elementor-element.elementor-element-3f1872c5>.elementor-element-populated {
+        .elementor-69 .elementor-element.elementor-element-3f1872c5 > .elementor-element-populated {
             border-style: solid;
             border-width: 1px 0px 0px 0px;
             border-color: #FFFFFF1A;
@@ -1404,23 +1410,23 @@
         }
 
         .elementor-69 .elementor-element.elementor-element-771d019f .pxl-text-editor a {
-            color: var( --e-global-color-primary);
+            color: var(--e-global-color-primary);
         }
 
         .elementor-bc-flex-widget .elementor-69 .elementor-element.elementor-element-c4d6b8b.elementor-column .elementor-widget-wrap {
             align-items: center;
         }
 
-        .elementor-69 .elementor-element.elementor-element-c4d6b8b.elementor-column.elementor-element[data-element_type="column"]>.elementor-widget-wrap.elementor-element-populated {
+        .elementor-69 .elementor-element.elementor-element-c4d6b8b.elementor-column.elementor-element[data-element_type="column"] > .elementor-widget-wrap.elementor-element-populated {
             align-content: center;
             align-items: center;
         }
 
-        .elementor-69 .elementor-element.elementor-element-c4d6b8b.elementor-column>.elementor-widget-wrap {
+        .elementor-69 .elementor-element.elementor-element-c4d6b8b.elementor-column > .elementor-widget-wrap {
             justify-content: flex-end;
         }
 
-        .elementor-69 .elementor-element.elementor-element-c4d6b8b>.elementor-element-populated {
+        .elementor-69 .elementor-element.elementor-element-c4d6b8b > .elementor-element-populated {
             border-style: solid;
             border-width: 1px 0px 0px 0px;
             border-color: #FFFFFF1A;
@@ -1454,7 +1460,7 @@
         }
 
         .elementor-69 .elementor-element.elementor-element-679b9c .pxl-text-editor a:hover {
-            color: var( --e-global-color-primary);
+            color: var(--e-global-color-primary);
         }
 
         .elementor-69 .elementor-element.elementor-element-3dac6dc5 {
@@ -1462,7 +1468,7 @@
             max-width: auto;
         }
 
-        .elementor-69 .elementor-element.elementor-element-3dac6dc5>.elementor-widget-container {
+        .elementor-69 .elementor-element.elementor-element-3dac6dc5 > .elementor-widget-container {
             margin: 0px 9px 0px 9px;
             padding: 0px 9px 0px 9px;
             border-style: solid;
@@ -1489,7 +1495,7 @@
         }
 
         .elementor-69 .elementor-element.elementor-element-3dac6dc5 .pxl-text-editor a:hover {
-            color: var( --e-global-color-primary);
+            color: var(--e-global-color-primary);
         }
 
         .elementor-69 .elementor-element.elementor-element-760eb02b {
@@ -1516,7 +1522,7 @@
         }
 
         .elementor-69 .elementor-element.elementor-element-760eb02b .pxl-text-editor a:hover {
-            color: var( --e-global-color-primary);
+            color: var(--e-global-color-primary);
         }
 
         .elementor-69 .elementor-element.elementor-element-25bfb44c {
@@ -1524,161 +1530,198 @@
             max-width: auto;
         }
 
-        @media(max-width:1024px) {
+        @media (max-width: 1024px) {
             .elementor-69 .elementor-element.elementor-element-656baa0 {
                 padding: 20px 0px 0px 0px;
             }
+
             .elementor-69 .elementor-element.elementor-element-15c6dc3 {
                 padding: 20px 0px 0px 0px;
             }
+
             .elementor-69 .elementor-element.elementor-element-11326e3c {
                 padding: 20px 0px 0px 0px;
             }
         }
 
-        @media(min-width:768px) {
+        @media (min-width: 768px) {
             .elementor-69 .elementor-element.elementor-element-9f2e257 {
                 width: 20%;
             }
+
             .elementor-69 .elementor-element.elementor-element-929d738 {
                 width: 59.332%;
             }
+
             .elementor-69 .elementor-element.elementor-element-bdd8d00 {
                 width: 20%;
             }
         }
 
-        @media(max-width:767px) {
+        @media (max-width: 767px) {
             .elementor-69 .elementor-element.elementor-element-ab33daf {
                 width: 100%;
                 max-width: 100%;
             }
+
             .elementor-69 .elementor-element.elementor-element-ab33daf .pxl-logo {
                 text-align: center;
             }
+
             .elementor-69 .elementor-element.elementor-element-ab33daf .pxl-logo img {
                 max-height: 75px;
             }
+
             .elementor-69 .elementor-element.elementor-element-a65ce65 {
                 --icon-size: 20px;
             }
-            .elementor-69 .elementor-element.elementor-element-547144f.elementor-column>.elementor-widget-wrap {
+
+            .elementor-69 .elementor-element.elementor-element-547144f.elementor-column > .elementor-widget-wrap {
                 justify-content: flex-start;
             }
-            .elementor-69 .elementor-element.elementor-element-8eef889.elementor-column>.elementor-widget-wrap {
+
+            .elementor-69 .elementor-element.elementor-element-8eef889.elementor-column > .elementor-widget-wrap {
                 justify-content: flex-start;
             }
+
             .elementor-69 .elementor-element.elementor-element-0361233 {
                 width: 100%;
                 max-width: 100%;
             }
-            .elementor-69 .elementor-element.elementor-element-0361233>.elementor-widget-container {
+
+            .elementor-69 .elementor-element.elementor-element-0361233 > .elementor-widget-container {
                 margin: 10px 0px 10px 0px;
                 padding: 0px 0px 0px 0px;
                 border-width: 0px 0px 0px 0px;
             }
-            .elementor-69 .elementor-element.elementor-element-fcc760e>.elementor-widget-container {
+
+            .elementor-69 .elementor-element.elementor-element-fcc760e > .elementor-widget-container {
                 margin: 0px 0px 0px -4px;
             }
-            .elementor-69 .elementor-element.elementor-element-61a8ce0.elementor-column>.elementor-widget-wrap {
+
+            .elementor-69 .elementor-element.elementor-element-61a8ce0.elementor-column > .elementor-widget-wrap {
                 justify-content: flex-start;
             }
-            .elementor-69 .elementor-element.elementor-element-61a8ce0>.elementor-element-populated {
+
+            .elementor-69 .elementor-element.elementor-element-61a8ce0 > .elementor-element-populated {
                 margin: 0px 0px 0px 0px;
                 --e-column-margin-right: 0px;
                 --e-column-margin-left: 0px;
                 padding: 15px 15px 15px 15px;
             }
-            .elementor-69 .elementor-element.elementor-element-d796d52>.elementor-widget-container {
+
+            .elementor-69 .elementor-element.elementor-element-d796d52 > .elementor-widget-container {
                 margin: 10px 0px 0px 0px;
             }
+
             .elementor-69 .elementor-element.elementor-element-d796d52 .pxl-text-editor {
                 text-align: center;
             }
-            .elementor-69 .elementor-element.elementor-element-6d648d7.elementor-column>.elementor-widget-wrap {
+
+            .elementor-69 .elementor-element.elementor-element-6d648d7.elementor-column > .elementor-widget-wrap {
                 justify-content: flex-start;
             }
-            .elementor-69 .elementor-element.elementor-element-6d648d7>.elementor-element-populated {
+
+            .elementor-69 .elementor-element.elementor-element-6d648d7 > .elementor-element-populated {
                 border-width: 0px 0px 0px 0px;
                 margin: 0px 0px 0px 0px;
                 --e-column-margin-right: 0px;
                 --e-column-margin-left: 0px;
                 padding: 0px 15px 15px 15px;
             }
+
             .elementor-69 .elementor-element.elementor-element-be019dc .pxl-text-editor p,
             .elementor-69 .elementor-element.elementor-element-be019dc .pxl-text-editor li {
                 font-size: 12px;
             }
-            .elementor-69 .elementor-element.elementor-element-d678f77>.elementor-widget-container {
+
+            .elementor-69 .elementor-element.elementor-element-d678f77 > .elementor-widget-container {
                 margin: 0px 5px 0px 5px;
                 padding: 0px 5px 0px 5px;
             }
+
             .elementor-69 .elementor-element.elementor-element-d678f77 .pxl-text-editor p,
             .elementor-69 .elementor-element.elementor-element-d678f77 .pxl-text-editor li {
                 font-size: 12px;
             }
+
             .elementor-69 .elementor-element.elementor-element-18a79d8 .pxl-text-editor p,
             .elementor-69 .elementor-element.elementor-element-18a79d8 .pxl-text-editor li {
                 font-size: 12px;
             }
-            .elementor-69 .elementor-element.elementor-element-3bcac994.elementor-column>.elementor-widget-wrap {
+
+            .elementor-69 .elementor-element.elementor-element-3bcac994.elementor-column > .elementor-widget-wrap {
                 justify-content: flex-start;
             }
+
             .elementor-69 .elementor-element.elementor-element-68387724 {
                 width: 100%;
                 max-width: 100%;
             }
-            .elementor-69 .elementor-element.elementor-element-68387724>.elementor-widget-container {
+
+            .elementor-69 .elementor-element.elementor-element-68387724 > .elementor-widget-container {
                 margin: 10px 0px 10px 0px;
                 padding: 0px 0px 0px 0px;
                 border-width: 0px 0px 0px 0px;
             }
+
             .elementor-69 .elementor-element.elementor-element-4db7b12 {
                 width: 100%;
                 max-width: 100%;
             }
-            .elementor-69 .elementor-element.elementor-element-4db7b12>.elementor-widget-container {
+
+            .elementor-69 .elementor-element.elementor-element-4db7b12 > .elementor-widget-container {
                 margin: 10px 0px 10px 0px;
                 padding: 0px 0px 0px 0px;
                 border-width: 0px 0px 0px 0px;
             }
-            .elementor-69 .elementor-element.elementor-element-3f1872c5.elementor-column>.elementor-widget-wrap {
+
+            .elementor-69 .elementor-element.elementor-element-3f1872c5.elementor-column > .elementor-widget-wrap {
                 justify-content: flex-start;
             }
-            .elementor-69 .elementor-element.elementor-element-3f1872c5>.elementor-element-populated {
+
+            .elementor-69 .elementor-element.elementor-element-3f1872c5 > .elementor-element-populated {
                 margin: 0px 0px 0px 0px;
                 --e-column-margin-right: 0px;
                 --e-column-margin-left: 0px;
                 padding: 15px 15px 15px 15px;
             }
-            .elementor-69 .elementor-element.elementor-element-62c8d48a>.elementor-widget-container {
+
+            .elementor-69 .elementor-element.elementor-element-62c8d48a > .elementor-widget-container {
                 margin: 10px 0px 0px 0px;
             }
+
             .elementor-69 .elementor-element.elementor-element-62c8d48a .pxl-text-editor {
                 text-align: center;
             }
-            .elementor-69 .elementor-element.elementor-element-c4d6b8b.elementor-column>.elementor-widget-wrap {
+
+            .elementor-69 .elementor-element.elementor-element-c4d6b8b.elementor-column > .elementor-widget-wrap {
                 justify-content: flex-start;
             }
-            .elementor-69 .elementor-element.elementor-element-c4d6b8b>.elementor-element-populated {
+
+            .elementor-69 .elementor-element.elementor-element-c4d6b8b > .elementor-element-populated {
                 border-width: 0px 0px 0px 0px;
                 margin: 0px 0px 0px 0px;
                 --e-column-margin-right: 0px;
                 --e-column-margin-left: 0px;
                 padding: 0px 15px 15px 15px;
             }
+
             .elementor-69 .elementor-element.elementor-element-679b9c .pxl-text-editor p,
             .elementor-69 .elementor-element.elementor-element-679b9c .pxl-text-editor li {
                 font-size: 12px;
             }
-            .elementor-69 .elementor-element.elementor-element-3dac6dc5>.elementor-widget-container {
+
+            .elementor-69 .elementor-element.elementor-element-3dac6dc5 > .elementor-widget-container {
                 margin: 0px 5px 0px 5px;
                 padding: 0px 5px 0px 5px;
             }
+
             .elementor-69 .elementor-element.elementor-element-3dac6dc5 .pxl-text-editor p,
             .elementor-69 .elementor-element.elementor-element-3dac6dc5 .pxl-text-editor li {
                 font-size: 12px;
             }
+
             .elementor-69 .elementor-element.elementor-element-760eb02b .pxl-text-editor p,
             .elementor-69 .elementor-element.elementor-element-760eb02b .pxl-text-editor li {
                 font-size: 12px;
@@ -1686,7 +1729,7 @@
         }
 
         .elementor-176 .elementor-element.elementor-element-5c59337:not(.elementor-motion-effects-element-type-background),
-        .elementor-176 .elementor-element.elementor-element-5c59337>.elementor-motion-effects-container>.elementor-motion-effects-layer {
+        .elementor-176 .elementor-element.elementor-element-5c59337 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
             background-color: #29292C;
         }
 
@@ -1695,7 +1738,7 @@
             padding: 66px 0px 70px 0px;
         }
 
-        .elementor-176 .elementor-element.elementor-element-5c59337>.elementor-background-overlay {
+        .elementor-176 .elementor-element.elementor-element-5c59337 > .elementor-background-overlay {
             transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
         }
 
@@ -1706,7 +1749,7 @@
             line-height: 22px;
         }
 
-        .elementor-176 .elementor-element.elementor-element-802f972>.elementor-widget-container {
+        .elementor-176 .elementor-element.elementor-element-802f972 > .elementor-widget-container {
             margin: 12px 0px 12px 0px;
         }
 
@@ -1739,7 +1782,7 @@
             line-height: 28px;
         }
 
-        @media(max-width:767px) {
+        @media (max-width: 767px) {
             .elementor-176 .elementor-element.elementor-element-802f972 .pxl-heading .pxl-item--title,
             .elementor-176 .elementor-element.elementor-element-802f972 .pxl-heading .pxl-item--title div {
                 font-size: 30px;
@@ -1969,8 +2012,8 @@
             flex-grow: 0 !important
         }
 
-        .nfd-wc-products>ul {
-            row-gap: calc(var(--wndb--gap--2xl)*var(--wndb--gap--scale-factor)) !important
+        .nfd-wc-products > ul {
+            row-gap: calc(var(--wndb--gap--2xl) * var(--wndb--gap--scale-factor)) !important
         }
 
         .nfd-wc-products .wc-block-grid__product-image {
@@ -1997,7 +2040,7 @@
             padding: 4px 12px !important
         }
 
-        .nfd-wc-products .wc-block-components-product-sale-badge>span {
+        .nfd-wc-products .wc-block-components-product-sale-badge > span {
             background: transparent !important
         }
 
@@ -2193,20 +2236,20 @@
             text-wrap: balance !important
         }
 
-        .nfd-text-balance>h1,
-        .nfd-text-balance>h2,
-        .nfd-text-balance>h3,
-        .nfd-text-balance>h4,
-        .nfd-text-balance>p {
+        .nfd-text-balance > h1,
+        .nfd-text-balance > h2,
+        .nfd-text-balance > h3,
+        .nfd-text-balance > h4,
+        .nfd-text-balance > p {
             text-wrap: balance !important
         }
 
         .nfd-text-pretty,
-        .nfd-text-pretty>h1,
-        .nfd-text-pretty>h2,
-        .nfd-text-pretty>h3,
-        .nfd-text-pretty>h4,
-        .nfd-text-pretty>p {
+        .nfd-text-pretty > h1,
+        .nfd-text-pretty > h2,
+        .nfd-text-pretty > h3,
+        .nfd-text-pretty > h4,
+        .nfd-text-pretty > p {
             text-wrap: pretty !important
         }
 
@@ -2218,7 +2261,7 @@
             text-wrap: balance !important
         }
 
-        .wp-block-quote>.nfd-text-pretty {
+        .wp-block-quote > .nfd-text-pretty {
             font-weight: 550;
             margin-block: .25em
         }
@@ -2236,7 +2279,7 @@
         }
 
         .nfd-text-xs:not([class*=font-size]):not([style*=font-size]) {
-            font-size: calc(var(--wndb--text--xs)*var(--wndb--text-scale-factor)) !important
+            font-size: calc(var(--wndb--text--xs) * var(--wndb--text-scale-factor)) !important
         }
 
         .nfd-text-xs:not([style*=letter-spacing]) {
@@ -2244,15 +2287,15 @@
         }
 
         .nfd-text-sm:not([class*=font-size]):not([style*=font-size]) {
-            font-size: calc(var(--wndb--text--sm)*var(--wndb--text-scale-factor)) !important
+            font-size: calc(var(--wndb--text--sm) * var(--wndb--text-scale-factor)) !important
         }
 
         .nfd-text-base:not([class*=font-size]):not([style*=font-size]) {
-            font-size: calc(var(--wndb--text--base)*var(--wndb--text-scale-factor)) !important
+            font-size: calc(var(--wndb--text--base) * var(--wndb--text-scale-factor)) !important
         }
 
         .nfd-text-md:not([class*=font-size]):not([style*=font-size]) {
-            font-size: calc(var(--wndb--text--md)*var(--wndb--text-scale-factor)) !important
+            font-size: calc(var(--wndb--text--md) * var(--wndb--text-scale-factor)) !important
         }
 
         .nfd-text-base:not([style*=line-height]),
@@ -2261,7 +2304,7 @@
         }
 
         .nfd-text-lg:not([class*=font-size]):not([style*=font-size]) {
-            font-size: calc(var(--wndb--text--lg)*var(--wndb--text-scale-factor)) !important
+            font-size: calc(var(--wndb--text--lg) * var(--wndb--text-scale-factor)) !important
         }
 
         .nfd-text-lg:not([style*=line-height]) {
@@ -2293,7 +2336,7 @@
         }
 
         :where(.nfd-text-huge:not([class*=font-size]):not([style*=font-size])) {
-            font-size: calc(var(--wndb--text--huge)*var(--wndb--text-scale-factor)) !important;
+            font-size: calc(var(--wndb--text--huge) * var(--wndb--text-scale-factor)) !important;
             max-width: var(--wndb--max-w--prose) !important;
             text-wrap: balance !important
         }
@@ -2321,7 +2364,7 @@
         }
 
         :where(.nfd-text-giga:not([class*=font-size]):not([style*=font-size])) {
-            font-size: calc(var(--wndb--text-giga)*var(--wndb--text-scale-factor)) !important;
+            font-size: calc(var(--wndb--text-giga) * var(--wndb--text-scale-factor)) !important;
             max-width: var(--wndb--max-w--prose) !important;
             text-wrap: balance !important
         }
@@ -2345,10 +2388,11 @@
             --nfd-wb-anim-transition: all var(--nfd-wb-anim-transition-duration) var(--nfd-wb-anim-transition-easing-function) var(--nfd-wb-anim-transition-delay)
         }
 
-        @media (prefers-reduced-motion:reduce) {
+        @media (prefers-reduced-motion: reduce) {
             .nfd-wb-animate {
                 transition: none !important
             }
+
             .nfd-wb-twist-in,
             [class*=nfd-wb-] {
                 clip-path: none !important;
@@ -2357,10 +2401,11 @@
             }
         }
 
-        @media (max-width:782px) {
+        @media (max-width: 782px) {
             .nfd-wb-animate {
                 transition: none !important
             }
+
             .nfd-wb-twist-in,
             [class*=nfd-wb-] {
                 clip-path: none !important;
@@ -2478,7 +2523,7 @@
             transition: var(--nfd-wb-anim-transition)
         }
 
-        .nfd-wb-animated-in>.nfd-wb-reveal-right:not([data-replay-animation]) {
+        .nfd-wb-animated-in > .nfd-wb-reveal-right:not([data-replay-animation]) {
             clip-path: inset(0 0 0 0) !important
         }
 
@@ -2531,31 +2576,31 @@
             --wndb--container--wide: 1340px
         }
 
-        body .is-layout-constrained:has(.nfd-container.is-layout-constrained)>.nfd-container.is-layout-constrained {
+        body .is-layout-constrained:has(.nfd-container.is-layout-constrained) > .nfd-container.is-layout-constrained {
             max-width: unset !important;
             width: 100% !important
         }
 
-        .is-layout-constrained.has-global-padding:has(.nfd-container.is-layout-constrained)>.nfd-container.is-layout-constrained {
-            margin-left: calc(var(--wp--style--root--padding-left)*-1) !important;
-            margin-right: calc(var(--wp--style--root--padding-right)*-1) !important;
+        .is-layout-constrained.has-global-padding:has(.nfd-container.is-layout-constrained) > .nfd-container.is-layout-constrained {
+            margin-left: calc(var(--wp--style--root--padding-left) * -1) !important;
+            margin-right: calc(var(--wp--style--root--padding-right) * -1) !important;
             max-width: unset !important;
             width: unset !important
         }
 
-        .editor-styles-wrapper .nfd-container:is(.is-layout-constrained)>:where(:not(.alignleft):not(.alignright):not(.alignfull):not(.alignwide)),
-        .editor-styles-wrapper .nfd-container>:where(.wp-block-cover-is-layout-constrained:not(.alignleft):not(.alignright):not(.alignfull):not(.alignwide)):not([style*=margin]),
-        .nfd-container:is(.is-layout-constrained)>:where(:not(.alignleft):not(.alignright):not(.alignfull):not(.alignwide)),
-        .nfd-container:is(.nfd-my-0)>div,
-        .nfd-container>:where(.wp-block-cover-is-layout-constrained:not(.alignleft):not(.alignright):not(.alignfull):not(.alignwide)) {
+        .editor-styles-wrapper .nfd-container:is(.is-layout-constrained) > :where(:not(.alignleft):not(.alignright):not(.alignfull):not(.alignwide)),
+        .editor-styles-wrapper .nfd-container > :where(.wp-block-cover-is-layout-constrained:not(.alignleft):not(.alignright):not(.alignfull):not(.alignwide)):not([style*=margin]),
+        .nfd-container:is(.is-layout-constrained) > :where(:not(.alignleft):not(.alignright):not(.alignfull):not(.alignwide)),
+        .nfd-container:is(.nfd-my-0) > div,
+        .nfd-container > :where(.wp-block-cover-is-layout-constrained:not(.alignleft):not(.alignright):not(.alignfull):not(.alignwide)) {
             max-width: var(--wndb--container);
             width: 100%
         }
 
-        .editor-styles-wrapper .nfd-container:is(.is-layout-constrained)>.alignwide,
-        .nfd-container:is(.is-layout-constrained).alignwide>:where(:not(.alignleft):not(.alignright):not(.alignfull)):not([style*=margin]),
-        .nfd-container:is(.is-layout-constrained)>.alignwide,
-        .nfd-container:is(.nfd-my-0)>.alignwide {
+        .editor-styles-wrapper .nfd-container:is(.is-layout-constrained) > .alignwide,
+        .nfd-container:is(.is-layout-constrained).alignwide > :where(:not(.alignleft):not(.alignright):not(.alignfull)):not([style*=margin]),
+        .nfd-container:is(.is-layout-constrained) > .alignwide,
+        .nfd-container:is(.nfd-my-0) > .alignwide {
             max-width: var(--wndb--container--wide);
             width: 100%
         }
@@ -2564,7 +2609,7 @@
             padding-inline: var(--wndb--p) !important
         }
 
-        .nfd-container:is(.nfd-my-0)>div:not([style*=margin]) {
+        .nfd-container:is(.nfd-my-0) > div:not([style*=margin]) {
             margin-inline: auto !important
         }
 
@@ -2573,17 +2618,17 @@
             z-index: 13
         }
 
-        [class*=nfd-divider-]~[class*=nfd-divider-] {
+        [class*=nfd-divider-] ~ [class*=nfd-divider-] {
             z-index: 12 !important
         }
 
-        [class*=nfd-divider-]~[class*=nfd-divider-]~[class*=nfd-divider-] {
+        [class*=nfd-divider-] ~ [class*=nfd-divider-] ~ [class*=nfd-divider-] {
             z-index: 11 !important
         }
 
         [class*=nfd-divider-]:before {
             background: inherit !important;
-            bottom: calc(var(--wndb--divider-size)*-1) !important;
+            bottom: calc(var(--wndb--divider-size) * -1) !important;
             content: "" !important;
             height: var(--wndb--divider-size) !important;
             left: 0 !important;
@@ -2598,11 +2643,11 @@
         }
 
         .nfd-divider-arrow:before {
-            bottom: calc(var(--wndb--divider-size)*-1) !important;
-            height: calc(var(--wndb--divider-size)*2) !important;
+            bottom: calc(var(--wndb--divider-size) * -1) !important;
+            height: calc(var(--wndb--divider-size) * 2) !important;
             left: 50% !important;
             transform: translateX(-50%) rotate(45deg) !important;
-            width: calc(var(--wndb--divider-size)*2) !important
+            width: calc(var(--wndb--divider-size) * 2) !important
         }
 
         .nfd-divider-clouds {
@@ -2654,12 +2699,12 @@
         }
 
         .nfd-divider-slant:before {
-            bottom: calc(var(--wndb--divider-size)*-1 + 1px) !important;
+            bottom: calc(var(--wndb--divider-size) * -1 + 1px) !important;
             clip-path: polygon(0 0, 100% 0, 0 100%) !important
         }
 
         .nfd-divider-slant-invert:before {
-            bottom: calc(var(--wndb--divider-size)*-1 + 1px) !important;
+            bottom: calc(var(--wndb--divider-size) * -1 + 1px) !important;
             clip-path: polygon(0 0, 100% 0, 100% 100%) !important
         }
 
@@ -2668,7 +2713,7 @@
         }
 
         .nfd-divider-triangle:before {
-            bottom: calc(var(--wndb--divider-size)*-1 + 1px) !important;
+            bottom: calc(var(--wndb--divider-size) * -1 + 1px) !important;
             clip-path: polygon(0 0, 100% 0, 50% 100%) !important
         }
 
@@ -2677,8 +2722,8 @@
         }
 
         .nfd-divider-zigzag:before {
-            -webkit-mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% /calc(var(--wndb--divider-size)*2) 100% !important;
-            mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% /calc(var(--wndb--divider-size)*2) 100% !important
+            -webkit-mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% /calc(var(--wndb--divider-size) * 2) 100% !important;
+            mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% /calc(var(--wndb--divider-size) * 2) 100% !important
         }
 
         :where(:root) {
@@ -2701,107 +2746,107 @@
         }
 
         .nfd-p-card-sm:not([style*=padding]) {
-            padding: calc(var(--wndb--p--xs)*var(--wndb--padding-factor)) calc(var(--wndb--p--sm)*var(--wndb--padding-factor)) !important
+            padding: calc(var(--wndb--p--xs) * var(--wndb--padding-factor)) calc(var(--wndb--p--sm) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-p-card-md:not([style*=padding]) {
-            padding: calc(var(--wndb--p--sm)*var(--wndb--padding-factor)) calc(var(--wndb--p--md)*var(--wndb--padding-factor)) !important
+            padding: calc(var(--wndb--p--sm) * var(--wndb--padding-factor)) calc(var(--wndb--p--md) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-p-card-lg:not([style*=padding]) {
-            padding: calc(var(--wndb--p--md)*var(--wndb--padding-factor)) calc(var(--wndb--p--md)*var(--wndb--padding-factor)) !important
+            padding: calc(var(--wndb--p--md) * var(--wndb--padding-factor)) calc(var(--wndb--p--md) * var(--wndb--padding-factor)) !important
         }
 
-        @media screen and (min-width:782px) {
+        @media screen and (min-width: 782px) {
             .nfd-p-card-lg:not([style*=padding]) {
-                padding: calc(var(--wndb--p--md)*var(--wndb--padding-factor)) calc(var(--wndb--p--md)*1.5*var(--wndb--padding-factor)) !important
+                padding: calc(var(--wndb--p--md) * var(--wndb--padding-factor)) calc(var(--wndb--p--md) * 1.5 * var(--wndb--padding-factor)) !important
             }
         }
 
         .nfd-p-card-square-lg:not([style*=padding]),
         .nfd-p-card-square:not([style*=padding]) {
-            padding: calc(var(--wndb--p--square)*var(--wndb--padding-factor)) !important
+            padding: calc(var(--wndb--p--square) * var(--wndb--padding-factor)) !important
         }
 
-        @media screen and (min-width:782px) {
+        @media screen and (min-width: 782px) {
             .nfd-p-card-square-lg:not([style*=padding]) {
-                padding: calc(var(--wndb--p--square-lg)*var(--wndb--padding-factor)) !important
+                padding: calc(var(--wndb--p--square-lg) * var(--wndb--padding-factor)) !important
             }
         }
 
         .nfd-p-xs:not([style*=padding]) {
-            padding: calc(var(--wndb--p--xs)*var(--wndb--padding-factor)) !important
+            padding: calc(var(--wndb--p--xs) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-py-xs:not([style*=padding]) {
-            padding-block: calc(var(--wndb--p--xs)*var(--wndb--padding-factor)) !important
+            padding-block: calc(var(--wndb--p--xs) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-pt-xs:not([style*=padding]) {
-            padding-block-start: calc(var(--wndb--p--xs)*var(--wndb--padding-factor)) !important
+            padding-block-start: calc(var(--wndb--p--xs) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-px-xs:not([style*=padding]) {
-            padding-inline: calc(var(--wndb--p--xs)*var(--wndb--padding-factor)) !important
+            padding-inline: calc(var(--wndb--p--xs) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-p-sm:not([style*=padding]) {
-            padding: calc(var(--wndb--p--sm)*var(--wndb--padding-factor)) !important
+            padding: calc(var(--wndb--p--sm) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-px-sm:not([style*=padding]) {
-            padding-inline: calc(var(--wndb--p--sm)*var(--wndb--padding-factor)) !important
+            padding-inline: calc(var(--wndb--p--sm) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-py-sm:not([style*=padding]) {
-            padding-block: calc(var(--wndb--p--sm)*var(--wndb--padding-factor)) !important
+            padding-block: calc(var(--wndb--p--sm) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-pt-sm:not([style*=padding]) {
-            padding-block-start: calc(var(--wndb--p--sm)*var(--wndb--padding-factor)) !important
+            padding-block-start: calc(var(--wndb--p--sm) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-pb-sm:not([style*=padding]) {
-            padding-block-end: calc(var(--wndb--p--sm)*var(--wndb--padding-factor)) !important
+            padding-block-end: calc(var(--wndb--p--sm) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-pl-sm:not([style*=padding]) {
-            padding-left: calc(var(--wndb--p--sm)*var(--wndb--padding-factor)) !important
+            padding-left: calc(var(--wndb--p--sm) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-p-md:not([style*=padding]) {
-            padding: calc(var(--wndb--p--md)*var(--wndb--padding-factor)) !important
+            padding: calc(var(--wndb--p--md) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-px-md:not([style*=padding]) {
-            padding-inline: calc(var(--wndb--p--md)*var(--wndb--padding-factor)) !important
+            padding-inline: calc(var(--wndb--p--md) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-pb-md:not([style*=padding]),
         .nfd-pt-md:not([style*=padding]),
         .nfd-py-md:not([style*=padding]) {
-            padding-block: calc(var(--wndb--p--md)*var(--wndb--padding-factor)) !important
+            padding-block: calc(var(--wndb--p--md) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-p-lg:not([style*=padding]) {
-            padding: calc(var(--wndb--p--lg)*var(--wndb--padding-factor)) calc(var(--wndb--p--md)*var(--wndb--padding-factor)) !important
+            padding: calc(var(--wndb--p--lg) * var(--wndb--padding-factor)) calc(var(--wndb--p--md) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-py-lg:not([style*=padding]) {
-            padding-block: calc(var(--wndb--p--lg)*var(--wndb--padding-factor)) !important
+            padding-block: calc(var(--wndb--p--lg) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-pt-lg:not([style*=padding]) {
-            padding-block-start: calc(var(--wndb--p--lg)*var(--wndb--padding-factor)) !important
+            padding-block-start: calc(var(--wndb--p--lg) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-pb-lg:not([style*=padding]) {
-            padding-block-end: calc(var(--wndb--p--lg)*var(--wndb--padding-factor)) !important
+            padding-block-end: calc(var(--wndb--p--lg) * var(--wndb--padding-factor)) !important
         }
 
         .nfd-pl-offset-md:not([style*=padding]) {
-            margin-left: calc(var(--wndb--p--md)*var(--wndb--padding-factor)*-1) !important;
-            padding-left: calc(var(--wndb--p--md)*var(--wndb--padding-factor) - 3px) !important
+            margin-left: calc(var(--wndb--p--md) * var(--wndb--padding-factor) * -1) !important;
+            padding-left: calc(var(--wndb--p--md) * var(--wndb--padding-factor) - 3px) !important
         }
 
         .editor-styles-wrapper .nfd-overlap-x,
@@ -2809,11 +2854,11 @@
             gap: 0
         }
 
-        .nfd-overlap-x>:not(:first-child) {
+        .nfd-overlap-x > :not(:first-child) {
             margin-inline-start: -1.275rem !important
         }
 
-        @media (min-width:768px) {
+        @media (min-width: 768px) {
             .-nfd-translate-y-1\/2 {
                 transform: translateY(-50%) !important
             }
@@ -2826,12 +2871,12 @@
             position: relative !important
         }
 
-        .nfd-pseudo-play-icon>a {
+        .nfd-pseudo-play-icon > a {
             inset: 0 !important;
             position: absolute !important
         }
 
-        :not(.is-root-container) .nfd-pseudo-play-icon>a {
+        :not(.is-root-container) .nfd-pseudo-play-icon > a {
             text-indent: -9999px !important
         }
 
@@ -2877,10 +2922,10 @@
             width: 0 !important
         }
 
-        .entry-content>.wp-block-group.has-background+.wp-block-group.has-background:not([style*=margin-top]),
-        .entry-content>.wp-block-group.has-background+[class*=nfd-theme-]:not([style*=margin-top]),
-        .entry-content>[class*=nfd-theme-]+.wp-block-group.has-background:not([style*=margin-top]),
-        .entry-content>[class*=nfd-theme-]+[class*=nfd-theme-]:not([style*=margin-top]) {
+        .entry-content > .wp-block-group.has-background + .wp-block-group.has-background:not([style*=margin-top]),
+        .entry-content > .wp-block-group.has-background + [class*=nfd-theme-]:not([style*=margin-top]),
+        .entry-content > [class*=nfd-theme-] + .wp-block-group.has-background:not([style*=margin-top]),
+        .entry-content > [class*=nfd-theme-] + [class*=nfd-theme-]:not([style*=margin-top]) {
             margin-block-start: 0 !important
         }
 
@@ -2903,74 +2948,74 @@
 
         .editor-styles-wrapper .nfd-gap-xs,
         .nfd-gap-xs {
-            gap: calc(var(--wndb--gap--xs)*var(--wndb--gap--scale-factor))
+            gap: calc(var(--wndb--gap--xs) * var(--wndb--gap--scale-factor))
         }
 
         .editor-styles-wrapper .nfd-gap-sm,
         .nfd-gap-sm {
-            gap: calc(var(--wndb--gap--sm)*var(--wndb--gap--scale-factor))
+            gap: calc(var(--wndb--gap--sm) * var(--wndb--gap--scale-factor))
         }
 
         .editor-styles-wrapper .nfd-gap-md,
         .nfd-gap-md {
-            gap: calc(var(--wndb--gap--md)*var(--wndb--gap--scale-factor))
+            gap: calc(var(--wndb--gap--md) * var(--wndb--gap--scale-factor))
         }
 
         .editor-styles-wrapper .nfd-gap-lg,
         .nfd-gap-lg {
-            gap: calc(var(--wndb--gap--lg)*var(--wndb--gap--scale-factor))
+            gap: calc(var(--wndb--gap--lg) * var(--wndb--gap--scale-factor))
         }
 
         .editor-styles-wrapper .nfd-gap-xl,
         .nfd-gap-xl {
-            gap: calc(var(--wndb--gap--xl)*var(--wndb--gap--scale-factor))
+            gap: calc(var(--wndb--gap--xl) * var(--wndb--gap--scale-factor))
         }
 
         .editor-styles-wrapper .nfd-gap-2xl,
         .nfd-gap-2xl {
-            gap: calc(var(--wndb--gap--2xl)*var(--wndb--gap--scale-factor))
+            gap: calc(var(--wndb--gap--2xl) * var(--wndb--gap--scale-factor))
         }
 
         .editor-styles-wrapper .nfd-gap-3xl,
         .nfd-gap-3xl {
-            gap: calc(var(--wndb--gap--3xl)*var(--wndb--gap--scale-factor))
+            gap: calc(var(--wndb--gap--3xl) * var(--wndb--gap--scale-factor))
         }
 
         .editor-styles-wrapper .nfd-gap-4xl,
         .nfd-gap-4xl {
-            gap: calc(var(--wndb--gap--4xl)*var(--wndb--gap--scale-factor))
+            gap: calc(var(--wndb--gap--4xl) * var(--wndb--gap--scale-factor))
         }
 
         .editor-styles-wrapper .nfd-gap-x-4xl,
         .nfd-gap-x-4xl {
-            -moz-column-gap: calc(var(--wndb--gap--4xl)*var(--wndb--gap--scale-factor));
-            column-gap: calc(var(--wndb--gap--4xl)*var(--wndb--gap--scale-factor))
+            -moz-column-gap: calc(var(--wndb--gap--4xl) * var(--wndb--gap--scale-factor));
+            column-gap: calc(var(--wndb--gap--4xl) * var(--wndb--gap--scale-factor))
         }
 
         .editor-styles-wrapper .nfd-gap-x-lg,
         .nfd-gap-x-lg {
-            -moz-column-gap: calc(var(--wndb--gap--lg)*var(--wndb--gap--scale-factor));
-            column-gap: calc(var(--wndb--gap--lg)*var(--wndb--gap--scale-factor))
+            -moz-column-gap: calc(var(--wndb--gap--lg) * var(--wndb--gap--scale-factor));
+            column-gap: calc(var(--wndb--gap--lg) * var(--wndb--gap--scale-factor))
         }
 
         .editor-styles-wrapper .nfd-gap-y-lg,
         .nfd-gap-y-lg {
-            row-gap: calc(var(--wndb--gap--lg)*var(--wndb--gap--scale-factor))
+            row-gap: calc(var(--wndb--gap--lg) * var(--wndb--gap--scale-factor))
         }
 
         .editor-styles-wrapper .nfd-gap-y-xl,
         .nfd-gap-y-xl {
-            row-gap: calc(var(--wndb--gap--xl)*var(--wndb--gap--scale-factor))
+            row-gap: calc(var(--wndb--gap--xl) * var(--wndb--gap--scale-factor))
         }
 
         .editor-styles-wrapper .nfd-gap-y-2xl,
         .nfd-gap-y-2xl {
-            row-gap: calc(var(--wndb--gap--2xl)*var(--wndb--gap--scale-factor))
+            row-gap: calc(var(--wndb--gap--2xl) * var(--wndb--gap--scale-factor))
         }
 
         .editor-styles-wrapper .nfd-gap-y-3xl,
         .nfd-gap-y-3xl {
-            row-gap: calc(var(--wndb--gap--3xl)*var(--wndb--gap--scale-factor))
+            row-gap: calc(var(--wndb--gap--3xl) * var(--wndb--gap--scale-factor))
         }
 
         .nfd-border-2 {
@@ -2996,124 +3041,124 @@
             --wndb--button--outline-width: 2px
         }
 
-        [class*=nfd-btn]>.wp-block-button__link:not([style*=padding]) {
+        [class*=nfd-btn] > .wp-block-button__link:not([style*=padding]) {
             padding: calc(.625rem - var(--wndb--button--outline-width)) calc(1.125rem - var(--wndb--button--outline-width)) !important
         }
 
-        .nfd-btn-sm>.wp-block-button__link:not([style*=padding]) {
+        .nfd-btn-sm > .wp-block-button__link:not([style*=padding]) {
             padding: calc(.375rem - var(--wndb--button--outline-width)) calc(1rem - var(--wndb--button--outline-width)) !important
         }
 
-        .nfd-btn-sm:not(.has-custom-font-size)>.wp-block-button__link:not([style*=font-size]) {
+        .nfd-btn-sm:not(.has-custom-font-size) > .wp-block-button__link:not([style*=font-size]) {
             font-size: var(--wndb--button-sm--font-size) !important
         }
 
-        .nfd-btn-lg>.wp-block-button__link:not([style*=padding]) {
+        .nfd-btn-lg > .wp-block-button__link:not([style*=padding]) {
             padding: calc(var(--wndb--button-lg-y) - var(--wndb--button--outline-width)) var(--wndb--button-lg-x) !important
         }
 
-        .nfd-btn-lg:not(.has-custom-font-size)>.wp-block-button__link:not([style*=font-size]) {
+        .nfd-btn-lg:not(.has-custom-font-size) > .wp-block-button__link:not([style*=font-size]) {
             font-size: var(--wndb--button-lg--font-size) !important
         }
 
-        .nfd-btn-lg:not([style*=font-weight])>.wp-block-button__link {
+        .nfd-btn-lg:not([style*=font-weight]) > .wp-block-button__link {
             font-weight: 600 !important
         }
 
-        .nfd-btn-xl>.wp-block-button__link:not([style*=padding]) {
+        .nfd-btn-xl > .wp-block-button__link:not([style*=padding]) {
             padding: calc(var(--wndb--button-xl-y) - var(--wndb--button--outline-width)) var(--wndb--button-xl-x) !important
         }
 
-        .nfd-btn-xl:not(.has-custom-font-size)>.wp-block-button__link:not([style*=font-size]) {
+        .nfd-btn-xl:not(.has-custom-font-size) > .wp-block-button__link:not([style*=font-size]) {
             font-size: var(--wndb--button-xl--font-size) !important
         }
 
-        .nfd-btn-xl:not([style*=font-weight])>.wp-block-button__link {
+        .nfd-btn-xl:not([style*=font-weight]) > .wp-block-button__link {
             font-weight: 600 !important
         }
 
-        .nfd-btn-wide>.wp-block-button__link:not([style*=padding]) {
+        .nfd-btn-wide > .wp-block-button__link:not([style*=padding]) {
             padding: calc(.625rem - var(--wndb--button--outline-width)) calc(2rem - var(--wndb--button--outline-width)) !important
         }
 
-        [class*=nfd-btn]:is(.is-style-outline)>.wp-block-button__link:not(.has-text-color) {
+        [class*=nfd-btn]:is(.is-style-outline) > .wp-block-button__link:not(.has-text-color) {
             color: var(--wndb--color--text--contrast) !important
         }
 
-        .nfd-btn:is(.is-style-outline)>.wp-block-button__link:not(.has-text-color):hover {
+        .nfd-btn:is(.is-style-outline) > .wp-block-button__link:not(.has-text-color):hover {
             --wndb--color--text--contrast: var(--wndb-gray-900);
             border-color: var(--wndb-white) !important
         }
 
-        [class*=nfd-button]>.wp-block-button__link:not(.has-background):hover {
+        [class*=nfd-button] > .wp-block-button__link:not(.has-background):hover {
             filter: brightness(.8) !important
         }
 
-        .nfd-theme-primary [class*=nfd-btn]:not(.is-style-outline):not(.nfd-btn-secondary):not(.nfd-btn-tertiary)>.wp-block-button__link:not(.has-background) {
+        .nfd-theme-primary [class*=nfd-btn]:not(.is-style-outline):not(.nfd-btn-secondary):not(.nfd-btn-tertiary) > .wp-block-button__link:not(.has-background) {
             background-color: var(--wndb-gray-800) !important
         }
 
-        .nfd-theme-primary [class*=nfd-btn]:not(.is-style-outline):not(.nfd-btn-secondary):not(.nfd-btn-tertiary)>.wp-block-button__link:not(.has-background):hover {
+        .nfd-theme-primary [class*=nfd-btn]:not(.is-style-outline):not(.nfd-btn-secondary):not(.nfd-btn-tertiary) > .wp-block-button__link:not(.has-background):hover {
             background-color: var(--wndb-gray-900) !important
         }
 
-        .nfd-theme-primary [class*=nfd-btn]:is(.is-style-outline):not(.nfd-btn-secondary):not(.nfd-btn-tertiary)>.wp-block-button__link:not(.has-background):not(.has-text-color):hover {
+        .nfd-theme-primary [class*=nfd-btn]:is(.is-style-outline):not(.nfd-btn-secondary):not(.nfd-btn-tertiary) > .wp-block-button__link:not(.has-background):not(.has-text-color):hover {
             background-color: var(--wndb-white) !important;
             border-color: var(--wndb-white) !important;
             color: var(--wndb-gray-900) !important
         }
 
-        .nfd-btn-secondary:is(.is-style-outline)>.wp-block-button__link:not(.has-text-color):hover {
+        .nfd-btn-secondary:is(.is-style-outline) > .wp-block-button__link:not(.has-text-color):hover {
             --wndb--color--text--contrast: var(--wndb-gray-900);
             border-color: var(--wndb-white) !important
         }
 
-        .nfd-btn-secondary:not(.is-style-outline)>.wp-block-button__link:not(.has-text-color) {
+        .nfd-btn-secondary:not(.is-style-outline) > .wp-block-button__link:not(.has-text-color) {
             color: var(--wndb-white) !important
         }
 
-        .nfd-btn-secondary:not(.is-style-outline)>.wp-block-button__link:not(.has-background) {
+        .nfd-btn-secondary:not(.is-style-outline) > .wp-block-button__link:not(.has-background) {
             background-color: var(--wndb-gray-800) !important
         }
 
-        .nfd-btn-secondary:not(.is-style-outline)>.wp-block-button__link:not(.has-background):hover {
+        .nfd-btn-secondary:not(.is-style-outline) > .wp-block-button__link:not(.has-background):hover {
             background-color: var(--wndb-gray-900) !important
         }
 
-        .nfd-theme-dark .nfd-btn-secondary:not(.is-style-outline)>.wp-block-button__link:not(.has-background),
-        .nfd-theme-darker .nfd-btn-secondary:not(.is-style-outline)>.wp-block-button__link:not(.has-background) {
+        .nfd-theme-dark .nfd-btn-secondary:not(.is-style-outline) > .wp-block-button__link:not(.has-background),
+        .nfd-theme-darker .nfd-btn-secondary:not(.is-style-outline) > .wp-block-button__link:not(.has-background) {
             background-color: var(--wndb-white) !important
         }
 
-        .nfd-theme-dark .nfd-btn-secondary:not(.is-style-outline)>.wp-block-button__link:not(.has-text-color),
-        .nfd-theme-darker .nfd-btn-secondary:not(.is-style-outline)>.wp-block-button__link:not(.has-text-color) {
+        .nfd-theme-dark .nfd-btn-secondary:not(.is-style-outline) > .wp-block-button__link:not(.has-text-color),
+        .nfd-theme-darker .nfd-btn-secondary:not(.is-style-outline) > .wp-block-button__link:not(.has-text-color) {
             color: var(--wndb-gray-900) !important
         }
 
-        .nfd-theme-dark .nfd-btn-secondary:not(.is-style-outline)>.wp-block-button__link:not(.has-background):hover,
-        .nfd-theme-darker .nfd-btn-secondary:not(.is-style-outline)>.wp-block-button__link:not(.has-background):hover {
+        .nfd-theme-dark .nfd-btn-secondary:not(.is-style-outline) > .wp-block-button__link:not(.has-background):hover,
+        .nfd-theme-darker .nfd-btn-secondary:not(.is-style-outline) > .wp-block-button__link:not(.has-background):hover {
             background-color: var(--wndb-white) !important;
             color: var(--wndb-gray-900) !important;
             filter: brightness(.8) !important
         }
 
-        .nfd-btn-tertiary:is(.is-style-outline)>.wp-block-button__link:not(.has-text-color):hover {
+        .nfd-btn-tertiary:is(.is-style-outline) > .wp-block-button__link:not(.has-text-color):hover {
             --wndb--color--text--contrast: var(--wndb-gray-900)
         }
 
-        .nfd-btn-tertiary:is(.is-style-outline)>.wp-block-button__link:not([class*=-border-color]) {
+        .nfd-btn-tertiary:is(.is-style-outline) > .wp-block-button__link:not([class*=-border-color]) {
             border-color: var(--wndb--color--subtle) !important
         }
 
-        .nfd-btn-tertiary:not(.is-style-outline)>.wp-block-button__link:not(.has-text-color) {
+        .nfd-btn-tertiary:not(.is-style-outline) > .wp-block-button__link:not(.has-text-color) {
             color: var(--wndb--color--text--contrast) !important
         }
 
-        .nfd-btn-tertiary:not(.is-style-outline)>.wp-block-button__link:not(.has-background) {
+        .nfd-btn-tertiary:not(.is-style-outline) > .wp-block-button__link:not(.has-background) {
             background-color: var(--wndb--color--borders) !important
         }
 
-        .nfd-btn-tertiary:not(.is-style-outline)>.wp-block-button__link:not(.has-background):hover {
+        .nfd-btn-tertiary:not(.is-style-outline) > .wp-block-button__link:not(.has-background):hover {
             --wndb--color--borders: var(--wndb--color--subtle)
         }
 
@@ -3144,23 +3189,23 @@
         }
 
         [class*=nfd-rounded]:not([style*=-radius]),
-        [class*=nfd-rounded]:not([style*=-radius])>.components-resizable-box__container>img:not([style*=-radius]),
-        [class*=nfd-rounded]:not([style*=-radius])>.wp-element-button:not([style*=-radius]),
-        [class*=nfd-rounded]:not([style*=-radius])>a>img,
-        [class*=nfd-rounded]:not([style*=-radius])>img {
-            border-radius: calc(var(--wndb--border--radius)*var(--wndb--rounded--scale-factor)) !important
+        [class*=nfd-rounded]:not([style*=-radius]) > .components-resizable-box__container > img:not([style*=-radius]),
+        [class*=nfd-rounded]:not([style*=-radius]) > .wp-element-button:not([style*=-radius]),
+        [class*=nfd-rounded]:not([style*=-radius]) > a > img,
+        [class*=nfd-rounded]:not([style*=-radius]) > img {
+            border-radius: calc(var(--wndb--border--radius) * var(--wndb--rounded--scale-factor)) !important
         }
 
         [class*=nfd-rounded-t-]:not([style*=-radius]),
-        [class*=nfd-rounded-t-]:not([style*=-radius])>.components-resizable-box__container>img:not([style*=-radius]),
-        [class*=nfd-rounded-t-]:not([style*=-radius])>.wp-element-button:not([style*=-radius]),
-        [class*=nfd-rounded-t-]:not([style*=-radius])>a>img,
-        [class*=nfd-rounded-t-]:not([style*=-radius])>img {
-            border-radius: calc(var(--wndb--border--radius)*var(--wndb--rounded--scale-factor)) calc(var(--wndb--border--radius)*var(--wndb--rounded--scale-factor)) 0 0 !important
+        [class*=nfd-rounded-t-]:not([style*=-radius]) > .components-resizable-box__container > img:not([style*=-radius]),
+        [class*=nfd-rounded-t-]:not([style*=-radius]) > .wp-element-button:not([style*=-radius]),
+        [class*=nfd-rounded-t-]:not([style*=-radius]) > a > img,
+        [class*=nfd-rounded-t-]:not([style*=-radius]) > img {
+            border-radius: calc(var(--wndb--border--radius) * var(--wndb--rounded--scale-factor)) calc(var(--wndb--border--radius) * var(--wndb--rounded--scale-factor)) 0 0 !important
         }
 
         .nfd-overflow-hidden.nfd-rounded-xl iframe:not([style*=-radius]) {
-            border-radius: calc(var(--wndb--border--radius--md)*var(--wndb--rounded--scale-factor)) !important
+            border-radius: calc(var(--wndb--border--radius--md) * var(--wndb--rounded--scale-factor)) !important
         }
 
         .nfd-rounded-none:not([style*=-radius]) {
@@ -3308,7 +3353,7 @@
 
         .nfd-text-faded p:not(.has-text-color):not(.has-link-color):not(.has-background):not(.nfd-text-primary),
         .nfd-text-faded time:not(.has-text-color):not(.has-background),
-        .nfd-text-faded>a:not(.has-text-color):not(.has-link-color):not(.has-background),
+        .nfd-text-faded > a:not(.has-text-color):not(.has-link-color):not(.has-background),
         ol.nfd-text-faded:not(.has-text-color):not(.has-link-color):not(.has-background):not(.nfd-text-primary),
         p.nfd-text-faded:not(.has-text-color):not(.has-link-color):not(.has-background),
         ul.nfd-text-faded:not(.has-text-color):not(.has-link-color):not(.has-background):not(.nfd-text-primary) {
@@ -3323,12 +3368,12 @@
         }
 
         .nfd-bg-surface [style*=border]:not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color]):not(.nfd-border-strong),
-        .nfd-bg-surface [style*=border]:not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color])>img:not(.has-border-color):not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color]),
-        .nfd-bg-surface [style*=border]:not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color])>img:not(.has-border-color):not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color])>.components-resizable-box__container>img:not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color]),
+        .nfd-bg-surface [style*=border]:not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color]) > img:not(.has-border-color):not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color]),
+        .nfd-bg-surface [style*=border]:not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color]) > img:not(.has-border-color):not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color]) > .components-resizable-box__container > img:not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color]),
         .nfd-bg-surface:not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color]):not(.has-border-color):not(.nfd-border-strong),
         [class*=is-style-nfd-theme] [style*=border]:not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color]):not(.nfd-border-strong),
-        [class*=is-style-nfd-theme] [style*=border]:not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color])>img:not(.has-border-color):not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color]),
-        [class*=is-style-nfd-theme] [style*=border]:not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color])>img:not(.has-border-color):not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color])>.components-resizable-box__container>img:not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color]),
+        [class*=is-style-nfd-theme] [style*=border]:not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color]) > img:not(.has-border-color):not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color]),
+        [class*=is-style-nfd-theme] [style*=border]:not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color]) > img:not(.has-border-color):not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color]) > .components-resizable-box__container > img:not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color]),
         [class*=is-style-nfd-theme]:not([class*=border-color]):not([style*=border-top-color]):not([style*=border-right-color]):not([style*=border-bottom-color]):not([style*=border-left-color]):not(.has-border-color):not(.nfd-border-strong) {
             border-color: var(--wndb--color--borders) !important
         }
@@ -3356,8 +3401,8 @@
 
         .nfd-bg-accent:not(.has-background),
         .nfd-bg-primary:not(.has-background),
-        .wp-block-cover.nfd-bg-accent>.wp-block-cover__background:not([class*=background-color]),
-        .wp-block-cover.nfd-bg-primary>.wp-block-cover__background:not([class*=background-color]) {
+        .wp-block-cover.nfd-bg-accent > .wp-block-cover__background:not([class*=background-color]),
+        .wp-block-cover.nfd-bg-primary > .wp-block-cover__background:not([class*=background-color]) {
             background-color: var(--wndb--color--primary) !important
         }
 
@@ -3367,25 +3412,25 @@
         }
 
         .nfd-bg-subtle:not(.has-background):not(.wp-block-button),
-        .nfd-bg-subtle:not(.has-background)>.wp-block-button__link:not(.has-background) {
+        .nfd-bg-subtle:not(.has-background) > .wp-block-button__link:not(.has-background) {
             background-color: var(--wndb--color--borders-light) !important;
             color: var(--wndb--color--text--contrast) !important
         }
 
         .nfd-text-primary:not(.has-text-color),
-        .wp-block-button.wndb-text-primary>a:not(.has-text-color) {
+        .wp-block-button.wndb-text-primary > a:not(.has-text-color) {
             color: var(--wndb--color--primary) !important
         }
 
         .nfd-text-secondary:not(.has-text-color),
-        .wp-block-button.wndb-text-secondary>a:not(.has-text-color) {
+        .wp-block-button.wndb-text-secondary > a:not(.has-text-color) {
             color: var(--wndb--color--secondary) !important
         }
 
         [class*=nfd-theme-primary] .nfd-text-primary:not(.has-text-color),
         [class*=nfd-theme-primary] .nfd-text-secondary:not(.has-text-color),
-        [class*=nfd-theme-primary] .wp-block-button.wndb-text-primary>a:not(.has-text-color),
-        [class*=nfd-theme-secondary] .wp-block-button.wndb-text-secondary>a:not(.has-text-color) {
+        [class*=nfd-theme-primary] .wp-block-button.wndb-text-primary > a:not(.has-text-color),
+        [class*=nfd-theme-secondary] .wp-block-button.wndb-text-secondary > a:not(.has-text-color) {
             color: var(--wndb--color--contrast) !important
         }
 
@@ -3477,7 +3522,7 @@
             scroll-snap-type: y mandatory !important
         }
 
-        .nfd-scroll-slider-vertical>* {
+        .nfd-scroll-slider-vertical > * {
             scroll-snap-align: start !important;
             width: 100% !important
         }
@@ -3488,23 +3533,23 @@
             scroll-snap-type: x mandatory !important
         }
 
-        .nfd-scroll-slider-horizontal>* {
+        .nfd-scroll-slider-horizontal > * {
             flex-shrink: 0 !important;
             scroll-snap-align: start !important
         }
 
-        .nfd-scroll-slider-horizontal>.wp-block-cover {
+        .nfd-scroll-slider-horizontal > .wp-block-cover {
             width: 100vw !important
         }
 
         .nfd-container.alignfull .nfd-scroll-slider-horizontal {
-            --half-container: calc(50vw - var(--wndb--container)/2);
+            --half-container: calc(50vw - var(--wndb--container) / 2);
             padding-left: var(--half-container) !important;
             padding-right: var(--half-container) !important;
             scroll-padding: var(--half-container) !important
         }
 
-        .nfd-scroll-slider-horizontal.nfd-scroll-slider-animate>.wp-block-cover:first-child {
+        .nfd-scroll-slider-horizontal.nfd-scroll-slider-animate > .wp-block-cover:first-child {
             animation: scroll-slider-slide 1s ease 1s forwards
         }
 
@@ -3584,12 +3629,12 @@
             display: none !important
         }
 
-        .block-editor-block-preview__content-iframe .is-root-container>.nfd-container:not([class*=nfd-p-]):not([class*=nfd-py-]):not([class*=nfd-pt-]):not([class*=nfd-pb-]):not([style*=padding]) {
+        .block-editor-block-preview__content-iframe .is-root-container > .nfd-container:not([class*=nfd-p-]):not([class*=nfd-py-]):not([class*=nfd-pt-]):not([class*=nfd-pb-]):not([style*=padding]) {
             padding-block: var(--wndb--p) !important
         }
 
-        .block-editor-block-preview__content-iframe [class*=nfd-rounded]:not([style*=-radius])>div>img:not([style*=-radius]) {
-            border-radius: calc(var(--wndb--border--radius)*var(--wndb--rounded--scale-factor)) !important
+        .block-editor-block-preview__content-iframe [class*=nfd-rounded]:not([style*=-radius]) > div > img:not([style*=-radius]) {
+            border-radius: calc(var(--wndb--border--radius) * var(--wndb--rounded--scale-factor)) !important
         }
 
         ol.nfd-gap-sm:not(.is-layout-flex) li:not(:last-child),
@@ -3668,7 +3713,7 @@
             display: none !important
         }
 
-        .nfd-form-items-grow>div:not(.wp-block-jetpack-button) {
+        .nfd-form-items-grow > div:not(.wp-block-jetpack-button) {
             flex-grow: 1 !important
         }
 
@@ -3687,7 +3732,7 @@
 
         .nfd-jp-form .contact-form-submission {
             border-color: currentColor !important;
-            padding: calc(var(--wndb--p--md)*.5) 0 !important
+            padding: calc(var(--wndb--p--md) * .5) 0 !important
         }
 
         .nfd-jp-form textarea {
@@ -3712,17 +3757,17 @@
             padding: 0 !important
         }
 
-        .nfd-mask-fade-to-b>.wp-block-cover__background {
+        .nfd-mask-fade-to-b > .wp-block-cover__background {
             -webkit-mask-image: linear-gradient(180deg, transparent 50%, #000 120%) !important;
             mask-image: linear-gradient(180deg, transparent 50%, #000 120%) !important
         }
 
-        .nfd-mask-radial-center>.wp-block-cover__background {
+        .nfd-mask-radial-center > .wp-block-cover__background {
             -webkit-mask-image: radial-gradient(circle, transparent -40%, rgba(0, 0, 0, .9) 58%) !important;
             mask-image: radial-gradient(circle, transparent -40%, rgba(0, 0, 0, .9) 58%) !important
         }
 
-        p[style*=text-decoration]>a {
+        p[style*=text-decoration] > a {
             color: inherit !important;
             text-decoration: inherit !important
         }
@@ -3732,14 +3777,14 @@
         }
 
         .nfd-h-full,
-        .nfd-h-full>.components-resizable-box__container>img,
-        .nfd-h-full>img {
+        .nfd-h-full > .components-resizable-box__container > img,
+        .nfd-h-full > img {
             height: 100% !important
         }
 
         .nfd-w-full,
-        .nfd-w-full>.components-resizable-box__container>img,
-        .nfd-w-full>img {
+        .nfd-w-full > .components-resizable-box__container > img,
+        .nfd-w-full > img {
             width: 100% !important
         }
 
@@ -3794,15 +3839,15 @@
         }
 
         .nfd-stretch-cover-child .wp-block-cover__inner-container,
-        .nfd-stretch-cover-child .wp-block-cover__inner-container>.nfd-pseudo-play-icon,
-        .nfd-stretch-cover-child .wp-block-cover__inner-container>.wp-block-group {
+        .nfd-stretch-cover-child .wp-block-cover__inner-container > .nfd-pseudo-play-icon,
+        .nfd-stretch-cover-child .wp-block-cover__inner-container > .wp-block-group {
             align-items: inherit !important;
             flex-grow: 1 !important;
             justify-content: inherit !important
         }
 
-        .nfd-stretch-cover-child .wp-block-cover__inner-container>.wp-block-group,
-        .nfd-stretch-cover-child .wp-block-cover__inner-container>p {
+        .nfd-stretch-cover-child .wp-block-cover__inner-container > .wp-block-group,
+        .nfd-stretch-cover-child .wp-block-cover__inner-container > p {
             width: 100% !important
         }
 
@@ -3867,99 +3912,117 @@
             object-position: right !important
         }
 
-        .editor-styles-wrapper .wp-block-image.nfd-h-full>div {
+        .editor-styles-wrapper .wp-block-image.nfd-h-full > div {
             aspect-ratio: unset !important;
             height: 100% !important;
             max-height: unset !important
         }
 
-        @media (max-width:782px) {
+        @media (max-width: 782px) {
             .md\:nfd-order-2 {
                 order: 2 !important
             }
+
             .md\:nfd-my-0:not([style*=margin]) {
                 margin-bottom: 0 !important;
                 margin-top: 0 !important
             }
+
             .md\:nfd-flex {
                 display: flex !important
             }
+
             .md\:nfd-hidden {
                 display: none !important
             }
+
             .md\:nfd-basis-full {
                 flex-basis: 100% !important
             }
+
             .md\:nfd-grid-cols-1 {
                 grid-template-columns: repeat(1, minmax(0, 1fr)) !important
             }
+
             .md\:nfd-flex-col {
                 flex-direction: column !important
             }
+
             .md\:nfd-flex-wrap {
                 flex-wrap: wrap !important
             }
+
             .md\:nfd-items-start {
                 align-items: flex-start !important
             }
+
             .md\:nfd-justify-start {
                 justify-content: flex-start !important
             }
+
             .md\:nfd-justify-end {
                 justify-content: flex-end !important
             }
+
             .md\:nfd-justify-center {
                 justify-content: center !important
             }
+
             .md\:nfd-gap-0 {
                 gap: 0 !important
             }
+
             .md\:nfd-gap-4 {
                 gap: 1rem !important
             }
+
             .md\:nfd-gap-5 {
                 gap: 1.25rem !important
             }
+
             .md\:nfd-gap-8 {
                 gap: 2rem !important
             }
+
             .md\:nfd-self-start {
                 align-self: flex-start !important
             }
+
             .md\:nfd-rounded-lg:not([style*=-radius]) {
                 border-radius: .5rem !important
             }
+
             .md\:nfd-border-none {
                 border-style: none !important
             }
+
             .md\:nfd-p-0:not([style*=padding]) {
                 padding: 0 !important
             }
+
             .md\:nfd-p-4:not([style*=padding]) {
                 padding: 1rem !important
             }
+
             .md\:nfd-px-0:not([style*=padding]) {
                 padding-left: 0 !important;
                 padding-right: 0 !important
             }
+
             .md\:nfd-py-0:not([style*=padding]) {
                 padding-bottom: 0 !important;
                 padding-top: 0 !important
             }
+
             .md\:nfd-text-left {
                 text-align: left !important
             }
+
             .md\:nfd-text-center {
                 text-align: center !important
             }
         }
     </style>
-    <link rel='stylesheet' id='magnific-popup-css' href='https://clairitylab.ai/wp-content/themes/aizan/assets/css/libs/magnific-popup.css?ver=1.1.0' type='text/css' media='all' />
-    <link rel='stylesheet' id='wow-animate-css' href='https://clairitylab.ai/wp-content/themes/aizan/assets/css/libs/animate.min.css?ver=1.1.0' type='text/css' media='all' />
-    <link rel='stylesheet' id='flaticon-css' href='https://clairitylab.ai/wp-content/themes/aizan/assets/fonts/flaticon/css/flaticon.css?ver=1.0.2' type='text/css' media='all' />
-    <link rel='stylesheet' id='pxl-caseicon-css' href='https://clairitylab.ai/wp-content/themes/aizan/assets/css/caseicon.css?ver=1.0.2' type='text/css' media='all' />
-    <link rel='stylesheet' id='pxl-grid-css' href='https://clairitylab.ai/wp-content/themes/aizan/assets/css/grid.css?ver=1.0.2' type='text/css' media='all' />
-    <link rel='stylesheet' id='pxl-style-css' href='https://clairitylab.ai/wp-content/themes/aizan/assets/css/style.css?ver=1.0.2' type='text/css' media='all' />
     <style id='pxl-style-inline-css' type='text/css'>
         :root {
             --primary-color: #4682b4;
@@ -3975,17 +4038,12 @@
             --gradient-color-to: #ff0048;
         }
 
-        @media screen and (min-width: 1200px) {}
+        @media screen and (min-width: 1200px) {
+        }
     </style>
-    <link rel='stylesheet' id='pxl-base-css' href='https://clairitylab.ai/wp-content/themes/aizan/style.css?ver=1.0.2' type='text/css' media='all' />
-    <link rel='stylesheet' id='pxl-google-fonts-css' href='//fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&#038;family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;subset=latin%2Clatin-ext'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-gf-local-roboto-css' href='https://clairitylab.ai/wp-content/uploads/elementor/google-fonts/css/roboto.css?ver=1746118449' type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-gf-local-robotoslab-css' href='https://clairitylab.ai/wp-content/uploads/elementor/google-fonts/css/robotoslab.css?ver=1746118460' type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-gf-local-plusjakartasans-css' href='https://clairitylab.ai/wp-content/uploads/elementor/google-fonts/css/plusjakartasans.css?ver=1746118470' type='text/css' media='all' />
-    <script type="text/javascript" src="https://clairitylab.ai/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/plugins/tnex-addons/assets/js/libs/waypoints.min.js?ver=2.0.5" id="waypoints-js"></script>
+    <link rel='stylesheet' id='pxl-google-fonts-css'
+          href='//fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&#038;family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;subset=latin%2Clatin-ext'
+          type='text/css' media='all'/>
     <script type="text/javascript" id="preloader-plus-js-extra">
         /* <![CDATA[ */
         var preloader_plus = {
@@ -3994,16 +4052,14 @@
         };
         /* ]]> */
     </script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/plugins/preloader-plus//assets/js/preloader-plus.min.js?ver=2.2.1" id="preloader-plus-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/plugins/wpcustom-preloader/js/preloader-script.js" id="wpcustom-plugin-preloader-script-js"></script>
     <script type="text/javascript" id="nfd-wonder-blocks-utilities-js-after">
         /* <![CDATA[ */
         (() => {
             var l = class {
                 constructor({
-                    clientId: t,
-                    ...n
-                } = {}) {
+                                clientId: t,
+                                ...n
+                            } = {}) {
                     this.options = {
                         activeClass: "nfd-wb-animated-in",
                         root: null,
@@ -4012,12 +4068,17 @@
                         ...n
                     }
                 }
+
                 observeElements(t, n = null, e = !1) {
-                    if (!("IntersectionObserver" in window) || !t ? .length || document.documentElement.classList.contains("block-editor-block-preview__content-iframe")) return;
+                    if (!("IntersectionObserver" in window) || !t ? .
+                    length || document.documentElement.classList.contains("block-editor-block-preview__content-iframe")
+                )
+                    return;
 
                     function a(r, i) {
                         this._mutationCallback(r, i, n)
                     }
+
                     let o = new IntersectionObserver(this._handleIntersection.bind(this), this.options),
                         d = new MutationObserver(a.bind(this)),
                         u = new MutationObserver(this._handleClassMutation.bind(this));
@@ -4032,6 +4093,7 @@
                         }))
                     })
                 }
+
                 _handleIntersection(t, n) {
                     t.forEach(e => {
                         e.isIntersecting && (e.target.classList.add(this.options.activeClass), e.target.querySelectorAll(".nfd-wb-animate").forEach(a => {
@@ -4039,17 +4101,25 @@
                         }), n.unobserve(e.target))
                     })
                 }
+
                 _handleClassMutation(t) {
                     t.forEach(n => {
-                        if (n ? .type === "attributes") {
+                        if (n ? .
+                        type === "attributes"
+                    )
+                        {
                             let e = n.target;
                             e.classList.contains("nfd-wb-animated-in") || e.classList.add("nfd-wb-animated-in")
                         }
                     })
                 }
+
                 _mutationCallback(t, n, e = null) {
                     t.forEach(a => {
-                        if (a ? .type === "attributes") {
+                        if (a ? .
+                        type === "attributes"
+                    )
+                        {
                             let o = a.target;
                             e && e === o.getAttribute("data-block") && (o.getAttribute("data-replay-animation") === null && (o.setAttribute("data-replay-animation", !0), requestAnimationFrame(() => {
                                 o.removeAttribute("data-replay-animation")
@@ -4065,18 +4135,26 @@
                 c()
             });
             document.addEventListener("wonder-blocks/animation-changed", s => {
-                let t = s ? .detail ? .clientId;
+                let t = s ?
+            .
+                detail ?
+            .
+                clientId;
                 c(t)
             });
             document.addEventListener("wonder-blocks/block-order-changed", () => {
                 c()
             });
-            window.onload = function() {
+            window.onload = function () {
                 c()
             };
 
             function c(s = null) {
-                let t = document.body ? .classList.contains("block-editor-page") || !!s || document.body ? .classList.contains("block-editor-iframe__body"),
+                let t = document.body ?
+            .
+                classList.contains("block-editor-page") || !!s || document.body ?
+            .
+                classList.contains("block-editor-iframe__body"),
                     n = t ? document.querySelector(".interface-interface-skeleton__content") : null,
                     e = new l({
                         root: n,
@@ -4090,15 +4168,11 @@
         })();
         /* ]]> */
     </script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/themes/aizan/assets/js/libs/jarallax.min.js?ver=1.1.0" id="aizan-jarallax-js"></script>
-    <link rel="https://api.w.org/" href="https://clairitylab.ai/wp-json/" />
-    <link rel="alternate" title="JSON" type="application/json" href="https://clairitylab.ai/wp-json/wp/v2/pages/15" />
-    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://clairitylab.ai/xmlrpc.php?rsd" />
-    <meta name="generator" content="WordPress 6.8.1" />
-    <link rel='shortlink' href='https://clairitylab.ai/?p=15' />
-    <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://clairitylab.ai/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fclairitylab.ai%2Fblog%2F" />
-    <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://clairitylab.ai/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fclairitylab.ai%2Fblog%2F&#038;format=xml" />
-    <meta name="generator" content="Redux 4.5.7" />
+    <link rel="https://api.w.org/" href="https://clairitylab.ai/wp-json/"/>
+
+    <meta name="generator" content="WordPress 6.8.1"/>
+    <link rel='shortlink' href='https://clairitylab.ai/?p=15'/>
+    <meta name="generator" content="Redux 4.5.7"/>
     <style>
         p.hello {
             font-size: 12px;
@@ -4194,7 +4268,7 @@
             top: -14px;
         }
 
-        #glt-translate-trigger>span {
+        #glt-translate-trigger > span {
             color: #ffffff;
         }
 
@@ -4227,18 +4301,19 @@
         }
     </style>
     <noscript>
-					<style type="text/css">
-							#wpcustom-plugin-preloader{
-								display:none !important;
-							}
-					</style>
-			</noscript>
+        <style type="text/css">
+            #wpcustom-plugin-preloader {
+                display: none !important;
+            }
+        </style>
+    </noscript>
     <style>
         img#wpstats {
             display: none
         }
     </style>
-    <meta name="generator" content="Elementor 3.29.2; features: additional_custom_breakpoints, e_local_google_fonts, e_element_cache; settings: css_print_method-internal, google_font-enabled, font_display-swap">
+    <meta name="generator"
+          content="Elementor 3.29.2; features: additional_custom_breakpoints, e_local_google_fonts, e_element_cache; settings: css_print_method-internal, google_font-enabled, font_display-swap">
     <style>
         .e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
         .e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
@@ -4259,10 +4334,8 @@
             }
         }
     </style>
-    <link rel="icon" href="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2023/09/Clarity-lab-Logi.jpg?fit=32%2C32&#038;ssl=1" sizes="32x32" />
-    <link rel="icon" href="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2023/09/Clarity-lab-Logi.jpg?fit=192%2C192&#038;ssl=1" sizes="192x192" />
-    <link rel="apple-touch-icon" href="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2023/09/Clarity-lab-Logi.jpg?fit=180%2C180&#038;ssl=1" />
-    <meta name="msapplication-TileImage" content="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2023/09/Clarity-lab-Logi.jpg?fit=270%2C270&#038;ssl=1" />
+    <meta name="msapplication-TileImage"
+          content="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2023/09/Clarity-lab-Logi.jpg?fit=270%2C270&#038;ssl=1"/>
     <style type="text/css" id="wp-custom-css">
         .elementor-element-823cab2 {
             background: #4683B4;
@@ -4356,7 +4429,9 @@
             height: 65px;
         }
     </style>
-    <style id="pxl-page-dynamic-css" data-type="redux-output-css">#pxl-wapper #pxl-main{padding-top:50px;}</style>
+    <style id="pxl-page-dynamic-css" data-type="redux-output-css">#pxl-wapper #pxl-main {
+        padding-top: 50px;
+    }</style>
     <script id="pxl-imb1-vs" type="x-shader/x-vertex">
         #ifdef GL_ES precision mediump float; #endif attribute vec3 aVertexPosition; attribute vec2 aTextureCoord; uniform mat4 uMVMatrix; uniform mat4 uPMatrix; uniform mat4 texture0Matrix; uniform mat4 texture1Matrix; uniform mat4 mapMatrix; varying vec3 vVertexPosition;
         varying vec2 vTextureCoord0; varying vec2 vTextureCoord1; varying vec2 vTextureCoordMap; void main() { vec3 vertexPosition = aVertexPosition; gl_Position = uPMatrix * uMVMatrix * vec4(vertexPosition, 1.0); vTextureCoord0 = (texture0Matrix * vec4(aTextureCoord,
@@ -4371,166 +4446,254 @@
             uv) * 0.1964825501511404; color +=t exture2D(image, uv + (off1 / resolution)) * 0.2969069646728344; color +=t exture2D(image, uv - (off1 / resolution)) * 0.2969069646728344; color +=t exture2D(image, uv + (off2 / resolution)) * 0.09447039785044732;
             color +=t exture2D(image, uv - (off2 / resolution)) * 0.09447039785044732; color +=t exture2D(image, uv + (off3 / resolution)) * 0.010381362401148057; color +=t exture2D(image, uv - (off3 / resolution)) * 0.010381362401148057; return color; }
             void main(){ vec2 uv0=v TextureCoord0; vec2 uv1=v TextureCoord1; float progress0=u Progress; float progress1=1 . - uProgress; vec4 map=b lur13(map, vTextureCoordMap, uReso, vec2(2.)) + 0.5; uv0.x +=p rogress0 * map.r; uv1.x -=p rogress1 * map.r;
-            vec4 color=t exture2D( texture0, uv0 ); vec4 color1=t exture2D( texture1, uv1 ); gl_FragColor=m ix(color, color1, progress0 ); } </script>
-            <!-- Include jQuery if not already included -->
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            vec4 color=t exture2D( texture0, uv0 ); vec4 color1=t exture2D( texture1, uv1 ); gl_FragColor=m ix(color, color1, progress0 ); }
+    </script>
+    <!-- Include jQuery if not already included -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-            <script>
-                jQuery(document).ready(function($) {
-                    if (navigator.userAgent.indexOf("Chrome") !== -1) {
-                        $('html').css('scroll-behavior', 'auto');
-                        $('body').css('scroll-behavior', 'auto');
-                    }
-                });
-            </script>
+    <script>
+        jQuery(document).ready(function ($) {
+            if (navigator.userAgent.indexOf("Chrome") !== -1) {
+                $('html').css('scroll-behavior', 'auto');
+                $('body').css('scroll-behavior', 'auto');
+            }
+        });
+    </script>
+    <link href="{% static 'css/index/style.css' %}" rel="stylesheet">
+    <script src="{% static 'js/home/main.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/home/1.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/home/2.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/home/3.js' %}" type="text/javascript"></script>
 </head>
 
 <body class="wp-singular page-template-default page page-id-15 wp-custom-logo wp-theme-aizan eio-default   pxl-redux-page  body-default-font   heading-default-font   bd-px-header--default  woocommerce-layout-grid elementor-default elementor-kit-7 elementor-page elementor-page-15">
-    <div id="pxl-wapper" class="pxl-wapper">
-        {% include 'header.html' %}
-        <div id="pxl-page-title-elementor">
-            <div data-elementor-type="wp-post" data-elementor-id="176" class="elementor elementor-176" data-elementor-post-type="pxl-template">
-                <section class="elementor-section elementor-top-section elementor-element elementor-element-5c59337 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none" data-id="5c59337"
-                    data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+<div id="pxl-wapper" class="pxl-wapper">
+    {% include 'header.html' %}
+    <div id="pxl-page-title-elementor">
+        <div data-elementor-type="wp-post" data-elementor-id="176" class="elementor elementor-176"
+             data-elementor-post-type="pxl-template">
+            <section
+                    class="elementor-section elementor-top-section elementor-element elementor-element-5c59337 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none"
+                    data-id="5c59337"
+                    data-element_type="section"
+                    data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
 
 
-                    <div class="elementor-container elementor-column-gap-extended ">
-                        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-487bd27 pxl-column-none" data-id="487bd27" data-element_type="column">
-                            <div class="elementor-widget-wrap elementor-element-populated">
+                <div class="elementor-container elementor-column-gap-extended ">
+                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-487bd27 pxl-column-none"
+                         data-id="487bd27" data-element_type="column">
+                        <div class="elementor-widget-wrap elementor-element-populated">
 
-                                <div class="elementor-element elementor-element-e0be5dc elementor-widget elementor-widget-pxl_breadcrumb" data-id="e0be5dc" data-element_type="widget" data-widget_type="pxl_breadcrumb.default">
-                                    <div class="elementor-widget-container">
-                                        <ul class="pxl-breadcrumb">
-                                            <li><a class="breadcrumb-entry" href="https://clairitylab.ai/">ClairityLab</a></li>
-                                            <li><span class="breadcrumb-entry">Blog</span></li>
-                                        </ul>
-                                    </div>
+                            <div class="elementor-element elementor-element-e0be5dc elementor-widget elementor-widget-pxl_breadcrumb"
+                                 data-id="e0be5dc" data-element_type="widget" data-widget_type="pxl_breadcrumb.default">
+                                <div class="elementor-widget-container">
+                                    <ul class="pxl-breadcrumb">
+                                        <li><a class="breadcrumb-entry" href="https://clairitylab.ai/">ClairityLab</a>
+                                        </li>
+                                        <li><span class="breadcrumb-entry">Blog</span></li>
+                                    </ul>
                                 </div>
-                                <div class="elementor-element elementor-element-802f972 elementor-widget elementor-widget-pxl_heading" data-id="802f972" data-element_type="widget" data-widget_type="pxl_heading.default">
-                                    <div class="elementor-widget-container">
-                                        <div id="pxl-pxl_heading-802f972-4171" class="pxl-heading pxl-heading--tcustom df-style">
-                                            <div class="pxl-heading--inner title heading mb-style animationtext clip">
+                            </div>
+                            <div class="elementor-element elementor-element-802f972 elementor-widget elementor-widget-pxl_heading"
+                                 data-id="802f972" data-element_type="widget" data-widget_type="pxl_heading.default">
+                                <div class="elementor-widget-container">
+                                    <div id="pxl-pxl_heading-802f972-4171"
+                                         class="pxl-heading pxl-heading--tcustom df-style">
+                                        <div class="pxl-heading--inner title heading mb-style animationtext clip">
 
-                                                <h3 class="pxl-item--title  " data-wow-delay="ms">
-                                                    Blog
-                                                    <div class="before-heading">
-                                                        <svg width="39" height="46" viewBox="0 0 39 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M10.4704 28.6324C14.1553 25.1233 24.3534 16.9879 35.666 12.5187M14.1238 40.7067C17.356 40.4323 25.7308 40.4869 33.3727 42.9013M3.27597 19.8167C4.44827 16.7921 8.17389 9.29141 13.698 3.48513" stroke="black" stroke-width="5" stroke-linecap="round"/>
-				</svg>
-                                                    </div>
-                                                </h3>
+                                            <h3 class="pxl-item--title  " data-wow-delay="ms">
+                                                Blog
+                                                <div class="before-heading">
+                                                    <svg width="39" height="46" viewBox="0 0 39 46" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10.4704 28.6324C14.1553 25.1233 24.3534 16.9879 35.666 12.5187M14.1238 40.7067C17.356 40.4323 25.7308 40.4869 33.3727 42.9013M3.27597 19.8167C4.44827 16.7921 8.17389 9.29141 13.698 3.48513"
+                                                              stroke="black" stroke-width="5" stroke-linecap="round"/>
+                                                    </svg>
+                                                </div>
+                                            </h3>
 
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="elementor-element elementor-element-602f6bc elementor-widget elementor-widget-pxl_text_editor" data-id="602f6bc" data-element_type="widget" data-widget_type="pxl_text_editor.default">
-                                    <div class="elementor-widget-container">
-                                        <div class="pxl-text-editor">
-                                            <div class="pxl-item--inner  " data-wow-delay="ms">
-                                                <p>ClairityLab empowers SMEs (Small and Medium Enterprises) in the UAE, Middle East, and Europe to adopt AI with clarity, compliance, and confidence, delivering secure, practical solutions through a collaborative
-                                                    network of specialists delivering real business impact.</p>
-                                            </div>
+                            </div>
+                            <div class="elementor-element elementor-element-602f6bc elementor-widget elementor-widget-pxl_text_editor"
+                                 data-id="602f6bc" data-element_type="widget"
+                                 data-widget_type="pxl_text_editor.default">
+                                <div class="elementor-widget-container">
+                                    <div class="pxl-text-editor">
+                                        <div class="pxl-item--inner  " data-wow-delay="ms">
+                                            <p>ClairityLab empowers SMEs (Small and Medium Enterprises) in the UAE,
+                                                Middle East, and Europe to adopt AI with clarity, compliance, and
+                                                confidence, delivering secure, practical solutions through a
+                                                collaborative
+                                                network of specialists delivering real business impact.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
         </div>
-        <div id="pxl-main">
-            <div class="elementor-container">
-                <div class="row pxl-content-wrap no-sidebar">
-                    <div id="pxl-content-area" class="pxl-content-area pxl-content-page col-12">
-                        <main id="pxl-content-main">
-                            <article id="pxl-post-15" class="post-15 page type-page status-publish hentry">
-                                <div class="pxl-entry-content clearfix">
+    </div>
+    <div id="pxl-main">
+        <div class="elementor-container">
+            <div class="row pxl-content-wrap no-sidebar">
+                <div id="pxl-content-area" class="pxl-content-area pxl-content-page col-12">
+                    <main id="pxl-content-main">
+                        <article id="pxl-post-15" class="post-15 page type-page status-publish hentry">
+                            <div class="pxl-entry-content clearfix">
 
-                                    <body>
-                                        <div data-elementor-type="wp-page" data-elementor-id="15" class="elementor elementor-15" data-elementor-post-type="page">
-                                            <section class="elementor-section elementor-top-section elementor-element elementor-element-3b07e7e elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none" data-id="3b07e7e" data-element_type="section">
+                                <body>
+                                <div data-elementor-type="wp-page" data-elementor-id="15" class="elementor elementor-15"
+                                     data-elementor-post-type="page">
+                                    <section
+                                            class="elementor-section elementor-top-section elementor-element elementor-element-3b07e7e elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none"
+                                            data-id="3b07e7e" data-element_type="section">
 
 
-                                                <div class="elementor-container elementor-column-gap-default ">
-                                                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c649dcf pxl-column-none" data-id="c649dcf" data-element_type="column">
-                                                        <div class="elementor-widget-wrap elementor-element-populated">
+                                        <div class="elementor-container elementor-column-gap-default ">
+                                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c649dcf pxl-column-none"
+                                                 data-id="c649dcf" data-element_type="column">
+                                                <div class="elementor-widget-wrap elementor-element-populated">
 
-                                                            <div class="elementor-element elementor-element-06a7d1f post-layout-post-1 elementor-widget elementor-widget-pxl_post_carousel" data-id="06a7d1f" data-element_type="widget" data-widget_type="pxl_post_carousel.default">
-                                                                <div class="elementor-widget-container">
+                                                    <div class="elementor-element elementor-element-06a7d1f post-layout-post-1 elementor-widget elementor-widget-pxl_post_carousel"
+                                                         data-id="06a7d1f" data-element_type="widget"
+                                                         data-widget_type="pxl_post_carousel.default">
+                                                        <div class="elementor-widget-container">
 
-                                                                    <div class="pxl-swiper-sliders pxl-post-carousel pxl-post-carousel1 pxl-swiper-boxshadow pxl-blog-style1 pxl-post-style1">
-                                                                        <div class="pxl-carousel-inner">
-                                                                            <div class="pxl-swiper-container" dir="ltr" data-settings='{"slide_direction":"horizontal","slide_percolumn":"1","slide_percolumnfill":"1","slide_mode":"slide","slides_to_show":"3","slides_to_show_xxl":"3","slides_to_show_lg":"3","slides_to_show_md":"3","slides_to_show_sm":"2","slides_to_show_xs":"1","slides_to_scroll":"1","slides_gutter":30,"arrow":"false","pagination":"false","pagination_type":"bullets","autoplay":"false","pause_on_hover":"true","pause_on_interaction":"true","delay":5000,"loop":"true","speed":500}'>
-                                                                                <div class="pxl-swiper-wrapper">
-                                                                                    <div class="pxl-swiper-slide">
-                                                                                        <div class="pxl-item--inner " data-wow-duration="1.2s">
-                                                                                            <div class="pxl-item--featured">
-                                                                                                <a href="https://clairitylab.ai/unlocking-africas-gen-ai-potential-why-smes-must-not-be-left-behind/"><img loading="lazy" decoding="async" class="" src="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2025/05/financial-advisor-works-revenue-balance-with-annual-statistics-scaled-820x540.jpg" width="820" height="540" alt="Financial advisor works on revenue balance with annual statistics, trying to create new report for CEO before risking income in global investments. Male accountant evaluating legal insurance." title="Financial advisor works on revenue balance with annual statistics" loading="lazy"></a>
-                                                                                            </div>
-                                                                                            <div class="pxl-item--holder">
-                                                                                                <div class="pxl-item-meta">
-                                                                                                    <span class="pxl-item--categorie"><a href="https://clairitylab.ai/category/ai/" rel="tag">AI</a></span>
-                                                                                                    <span class="pxl-item--date">May,21 2025</span>
-                                                                                                </div>
-                                                                                                <h5 class="pxl-item--title"><a href="https://clairitylab.ai/unlocking-africas-gen-ai-potential-why-smes-must-not-be-left-behind/">Unlocking Africas Gen AI Potential Why SMEs Must Not Be Left Behind</a></h5>
-                                                                                                <div class="item--content">
-                                                                                                </div>
-
-                                                                                            </div>
-                                                                                        </div>
+                                                            <div class="pxl-swiper-sliders pxl-post-carousel pxl-post-carousel1 pxl-swiper-boxshadow pxl-blog-style1 pxl-post-style1">
+                                                                <div class="pxl-carousel-inner">
+                                                                    <div class="pxl-swiper-container" dir="ltr"
+                                                                         data-settings='{"slide_direction":"horizontal","slide_percolumn":"1","slide_percolumnfill":"1","slide_mode":"slide","slides_to_show":"3","slides_to_show_xxl":"3","slides_to_show_lg":"3","slides_to_show_md":"3","slides_to_show_sm":"2","slides_to_show_xs":"1","slides_to_scroll":"1","slides_gutter":30,"arrow":"false","pagination":"false","pagination_type":"bullets","autoplay":"false","pause_on_hover":"true","pause_on_interaction":"true","delay":5000,"loop":"true","speed":500}'>
+                                                                        <div class="pxl-swiper-wrapper">
+                                                                            <div class="pxl-swiper-slide">
+                                                                                <div class="pxl-item--inner "
+                                                                                     data-wow-duration="1.2s">
+                                                                                    <div class="pxl-item--featured">
+                                                                                        <a href="https://clairitylab.ai/unlocking-africas-gen-ai-potential-why-smes-must-not-be-left-behind/"><img
+                                                                                                loading="lazy"
+                                                                                                decoding="async"
+                                                                                                class=""
+                                                                                                src="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2025/05/financial-advisor-works-revenue-balance-with-annual-statistics-scaled-820x540.jpg"
+                                                                                                width="820" height="540"
+                                                                                                alt="Financial advisor works on revenue balance with annual statistics, trying to create new report for CEO before risking income in global investments. Male accountant evaluating legal insurance."
+                                                                                                title="Financial advisor works on revenue balance with annual statistics"
+                                                                                                loading="lazy"></a>
                                                                                     </div>
-                                                                                    <div class="pxl-swiper-slide">
-                                                                                        <div class="pxl-item--inner " data-wow-duration="1.2s">
-                                                                                            <div class="pxl-item--featured">
-                                                                                                <a href="https://clairitylab.ai/humanizing-ai-how-clairitylab-empowers-smes-in-the-digital-era/"><img loading="lazy" decoding="async" class="" src="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2025/05/gradient-ai-cloud-with-broken-pieces-scaled-820x540.jpg" width="820" height="540" alt="ourMindset1" title="ourMindset1" loading="lazy"></a>
-                                                                                            </div>
-                                                                                            <div class="pxl-item--holder">
-                                                                                                <div class="pxl-item-meta">
-                                                                                                    <span class="pxl-item--categorie"><a href="https://clairitylab.ai/category/ai/" rel="tag">AI</a></span>
-                                                                                                    <span class="pxl-item--date">May,09 2025</span>
-                                                                                                </div>
-                                                                                                <h5 class="pxl-item--title"><a href="https://clairitylab.ai/humanizing-ai-how-clairitylab-empowers-smes-in-the-digital-era/">Humanizing AI: How ClairityLab Empowers SMEs in the Digital Era</a></h5>
-                                                                                                <div class="item--content">
-                                                                                                </div>
-
-                                                                                            </div>
+                                                                                    <div class="pxl-item--holder">
+                                                                                        <div class="pxl-item-meta">
+                                                                                            <span class="pxl-item--categorie"><a
+                                                                                                    href="https://clairitylab.ai/category/ai/"
+                                                                                                    rel="tag">AI</a></span>
+                                                                                            <span class="pxl-item--date">May,21 2025</span>
                                                                                         </div>
+                                                                                        <h5 class="pxl-item--title"><a
+                                                                                                href="https://clairitylab.ai/unlocking-africas-gen-ai-potential-why-smes-must-not-be-left-behind/">Unlocking
+                                                                                            Africas Gen AI Potential Why
+                                                                                            SMEs Must Not Be Left
+                                                                                            Behind</a></h5>
+                                                                                        <div class="item--content">
+                                                                                        </div>
+
                                                                                     </div>
-                                                                                    <div class="pxl-swiper-slide">
-                                                                                        <div class="pxl-item--inner " data-wow-duration="1.2s">
-                                                                                            <div class="pxl-item--featured">
-                                                                                                <a href="https://clairitylab.ai/ethical-ai-use-in-smes-building-trust-in-gcc-and-europe/"><img loading="lazy" decoding="async" class="" src="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2025/05/environment-education-day-concept-scaled-820x540.jpg" width="820" height="540" alt="Ethical AI" title="Ethical AI" loading="lazy"></a>
-                                                                                            </div>
-                                                                                            <div class="pxl-item--holder">
-                                                                                                <div class="pxl-item-meta">
-                                                                                                    <span class="pxl-item--categorie"><a href="https://clairitylab.ai/category/ai/" rel="tag">AI</a></span>
-                                                                                                    <span class="pxl-item--date">May,06 2025</span>
-                                                                                                </div>
-                                                                                                <h5 class="pxl-item--title"><a href="https://clairitylab.ai/ethical-ai-use-in-smes-building-trust-in-gcc-and-europe/">Ethical AI Use in SMEs Building Trust in GCC and Europe</a></h5>
-                                                                                                <div class="item--content">
-                                                                                                </div>
-
-                                                                                            </div>
-                                                                                        </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="pxl-swiper-slide">
+                                                                                <div class="pxl-item--inner "
+                                                                                     data-wow-duration="1.2s">
+                                                                                    <div class="pxl-item--featured">
+                                                                                        <a href="https://clairitylab.ai/humanizing-ai-how-clairitylab-empowers-smes-in-the-digital-era/"><img
+                                                                                                loading="lazy"
+                                                                                                decoding="async"
+                                                                                                class=""
+                                                                                                src="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2025/05/gradient-ai-cloud-with-broken-pieces-scaled-820x540.jpg"
+                                                                                                width="820" height="540"
+                                                                                                alt="ourMindset1"
+                                                                                                title="ourMindset1"
+                                                                                                loading="lazy"></a>
                                                                                     </div>
-                                                                                    <div class="pxl-swiper-slide">
-                                                                                        <div class="pxl-item--inner " data-wow-duration="1.2s">
-                                                                                            <div class="pxl-item--featured">
-                                                                                                <a href="https://clairitylab.ai/overcoming-ai-adoption-barriers-affordable-ai-solutions-for-smes-in-gcc-and-europe/"><img loading="lazy" decoding="async" class="" src="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2025/05/cartoon-ai-robot-scene-scaled-820x540.jpg" width="820" height="540" alt="AI Adoption" title="AI Adoption" loading="lazy"></a>
-                                                                                            </div>
-                                                                                            <div class="pxl-item--holder">
-                                                                                                <div class="pxl-item-meta">
-                                                                                                    <span class="pxl-item--categorie"><a href="https://clairitylab.ai/category/ai/" rel="tag">AI</a></span>
-                                                                                                    <span class="pxl-item--date">May,06 2025</span>
-                                                                                                </div>
-                                                                                                <h5 class="pxl-item--title"><a href="https://clairitylab.ai/overcoming-ai-adoption-barriers-affordable-ai-solutions-for-smes-in-gcc-and-europe/">Overcoming AI Adoption Barriers Affordable AI Solutions for SMEs in GCC and Europe</a></h5>
-                                                                                                <div class="item--content">
-                                                                                                </div>
-
-                                                                                            </div>
+                                                                                    <div class="pxl-item--holder">
+                                                                                        <div class="pxl-item-meta">
+                                                                                            <span class="pxl-item--categorie"><a
+                                                                                                    href="https://clairitylab.ai/category/ai/"
+                                                                                                    rel="tag">AI</a></span>
+                                                                                            <span class="pxl-item--date">May,09 2025</span>
                                                                                         </div>
+                                                                                        <h5 class="pxl-item--title"><a
+                                                                                                href="https://clairitylab.ai/humanizing-ai-how-clairitylab-empowers-smes-in-the-digital-era/">Humanizing
+                                                                                            AI: How ClairityLab Empowers
+                                                                                            SMEs in the Digital Era</a>
+                                                                                        </h5>
+                                                                                        <div class="item--content">
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="pxl-swiper-slide">
+                                                                                <div class="pxl-item--inner "
+                                                                                     data-wow-duration="1.2s">
+                                                                                    <div class="pxl-item--featured">
+                                                                                        <a href="https://clairitylab.ai/ethical-ai-use-in-smes-building-trust-in-gcc-and-europe/"><img
+                                                                                                loading="lazy"
+                                                                                                decoding="async"
+                                                                                                class=""
+                                                                                                src="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2025/05/environment-education-day-concept-scaled-820x540.jpg"
+                                                                                                width="820" height="540"
+                                                                                                alt="Ethical AI"
+                                                                                                title="Ethical AI"
+                                                                                                loading="lazy"></a>
+                                                                                    </div>
+                                                                                    <div class="pxl-item--holder">
+                                                                                        <div class="pxl-item-meta">
+                                                                                            <span class="pxl-item--categorie"><a
+                                                                                                    href="https://clairitylab.ai/category/ai/"
+                                                                                                    rel="tag">AI</a></span>
+                                                                                            <span class="pxl-item--date">May,06 2025</span>
+                                                                                        </div>
+                                                                                        <h5 class="pxl-item--title"><a
+                                                                                                href="https://clairitylab.ai/ethical-ai-use-in-smes-building-trust-in-gcc-and-europe/">Ethical
+                                                                                            AI Use in SMEs Building
+                                                                                            Trust in GCC and Europe</a>
+                                                                                        </h5>
+                                                                                        <div class="item--content">
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="pxl-swiper-slide">
+                                                                                <div class="pxl-item--inner "
+                                                                                     data-wow-duration="1.2s">
+                                                                                    <div class="pxl-item--featured">
+                                                                                        <a href="https://clairitylab.ai/overcoming-ai-adoption-barriers-affordable-ai-solutions-for-smes-in-gcc-and-europe/"><img
+                                                                                                loading="lazy"
+                                                                                                decoding="async"
+                                                                                                class=""
+                                                                                                src="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2025/05/cartoon-ai-robot-scene-scaled-820x540.jpg"
+                                                                                                width="820" height="540"
+                                                                                                alt="AI Adoption"
+                                                                                                title="AI Adoption"
+                                                                                                loading="lazy"></a>
+                                                                                    </div>
+                                                                                    <div class="pxl-item--holder">
+                                                                                        <div class="pxl-item-meta">
+                                                                                            <span class="pxl-item--categorie"><a
+                                                                                                    href="https://clairitylab.ai/category/ai/"
+                                                                                                    rel="tag">AI</a></span>
+                                                                                            <span class="pxl-item--date">May,06 2025</span>
+                                                                                        </div>
+                                                                                        <h5 class="pxl-item--title"><a
+                                                                                                href="https://clairitylab.ai/overcoming-ai-adoption-barriers-affordable-ai-solutions-for-smes-in-gcc-and-europe/">Overcoming
+                                                                                            AI Adoption Barriers
+                                                                                            Affordable AI Solutions for
+                                                                                            SMEs in GCC and Europe</a>
+                                                                                        </h5>
+                                                                                        <div class="item--content">
+                                                                                        </div>
+
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -4541,407 +4704,401 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </section>
-                                            <section class="elementor-section elementor-top-section elementor-element elementor-element-f7f3093 elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none" data-id="f7f3093" data-element_type="section">
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section
+                                            class="elementor-section elementor-top-section elementor-element elementor-element-f7f3093 elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none"
+                                            data-id="f7f3093" data-element_type="section">
 
 
-                                                <div class="elementor-container elementor-column-gap-default ">
-                                                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-49c8363 pxl-column-none" data-id="49c8363" data-element_type="column">
-                                                        <div class="elementor-widget-wrap elementor-element-populated">
+                                        <div class="elementor-container elementor-column-gap-default ">
+                                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-49c8363 pxl-column-none"
+                                                 data-id="49c8363" data-element_type="column">
+                                                <div class="elementor-widget-wrap elementor-element-populated">
 
-                                                            <div class="elementor-element elementor-element-d962822 elementor-widget elementor-widget-html" data-id="d962822" data-element_type="widget" data-widget_type="html.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <script>
-                                                                        document.querySelectorAll('.elementor-element-823cab2 a').forEach(function(link) {
-                                                                            link.setAttribute('target', '_blank');
-                                                                        });
-                                                                    </script>
-                                                                </div>
-                                                            </div>
+                                                    <div class="elementor-element elementor-element-d962822 elementor-widget elementor-widget-html"
+                                                         data-id="d962822" data-element_type="widget"
+                                                         data-widget_type="html.default">
+                                                        <div class="elementor-widget-container">
+                                                            <script>
+                                                                document.querySelectorAll('.elementor-element-823cab2 a').forEach(function (link) {
+                                                                    link.setAttribute('target', '_blank');
+                                                                });
+                                                            </script>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </section>
+                                            </div>
                                         </div>
-                                    </body>
+                                    </section>
                                 </div>
-                            </article>
-                        </main>
-                    </div>
-
+                                </body>
+                            </div>
+                        </article>
+                    </main>
                 </div>
+
             </div>
         </div>
-        <!-- #main -->
+    </div>
+    <!-- #main -->
 
-        {% include 'footer.html' %}
+    {% include 'footer.html' %}
+</div>
+<!-- #wapper -->
+<script type="speculationrules">
+    {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/aizan\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch,
+    .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<div id="flags" style="display:none" class="size18">
+    <ul id="sortable" class="ui-sortable">
+        <li id="Arabic"><a href="#" title="Arabic" class="nturl notranslate ar flag Arabic"></a></li>
+        <li id="English"><a href="#" title="English" class="nturl notranslate en flag united-states"></a></li>
+        <li id="German"><a href="#" title="German" class="nturl notranslate de flag German"></a></li>
+    </ul>
+</div>
+<div id='glt-footer'>
+    <div id="google_language_translator" class="default-language-en"></div>
+</div>
+<script>
+    function GoogleLanguageTranslatorInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'ar,en,de',
+            autoDisplay: false
+        }, 'google_language_translator');
+    }
+</script>
+<div class="preloader-plus">
+    <div class="preloader-content"><img class="preloader-custom-img"
+                                        src="https://clairitylab.ai/wp-content/uploads/2023/09/Header-Logo-2.webp"/>
     </div>
-    <!-- #wapper -->
-    <script type="speculationrules">
-        {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/aizan\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch,
-        .no-prefetch a"}}]},"eagerness":"conservative"}]}
-    </script>
-    <div id="flags" style="display:none" class="size18">
-        <ul id="sortable" class="ui-sortable">
-            <li id="Arabic"><a href="#" title="Arabic" class="nturl notranslate ar flag Arabic"></a></li>
-            <li id="English"><a href="#" title="English" class="nturl notranslate en flag united-states"></a></li>
-            <li id="German"><a href="#" title="German" class="nturl notranslate de flag German"></a></li>
-        </ul>
-    </div>
-    <div id='glt-footer'>
-        <div id="google_language_translator" class="default-language-en"></div>
-    </div>
-    <script>
-        function GoogleLanguageTranslatorInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'ar,en,de',
-                autoDisplay: false
-            }, 'google_language_translator');
-        }
-    </script>
-    <div class="preloader-plus">
-        <div class="preloader-content"> <img class="preloader-custom-img" src="https://clairitylab.ai/wp-content/uploads/2023/09/Header-Logo-2.webp" />
-        </div>
-    </div>
-    <script>
-        const lazyloadRunObserver = () => {
-            const lazyloadBackgrounds = document.querySelectorAll(`.e-con.e-parent:not(.e-lazyloaded)`);
-            const lazyloadBackgroundObserver = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        let lazyloadBackground = entry.target;
-                        if (lazyloadBackground) {
-                            lazyloadBackground.classList.add('e-lazyloaded');
-                        }
-                        lazyloadBackgroundObserver.unobserve(entry.target);
+</div>
+<script>
+    const lazyloadRunObserver = () => {
+        const lazyloadBackgrounds = document.querySelectorAll(`.e-con.e-parent:not(.e-lazyloaded)`);
+        const lazyloadBackgroundObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    let lazyloadBackground = entry.target;
+                    if (lazyloadBackground) {
+                        lazyloadBackground.classList.add('e-lazyloaded');
                     }
-                });
-            }, {
-                rootMargin: '200px 0px 200px 0px'
+                    lazyloadBackgroundObserver.unobserve(entry.target);
+                }
             });
-            lazyloadBackgrounds.forEach((lazyloadBackground) => {
-                lazyloadBackgroundObserver.observe(lazyloadBackground);
-            });
-        };
-        const events = [
-            'DOMContentLoaded',
-            'elementor/lazyload/observe',
-        ];
-        events.forEach((event) => {
-            document.addEventListener(event, lazyloadRunObserver);
+        }, {
+            rootMargin: '200px 0px 200px 0px'
         });
-    </script>
-    <link rel='stylesheet' id='widget-social-icons-css' href='https://clairitylab.ai/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=3.29.2' type='text/css' media='all' />
-    <link rel='stylesheet' id='e-apple-webkit-css' href='https://clairitylab.ai/wp-content/uploads/elementor/css/custom-apple-webkit.min.css?ver=1750960085' type='text/css' media='all' />
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/plugins/tnex-addons/assets/js/main.js?ver=1.0.0" id="pxl-core-main-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
-    <script type="text/javascript" id="wp-i18n-js-after">
-        /* <![CDATA[ */
-        wp.i18n.setLocaleData({
-            'text direction\u0004ltr': ['ltr']
+        lazyloadBackgrounds.forEach((lazyloadBackground) => {
+            lazyloadBackgroundObserver.observe(lazyloadBackground);
         });
-        /* ]]> */
-    </script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.1" id="swv-js"></script>
-    <script type="text/javascript" id="contact-form-7-js-before">
-        /* <![CDATA[ */
-        var wpcf7 = {
-            "api": {
-                "root": "https:\/\/clairitylab.ai\/wp-json\/",
-                "namespace": "contact-form-7\/v1"
-            },
-            "cached": 1
-        };
-        /* ]]> */
-    </script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.1" id="contact-form-7-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/plugins/google-language-translator/js/scripts.js?ver=6.0.20" id="scripts-js"></script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=GoogleLanguageTranslatorInit" id="scripts-google-js"></script>
-    <script type="text/javascript" id="wp_ulike-js-extra">
-        /* <![CDATA[ */
-        var wp_ulike_params = {
-            "ajax_url": "https:\/\/clairitylab.ai\/wp-admin\/admin-ajax.php",
-            "notifications": "1"
-        };
-        /* ]]> */
-    </script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/plugins/wp-ulike/assets/js/wp-ulike.min.js?ver=4.7.9.1" id="wp_ulike-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/plugins/tnex-addons/assets/js/libs/swiper/swiper.min.js?ver=5.3.6" id="swiper-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.29.2" id="elementor-webpack-runtime-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.29.2" id="elementor-frontend-modules-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
-    <script type="text/javascript" id="elementor-frontend-js-before">
-        /* <![CDATA[ */
-        var elementorFrontendConfig = {
-            "environmentMode": {
-                "edit": false,
-                "wpPreview": false,
-                "isScriptDebug": false
-            },
-            "i18n": {
-                "shareOnFacebook": "Share on Facebook",
-                "shareOnTwitter": "Share on Twitter",
-                "pinIt": "Pin it",
-                "download": "Download",
-                "downloadImage": "Download image",
-                "fullscreen": "Fullscreen",
-                "zoom": "Zoom",
-                "share": "Share",
-                "playVideo": "Play Video",
-                "previous": "Previous",
-                "next": "Next",
-                "close": "Close",
-                "a11yCarouselPrevSlideMessage": "Previous slide",
-                "a11yCarouselNextSlideMessage": "Next slide",
-                "a11yCarouselFirstSlideMessage": "This is the first slide",
-                "a11yCarouselLastSlideMessage": "This is the last slide",
-                "a11yCarouselPaginationBulletMessage": "Go to slide"
-            },
-            "is_rtl": false,
+    };
+    const events = [
+        'DOMContentLoaded',
+        'elementor/lazyload/observe',
+    ];
+    events.forEach((event) => {
+        document.addEventListener(event, lazyloadRunObserver);
+    });
+</script>
+
+<script type="text/javascript" id="wp-i18n-js-after">
+    /* <![CDATA[ */
+    wp.i18n.setLocaleData({
+        'text direction\u0004ltr': ['ltr']
+    });
+    /* ]]> */
+</script>
+
+<script type="text/javascript" id="contact-form-7-js-before">
+    /* <![CDATA[ */
+    var wpcf7 = {
+        "api": {
+            "root": "https:\/\/clairitylab.ai\/wp-json\/",
+            "namespace": "contact-form-7\/v1"
+        },
+        "cached": 1
+    };
+    /* ]]> */
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=GoogleLanguageTranslatorInit"
+        id="scripts-google-js"></script>
+<script type="text/javascript" id="wp_ulike-js-extra">
+    /* <![CDATA[ */
+    var wp_ulike_params = {
+        "ajax_url": "https:\/\/clairitylab.ai\/wp-admin\/admin-ajax.php",
+        "notifications": "1"
+    };
+    /* ]]> */
+</script>
+
+<script type="text/javascript"
+        src="{% static 'js/service/main.js' %}"
+        id="elementor-webpack-runtime-js"></script>
+<script type="text/javascript"
+        src="{% static 'js/service/1.js' %}"
+        id="swiper-js"></script>
+
+<script type="text/javascript"
+        src="{% static 'js/service/2.js' %}"
+        id="pxl-swiper-js"></script>
+
+<script type="text/javascript" id="elementor-frontend-js-before">
+    /* <![CDATA[ */
+    var elementorFrontendConfig = {
+        "environmentMode": {
+            "edit": false,
+            "wpPreview": false,
+            "isScriptDebug": false
+        },
+        "i18n": {
+            "shareOnFacebook": "Share on Facebook",
+            "shareOnTwitter": "Share on Twitter",
+            "pinIt": "Pin it",
+            "download": "Download",
+            "downloadImage": "Download image",
+            "fullscreen": "Fullscreen",
+            "zoom": "Zoom",
+            "share": "Share",
+            "playVideo": "Play Video",
+            "previous": "Previous",
+            "next": "Next",
+            "close": "Close",
+            "a11yCarouselPrevSlideMessage": "Previous slide",
+            "a11yCarouselNextSlideMessage": "Next slide",
+            "a11yCarouselFirstSlideMessage": "This is the first slide",
+            "a11yCarouselLastSlideMessage": "This is the last slide",
+            "a11yCarouselPaginationBulletMessage": "Go to slide"
+        },
+        "is_rtl": false,
+        "breakpoints": {
+            "xs": 0,
+            "sm": 480,
+            "md": 768,
+            "lg": 1025,
+            "xl": 1440,
+            "xxl": 1600
+        },
+        "responsive": {
             "breakpoints": {
-                "xs": 0,
-                "sm": 480,
-                "md": 768,
-                "lg": 1025,
-                "xl": 1440,
-                "xxl": 1600
-            },
-            "responsive": {
-                "breakpoints": {
-                    "mobile": {
-                        "label": "Mobile Portrait",
-                        "value": 767,
-                        "default_value": 767,
-                        "direction": "max",
-                        "is_enabled": true
-                    },
-                    "mobile_extra": {
-                        "label": "Mobile Landscape",
-                        "value": 880,
-                        "default_value": 880,
-                        "direction": "max",
-                        "is_enabled": false
-                    },
-                    "tablet": {
-                        "label": "Tablet Portrait",
-                        "value": 1024,
-                        "default_value": 1024,
-                        "direction": "max",
-                        "is_enabled": true
-                    },
-                    "tablet_extra": {
-                        "label": "Tablet Landscape",
-                        "value": 1200,
-                        "default_value": 1200,
-                        "direction": "max",
-                        "is_enabled": false
-                    },
-                    "laptop": {
-                        "label": "Laptop",
-                        "value": 1366,
-                        "default_value": 1366,
-                        "direction": "max",
-                        "is_enabled": true
-                    },
-                    "widescreen": {
-                        "label": "Widescreen",
-                        "value": 2400,
-                        "default_value": 2400,
-                        "direction": "min",
-                        "is_enabled": false
-                    }
+                "mobile": {
+                    "label": "Mobile Portrait",
+                    "value": 767,
+                    "default_value": 767,
+                    "direction": "max",
+                    "is_enabled": true
                 },
-                "hasCustomBreakpoints": true
-            },
-            "version": "3.29.2",
-            "is_static": false,
-            "experimentalFeatures": {
-                "additional_custom_breakpoints": true,
-                "e_local_google_fonts": true,
-                "theme_builder_v2": true,
-                "editor_v2": true,
-                "e_element_cache": true,
-                "home_screen": true,
-                "launchpad-checklist": true,
-                "cloud-library": true,
-                "e_opt_in_v4_page": true
-            },
-            "urls": {
-                "assets": "https:\/\/clairitylab.ai\/wp-content\/plugins\/elementor\/assets\/",
-                "ajaxurl": "https:\/\/clairitylab.ai\/wp-admin\/admin-ajax.php",
-                "uploadUrl": "https:\/\/clairitylab.ai\/wp-content\/uploads"
-            },
-            "nonces": {
-                "floatingButtonsClickTracking": "e7be593879"
-            },
-            "swiperClass": "swiper",
-            "settings": {
-                "page": [],
-                "editorPreferences": []
-            },
-            "kit": {
-                "active_breakpoints": ["viewport_mobile", "viewport_tablet", "viewport_laptop"],
-                "global_image_lightbox": "yes",
-                "lightbox_enable_counter": "yes",
-                "lightbox_enable_fullscreen": "yes",
-                "lightbox_enable_zoom": "yes",
-                "lightbox_enable_share": "yes",
-                "lightbox_title_src": "title",
-                "lightbox_description_src": "description"
-            },
-            "post": {
-                "id": 69,
-                "title": "Footer%20Layout%201%20-%20ClairityLab",
-                "excerpt": "",
-                "featuredImage": false
-            }
-        };
-        /* ]]> */
-    </script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.29.2" id="elementor-frontend-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/themes/aizan/elements/widgets/js/elementor.js?ver=1.0.2" id="aizan-elementor-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/themes/aizan/assets/js/libs/bundled-lenis.min.js?ver=1.0.0" id="pxl-bundled-lenis-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/themes/aizan/elements/widgets/js/carousel.js?ver=1.0.2" id="pxl-swiper-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/themes/aizan/elements/widgets/js/pxl-typewrite.js?ver=1.0.2" id="aizan-typewrite-js"></script>
-    <script type="text/javascript" id="nfd-performance-lazy-loader-js-before">
-        /* <![CDATA[ */
-        window.nfdPerformance = window.nfdPerformance || {};
-        window.nfdPerformance.imageOptimization = window.nfdPerformance.imageOptimization || {};
-        window.nfdPerformance.imageOptimization.lazyLoading = {
-            "classes": ["nfd-performance-not-lazy", "a3-notlazy", "disable-lazyload", "no-lazy", "no-lazyload", "skip-lazy"],
-            "attributes": ["data-lazy-src", "data-crazy-lazy=\"exclude\"", "data-no-lazy", "data-no-lazy=\"1\""]
-        };
-        /* ]]> */
-    </script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/plugins/bluehost-wordpress-plugin/vendor/newfold-labs/wp-module-performance/build/assets/image-lazy-loader.min.js?ver=1750376277" id="nfd-performance-lazy-loader-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/themes/aizan/assets/js/libs/magnific-popup.min.js?ver=1.1.0" id="magnific-popup-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/themes/aizan/assets/js/libs/wow.min.js?ver=1.0.0" id="wow-animate-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/themes/aizan/assets/js/libs/nice-select.min.js?ver=all" id="nice-select-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/themes/aizan/assets/js/libs/curtains.umd.min.js?ver=1.0.0" id="pxl-imb-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/themes/aizan/assets/js/libs/gsap.min.js?ver=1.0.0" id="pxl-gsap-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/themes/aizan/assets/js/libs/sticker.js?ver=1.0.0" id="pxl-sticker-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/themes/aizan/assets/js/libs/scroll-trigger.min.js?ver=1.0.0" id="pxl-gsap-trigger-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/themes/aizan/assets/js/libs/splittype.min.js?ver=1.0.0" id="pxl-gsap-splittype-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/themes/aizan/assets/js/libs/splittext.min.js?ver=1.0.0" id="pxl-gsap-splittext-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/themes/aizan/woocommerce/woocommerce.js?ver=1.0.2" id="pxl-woocommerce-js"></script>
-    <script type="text/javascript" id="pxl-main-js-extra">
-        /* <![CDATA[ */
-        var main_data = {
-            "ajax_url": "https:\/\/clairitylab.ai\/wp-admin\/admin-ajax.php"
-        };
-        /* ]]> */
-    </script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/themes/aizan/assets/js/theme.js?ver=1.0.2" id="pxl-main-js"></script>
-    <script type="text/javascript" id="jetpack-stats-js-before">
-        /* <![CDATA[ */
-        _stq = window._stq || [];
-        _stq.push(["view", JSON.parse("{\"v\":\"ext\",\"blog\":\"241060426\",\"post\":\"15\",\"tz\":\"0\",\"srv\":\"clairitylab.ai\",\"j\":\"1:14.7\"}")]);
-        _stq.push(["clickTrackerInit", "241060426", "15"]);
-        /* ]]> */
-    </script>
-    <script type="text/javascript" src="https://stats.wp.com/e-202526.js" id="jetpack-stats-js" defer="defer" data-wp-strategy="defer"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/themes/aizan/assets/js/libs/cookie.js?ver=1.4.1" id="pxl-cookie-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.28.0" id="elementor-pro-webpack-runtime-js"></script>
-    <script type="text/javascript" id="elementor-pro-frontend-js-before">
-        /* <![CDATA[ */
-        var ElementorProFrontendConfig = {
-            "ajaxurl": "https:\/\/clairitylab.ai\/wp-admin\/admin-ajax.php",
-            "nonce": "4cdf5690da",
-            "urls": {
-                "assets": "https:\/\/clairitylab.ai\/wp-content\/plugins\/elementor-pro\/assets\/",
-                "rest": "https:\/\/clairitylab.ai\/wp-json\/"
-            },
-            "settings": {
-                "lazy_load_background_images": true
-            },
-            "popup": {
-                "hasPopUps": false
-            },
-            "shareButtonsNetworks": {
-                "facebook": {
-                    "title": "Facebook",
-                    "has_counter": true
+                "mobile_extra": {
+                    "label": "Mobile Landscape",
+                    "value": 880,
+                    "default_value": 880,
+                    "direction": "max",
+                    "is_enabled": false
                 },
-                "twitter": {
-                    "title": "Twitter"
+                "tablet": {
+                    "label": "Tablet Portrait",
+                    "value": 1024,
+                    "default_value": 1024,
+                    "direction": "max",
+                    "is_enabled": true
                 },
-                "linkedin": {
-                    "title": "LinkedIn",
-                    "has_counter": true
+                "tablet_extra": {
+                    "label": "Tablet Landscape",
+                    "value": 1200,
+                    "default_value": 1200,
+                    "direction": "max",
+                    "is_enabled": false
                 },
-                "pinterest": {
-                    "title": "Pinterest",
-                    "has_counter": true
+                "laptop": {
+                    "label": "Laptop",
+                    "value": 1366,
+                    "default_value": 1366,
+                    "direction": "max",
+                    "is_enabled": true
                 },
-                "reddit": {
-                    "title": "Reddit",
-                    "has_counter": true
-                },
-                "vk": {
-                    "title": "VK",
-                    "has_counter": true
-                },
-                "odnoklassniki": {
-                    "title": "OK",
-                    "has_counter": true
-                },
-                "tumblr": {
-                    "title": "Tumblr"
-                },
-                "digg": {
-                    "title": "Digg"
-                },
-                "skype": {
-                    "title": "Skype"
-                },
-                "stumbleupon": {
-                    "title": "StumbleUpon",
-                    "has_counter": true
-                },
-                "mix": {
-                    "title": "Mix"
-                },
-                "telegram": {
-                    "title": "Telegram"
-                },
-                "pocket": {
-                    "title": "Pocket",
-                    "has_counter": true
-                },
-                "xing": {
-                    "title": "XING",
-                    "has_counter": true
-                },
-                "whatsapp": {
-                    "title": "WhatsApp"
-                },
-                "email": {
-                    "title": "Email"
-                },
-                "print": {
-                    "title": "Print"
-                },
-                "x-twitter": {
-                    "title": "X"
-                },
-                "threads": {
-                    "title": "Threads"
+                "widescreen": {
+                    "label": "Widescreen",
+                    "value": 2400,
+                    "default_value": 2400,
+                    "direction": "min",
+                    "is_enabled": false
                 }
             },
-            "facebook_sdk": {
-                "lang": "en_US",
-                "app_id": ""
+            "hasCustomBreakpoints": true
+        },
+        "version": "3.29.2",
+        "is_static": false,
+        "experimentalFeatures": {
+            "additional_custom_breakpoints": true,
+            "e_local_google_fonts": true,
+            "theme_builder_v2": true,
+            "editor_v2": true,
+            "e_element_cache": true,
+            "home_screen": true,
+            "launchpad-checklist": true,
+            "cloud-library": true,
+            "e_opt_in_v4_page": true
+        },
+        "urls": {
+            "assets": "https:\/\/clairitylab.ai\/wp-content\/plugins\/elementor\/assets\/",
+            "ajaxurl": "https:\/\/clairitylab.ai\/wp-admin\/admin-ajax.php",
+            "uploadUrl": "https:\/\/clairitylab.ai\/wp-content\/uploads"
+        },
+        "nonces": {
+            "floatingButtonsClickTracking": "e7be593879"
+        },
+        "swiperClass": "swiper",
+        "settings": {
+            "page": [],
+            "editorPreferences": []
+        },
+        "kit": {
+            "active_breakpoints": ["viewport_mobile", "viewport_tablet", "viewport_laptop"],
+            "global_image_lightbox": "yes",
+            "lightbox_enable_counter": "yes",
+            "lightbox_enable_fullscreen": "yes",
+            "lightbox_enable_zoom": "yes",
+            "lightbox_enable_share": "yes",
+            "lightbox_title_src": "title",
+            "lightbox_description_src": "description"
+        },
+        "post": {
+            "id": 69,
+            "title": "Footer%20Layout%201%20-%20ClairityLab",
+            "excerpt": "",
+            "featuredImage": false
+        }
+    };
+    /* ]]> */
+</script>
+<script type="text/javascript"
+        src="{% static 'js/blog/main.js' %}"
+        id="elementor-frontend-js"></script>
+
+<script type="text/javascript" id="nfd-performance-lazy-loader-js-before">
+    /* <![CDATA[ */
+    window.nfdPerformance = window.nfdPerformance || {};
+    window.nfdPerformance.imageOptimization = window.nfdPerformance.imageOptimization || {};
+    window.nfdPerformance.imageOptimization.lazyLoading = {
+        "classes": ["nfd-performance-not-lazy", "a3-notlazy", "disable-lazyload", "no-lazy", "no-lazyload", "skip-lazy"],
+        "attributes": ["data-lazy-src", "data-crazy-lazy=\"exclude\"", "data-no-lazy", "data-no-lazy=\"1\""]
+    };
+    /* ]]> */
+</script>
+
+<script type="text/javascript" id="pxl-main-js-extra">
+    /* <![CDATA[ */
+    var main_data = {
+        "ajax_url": "https:\/\/clairitylab.ai\/wp-admin\/admin-ajax.php"
+    };
+    /* ]]> */
+</script>
+<script type="text/javascript" id="jetpack-stats-js-before">
+    /* <![CDATA[ */
+    _stq = window._stq || [];
+    _stq.push(["view", JSON.parse("{\"v\":\"ext\",\"blog\":\"241060426\",\"post\":\"15\",\"tz\":\"0\",\"srv\":\"clairitylab.ai\",\"j\":\"1:14.7\"}")]);
+    _stq.push(["clickTrackerInit", "241060426", "15"]);
+    /* ]]> */
+</script>
+<script type="text/javascript" id="elementor-pro-frontend-js-before">
+    /* <![CDATA[ */
+    var ElementorProFrontendConfig = {
+        "ajaxurl": "https:\/\/clairitylab.ai\/wp-admin\/admin-ajax.php",
+        "nonce": "4cdf5690da",
+        "urls": {
+            "assets": "https:\/\/clairitylab.ai\/wp-content\/plugins\/elementor-pro\/assets\/",
+            "rest": "https:\/\/clairitylab.ai\/wp-json\/"
+        },
+        "settings": {
+            "lazy_load_background_images": true
+        },
+        "popup": {
+            "hasPopUps": false
+        },
+        "shareButtonsNetworks": {
+            "facebook": {
+                "title": "Facebook",
+                "has_counter": true
             },
-            "lottie": {
-                "defaultAnimationUrl": "https:\/\/clairitylab.ai\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"
+            "twitter": {
+                "title": "Twitter"
+            },
+            "linkedin": {
+                "title": "LinkedIn",
+                "has_counter": true
+            },
+            "pinterest": {
+                "title": "Pinterest",
+                "has_counter": true
+            },
+            "reddit": {
+                "title": "Reddit",
+                "has_counter": true
+            },
+            "vk": {
+                "title": "VK",
+                "has_counter": true
+            },
+            "odnoklassniki": {
+                "title": "OK",
+                "has_counter": true
+            },
+            "tumblr": {
+                "title": "Tumblr"
+            },
+            "digg": {
+                "title": "Digg"
+            },
+            "skype": {
+                "title": "Skype"
+            },
+            "stumbleupon": {
+                "title": "StumbleUpon",
+                "has_counter": true
+            },
+            "mix": {
+                "title": "Mix"
+            },
+            "telegram": {
+                "title": "Telegram"
+            },
+            "pocket": {
+                "title": "Pocket",
+                "has_counter": true
+            },
+            "xing": {
+                "title": "XING",
+                "has_counter": true
+            },
+            "whatsapp": {
+                "title": "WhatsApp"
+            },
+            "email": {
+                "title": "Email"
+            },
+            "print": {
+                "title": "Print"
+            },
+            "x-twitter": {
+                "title": "X"
+            },
+            "threads": {
+                "title": "Threads"
             }
-        };
-        /* ]]> */
-    </script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.28.0" id="elementor-pro-frontend-js"></script>
-    <script type="text/javascript" src="https://clairitylab.ai/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.28.0" id="pro-elements-handlers-js"></script>
+        },
+        "facebook_sdk": {
+            "lang": "en_US",
+            "app_id": ""
+        },
+        "lottie": {
+            "defaultAnimationUrl": "https:\/\/clairitylab.ai\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"
+        }
+    };
+    /* ]]> */
+</script>
 </body>
 
 </html>
