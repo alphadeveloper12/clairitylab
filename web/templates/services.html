@@ -5924,44 +5924,12 @@
                                             </div>
                                         </div>
                                     </section>
-                                    {% include 'blogList.html' %}
                                     <section
                                             class="elementor-section elementor-top-section elementor-element elementor-element-c257aab elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none"
                                             data-id="c257aab" data-element_type="section">
 
 
-                                        <div class="elementor-container elementor-column-gap-default ">
-                                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-0830d12 pxl-column-none"
-                                                 data-id="0830d12" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated">
 
-                                                    <div class="elementor-element elementor-element-fd3fbab elementor-widget elementor-widget-html"
-                                                         data-id="fd3fbab" data-element_type="widget"
-                                                         data-widget_type="html.default">
-                                                        <div class="elementor-widget-container">
-                                                            <script>
-                                                                document.addEventListener('DOMContentLoaded', function () {
-                                                                    const excludedContainer1 = document.querySelector('.elementor-element-81ef803');
-                                                                    const excludedContainer2 = document.getElementById('menu-menu-primary-2');
-
-                                                                    document.querySelectorAll('a').forEach(function (link) {
-                                                                        // Skip links that are inside either of the excluded containers
-                                                                        if (
-                                                                            (!excludedContainer1 || !excludedContainer1.contains(link)) &&
-                                                                            (!excludedContainer2 || !excludedContainer2.contains(link))
-                                                                        ) {
-                                                                            link.setAttribute('target', '_blank');
-                                                                        }
-                                                                    });
-                                                                });
-                                                            </script>
-
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </section>
                                 </div>
                                 </body>
@@ -6004,7 +5972,7 @@
 </script>
 <div class="preloader-plus">
     <div class="preloader-content"><img class="preloader-custom-img"
-                                        src="https://clairitylab.ai/wp-content/uploads/2023/09/Header-Logo-2.webp"/>
+                                        src="{% static 'images/media/Header-Logo-2.webp' %}"/>
     </div>
 </div>
 <script>

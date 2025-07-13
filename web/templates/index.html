@@ -27,6 +27,7 @@
             "description": "ClairityLab"
         }
     </script>
+
     <meta property="og:url" content="https://clairitylab.ai/"/>
     <meta property="og:site_name" content="ClairityLab"/>
     <meta property="og:locale" content="en_US"/>
@@ -166,122 +167,6 @@
         /* ]]> */
     </script>
 
-    <script type="text/javascript" id="nfd-wonder-blocks-utilities-js-after">
-        /* <![CDATA[ */
-        (() => {
-            var l = class {
-                constructor({
-                                clientId: t,
-                                ...n
-                            } = {}) {
-                    this.options = {
-                        activeClass: "nfd-wb-animated-in",
-                        root: null,
-                        rootMargin: "0px",
-                        threshold: 0,
-                        ...n
-                    }
-                }
-
-                observeElements(t, n = null, e = !1) {
-                    if (!("IntersectionObserver" in window) || !t ? .
-                    length || document.documentElement.classList.contains("block-editor-block-preview__content-iframe")
-                )
-                    return;
-
-                    function a(r, i) {
-                        this._mutationCallback(r, i, n)
-                    }
-
-                    let o = new IntersectionObserver(this._handleIntersection.bind(this), this.options),
-                        d = new MutationObserver(a.bind(this)),
-                        u = new MutationObserver(this._handleClassMutation.bind(this));
-                    t.forEach(r => {
-                        let i = r;
-                        r.classList.contains("nfd-wb-reveal-right") && (i = r.parentElement), o.observe(i), e && (u.observe(i, {
-                            attributes: !0,
-                            attributeFilter: ["class"]
-                        }), d.observe(i, {
-                            attributes: !0,
-                            attributeFilter: ["class"]
-                        }))
-                    })
-                }
-
-                _handleIntersection(t, n) {
-                    t.forEach(e => {
-                        e.isIntersecting && (e.target.classList.add(this.options.activeClass), e.target.querySelectorAll(".nfd-wb-animate").forEach(a => {
-                            a.classList.add(this.options.activeClass)
-                        }), n.unobserve(e.target))
-                    })
-                }
-
-                _handleClassMutation(t) {
-                    t.forEach(n => {
-                        if (n ? .
-                        type === "attributes"
-                    )
-                        {
-                            let e = n.target;
-                            e.classList.contains("nfd-wb-animated-in") || e.classList.add("nfd-wb-animated-in")
-                        }
-                    })
-                }
-
-                _mutationCallback(t, n, e = null) {
-                    t.forEach(a => {
-                        if (a ? .
-                        type === "attributes"
-                    )
-                        {
-                            let o = a.target;
-                            e && e === o.getAttribute("data-block") && (o.getAttribute("data-replay-animation") === null && (o.setAttribute("data-replay-animation", !0), requestAnimationFrame(() => {
-                                o.removeAttribute("data-replay-animation")
-                            })), n.disconnect())
-                        }
-                    })
-                }
-            };
-            document.addEventListener("DOMContentLoaded", () => {
-                c()
-            });
-            document.addEventListener("wonder-blocks/toolbar-button-added", () => {
-                c()
-            });
-            document.addEventListener("wonder-blocks/animation-changed", s => {
-                let t = s ?
-            .
-                detail ?
-            .
-                clientId;
-                c(t)
-            });
-            document.addEventListener("wonder-blocks/block-order-changed", () => {
-                c()
-            });
-            window.onload = function () {
-                c()
-            };
-
-            function c(s = null) {
-                let t = document.body ?
-            .
-                classList.contains("block-editor-page") || !!s || document.body ?
-            .
-                classList.contains("block-editor-iframe__body"),
-                    n = t ? document.querySelector(".interface-interface-skeleton__content") : null,
-                    e = new l({
-                        root: n,
-                        threshold: 0
-                    });
-                requestAnimationFrame(() => {
-                    let a = Array.from(document.getElementsByClassName("nfd-wb-animate"));
-                    e.observeElements(a, s, t)
-                })
-            }
-        })();
-        /* ]]> */
-    </script>
 
     <meta name="generator" content="Redux 4.5.7"/>
 
@@ -340,6 +225,7 @@
         });
     </script>
     <link href="{% static 'css/index/style.css' %}" rel="stylesheet">
+
 </head>
 
 <body class="home wp-singular page-template-default page page-id-30 wp-custom-logo wp-theme-aizan eio-default   pxl-redux-page  body-default-font   heading-default-font   bd-px-header--default  woocommerce-layout-grid elementor-default elementor-kit-7 elementor-page elementor-page-30">
@@ -865,7 +751,7 @@
                                                                 <div class="pxl-item--inner">
                                                                     <div class="pxl-item--icon">
                                                                         <i aria-hidden="true"
-                                                                           class="fas fa-lightbulb-on"></i></div>
+                                                                           class="fas fa-lightbulb"></i></div>
                                                                     <div class="right-content">
                                                                         <h5 class="pxl-item-title el-empty">
                                                                             <a href="#">
@@ -926,7 +812,7 @@
                                                                 <div class="pxl-item--inner">
                                                                     <div class="pxl-item--icon">
                                                                         <i aria-hidden="true"
-                                                                           class="fas fa-badge-check"></i></div>
+                                                                           class="fab fa-confluence"></i></div>
                                                                     <div class="right-content">
                                                                         <h5 class="pxl-item-title el-empty">
                                                                             <a href="#">
@@ -947,6 +833,103 @@
                                             </div>
                                         </div>
                                     </section>
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function () {
+                                            // Get all icon boxes
+                                            const iconBoxes = document.querySelectorAll('.pxl-icon-box.pxl-icon-box6.pxl--widget-hover');
+
+                                            // Function to remove active class from all icon boxes
+                                            function removeAllActiveStates() {
+                                                iconBoxes.forEach(box => {
+                                                    box.classList.remove('pxl--item-active');
+                                                    box.classList.add('default');
+                                                });
+                                            }
+
+                                            // Function to set active state on specific icon box
+                                            function setActiveState(targetBox) {
+                                                targetBox.classList.add('pxl--item-active');
+                                                targetBox.classList.remove('default');
+                                            }
+
+                                            // Add event listeners to each icon box
+                                            iconBoxes.forEach(iconBox => {
+                                                // Mouse enter event
+                                                iconBox.addEventListener('mouseenter', function () {
+                                                    // Remove active state from all boxes
+                                                    removeAllActiveStates();
+
+                                                    // Set active state on hovered box
+                                                    setActiveState(this);
+                                                });
+
+                                                // Mouse leave event - Optional: you can uncomment this if you want to revert to original state on mouse leave
+                                                // iconBox.addEventListener('mouseleave', function() {
+                                                //     // Remove active state from all boxes
+                                                //     removeAllActiveStates();
+                                                //
+                                                //     // You can set a default active state here if needed
+                                                //     // For example, make the second box active by default:
+                                                //     // if (iconBoxes[1]) {
+                                                //     //     setActiveState(iconBoxes[1]);
+                                                //     // }
+                                                // });
+                                            });
+
+                                            // Optional: Set initial active state (currently the second box has pxl--item-active)
+                                            // This ensures the correct initial state is maintained
+                                            const initialActiveBox = document.querySelector('.pxl-icon-box.pxl--item-active');
+                                            if (initialActiveBox) {
+                                                removeAllActiveStates();
+                                                setActiveState(initialActiveBox);
+                                            }
+                                        });
+
+                                        // Alternative version with more sophisticated hover handling
+                                        // Uncomment this section if you want more advanced behavior
+
+                                        /*
+                                        document.addEventListener('DOMContentLoaded', function() {
+                                            const iconBoxes = document.querySelectorAll('.pxl-icon-box.pxl-icon-box6.pxl--widget-hover');
+                                            let defaultActiveIndex = 1; // Index of the box that should be active by default (0-based)
+
+                                            // Store the original active box
+                                            const originalActiveBox = document.querySelector('.pxl-icon-box.pxl--item-active');
+                                            if (originalActiveBox) {
+                                                defaultActiveIndex = Array.from(iconBoxes).indexOf(originalActiveBox);
+                                            }
+
+                                            function updateActiveState(activeIndex) {
+                                                iconBoxes.forEach((box, index) => {
+                                                    if (index === activeIndex) {
+                                                        box.classList.add('pxl--item-active');
+                                                        box.classList.remove('default');
+                                                    } else {
+                                                        box.classList.remove('pxl--item-active');
+                                                        box.classList.add('default');
+                                                    }
+                                                });
+                                            }
+
+                                            // Add hover events
+                                            iconBoxes.forEach((iconBox, index) => {
+                                                iconBox.addEventListener('mouseenter', function() {
+                                                    updateActiveState(index);
+                                                });
+
+                                                iconBox.addEventListener('mouseleave', function() {
+                                                    // Revert to default active state after a short delay
+                                                    setTimeout(() => {
+                                                        updateActiveState(defaultActiveIndex);
+                                                    }, 100);
+                                                });
+                                            });
+
+                                            // Set initial state
+                                            updateActiveState(defaultActiveIndex);
+                                        });
+                                        */
+                                    </script>
                                     <section
                                             class="elementor-section elementor-top-section elementor-element elementor-element-be3b534 elementor-section-stretched elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none"
                                             data-id="be3b534" data-element_type="section"
@@ -1627,6 +1610,39 @@
                                             </div>
                                         </div>
                                     </section>
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function () {
+                                            const accordionTitles = document.querySelectorAll('.pxl-item--title');
+
+                                            accordionTitles.forEach(title => {
+                                                title.addEventListener('click', function () {
+                                                    const targetId = this.getAttribute('data-target');
+                                                    const targetContent = document.querySelector(targetId);
+                                                    const parentItem = this.closest('.pxl--item');
+
+                                                    // Check if this item is currently active
+                                                    const isActive = parentItem.classList.contains('active');
+
+                                                    // Close all accordion items
+                                                    document.querySelectorAll('.pxl--item').forEach(item => {
+                                                        item.classList.remove('active');
+                                                        const content = item.querySelector('.pxl-item--content');
+                                                        if (content) {
+                                                            content.style.display = 'none';
+                                                        }
+                                                    });
+
+                                                    // If the clicked item wasn't active, open it
+                                                    if (!isActive) {
+                                                        parentItem.classList.add('active');
+                                                        if (targetContent) {
+                                                            targetContent.style.display = 'block';
+                                                        }
+                                                    }
+                                                });
+                                            });
+                                        });
+                                    </script>
                                     <section
                                             class="elementor-section elementor-top-section elementor-element elementor-element-6fcd526 elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default pxl-row-scroll-none pxl-full-content-with-space-none none"
                                             data-id="6fcd526" data-element_type="section" id="form"
@@ -2207,17 +2223,7 @@
     /* ]]> */
 </script>
 
-<script type="text/javascript" id="contact-form-7-js-before">
-    /* <![CDATA[ */
-    var wpcf7 = {
-        "api": {
-            "root": "https:\/\/clairitylab.ai\/wp-json\/",
-            "namespace": "contact-form-7\/v1"
-        },
-        "cached": 1
-    };
-    /* ]]> */
-</script>
+
 
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=GoogleLanguageTranslatorInit"
         id="scripts-google-js"></script>
