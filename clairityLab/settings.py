@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-a3(u6z4e&!0qx7=xclo32&zwv$-a__zr%km550br*pvd154shp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['clairitylab.ai', 'www.clairitylab.ai', '159.89.163.177']
 
 load_dotenv()
 SYSTEME_IO_API_KEY = os.getenv('SYSTEME_IO_API_KEY')
@@ -72,6 +72,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'clairityLab.wsgi.application'
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/var/tmp/django_cache',
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
