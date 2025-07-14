@@ -537,16 +537,16 @@
         </div>
     </div>
 </footer>
-<div id="google_translate_element"></div>
+<div id="google_translate_element" style="display: none"></div>
 <script>
-  // Define the Google Translate callback function=
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'en',
-      includedLanguages: 'ar,en,de',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-  }
+    // Define the Google Translate callback function=
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'ar,en,de',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
 </script>
 
 <!-- Load the Google Translate script -->
@@ -554,40 +554,60 @@
 
 
 <script>
-  // Map readable language names to Google Translate language codes
-  const languageMap = {
-    Arabic: "ar",
-    English: "en",
-    German: "de"
-  };
+    // Map readable language names to Google Translate language codes
+    const languageMap = {
+        Arabic: "ar",
+        English: "en",
+        German: "de"
+    };
 
-  // Wait for everything to fully load
-  window.addEventListener("load", function () {
-    const waitForGoogleDropdown = setInterval(() => {
-      const googleSelect = document.querySelector("select.goog-te-combo");
-      if (googleSelect) {
-        clearInterval(waitForGoogleDropdown);
+    // Wait for everything to fully load
+    window.addEventListener("load", function () {
+        const waitForGoogleDropdown = setInterval(() => {
+            const googleSelect = document.querySelector("select.goog-te-combo");
+            if (googleSelect) {
+                clearInterval(waitForGoogleDropdown);
 
-        // Bind click events to each language link
-        document.querySelectorAll(".single-language").forEach(item => {
-          item.addEventListener("click", function (e) {
-            e.preventDefault();
-            const langKey = this.getAttribute("data-lang");
-            const langCode = languageMap[langKey];
-            if (langCode && googleSelect) {
-              googleSelect.value = langCode;
-              googleSelect.dispatchEvent(new Event("change"));
+                // Bind click events to each language link
+                document.querySelectorAll(".single-language").forEach(item => {
+                    item.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        const langKey = this.getAttribute("data-lang");
+                        const langCode = languageMap[langKey];
+                        if (langCode && googleSelect) {
+                            googleSelect.value = langCode;
+                            googleSelect.dispatchEvent(new Event("change"));
+                        }
+                    });
+                });
             }
-          });
-        });
-      }
-    }, 500); // Check every 500ms
-  });
+        }, 500); // Check every 500ms
+    });
 </script>
 
+<button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">&#8679;</button>
+<script>
+    // Get the button
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
+    // Show button on scroll
+    window.onscroll = function () {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    };
 
+    // Smooth scroll to top
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
 
+</script>
 
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous">
