@@ -216,48 +216,59 @@ submitBtn.onclick = function (e) {
     <div id="readinessLevel" class="readiness-level level-moderate">${level}</div>
     </div>
 
-    <div class="row text-center mb-4" style="display: flex; justify-content: space-between; padding: 20px">
-    <div class="category-card category-strategy" style="margin-bottom: 20px">
-        <div>
-            <h6>Strategy <span class="badge bg-light text-dark">25% weight</span></h6>
-            <p class="mb-1 fw-bold">${strategyRaw}/20</p>
-            <p class="small text-muted" style="color:#fff;">${Math.round((strategyRaw / maxPerCategory) * 100)}% • Contributes ${strategyPoints} pts</p>
-            <div class="progress" style="height: 10px;">
-                <div class=" bg-primary" role="progressbar" style="width: ${Math.round((strategyRaw / maxPerCategory) * 100)}%"></div>
-            </div>
+<div class="row g-4 text-center">
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="category-card category-strategy p-3 h-100">
+        <h6>Strategy <span class="badge bg-light text-dark">25% weight</span></h6>
+        <p class="mb-1 fw-bold">${strategyRaw}/20</p>
+        <p class="small text-muted" style="color:#fff;">
+          ${Math.round((strategyRaw / maxPerCategory) * 100)}% • Contributes ${strategyPoints} pts
+        </p>
+        <div class="progress" style="height: 10px;">
+          <div class="bg-primary" role="progressbar" style="width: ${Math.round((strategyRaw / maxPerCategory) * 100)}%"></div>
         </div>
+      </div>
     </div>
-    <div class="category-card category-people">
-        <div class="">
-            <h6>People <span class="badge bg-light text-dark">25% weight</span></h6>
-            <p class="mb-1 fw-bold">${peopleRaw}/20</p>
-            <p class="small text-muted" style="color:#fff;">${Math.round((peopleRaw / maxPerCategory) * 100)}% • Contributes ${peoplePoints} pts</p>
-            <div class="progress" style="height: 10px;">
-                <div class="bg-success" role="progressbar" style="width: ${Math.round((peopleRaw / maxPerCategory) * 100)}%"></div>
-            </div>
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="category-card category-people p-3 h-100">
+        <h6>People <span class="badge bg-light text-dark">25% weight</span></h6>
+        <p class="mb-1 fw-bold">${peopleRaw}/20</p>
+        <p class="small text-muted" style="color:#fff;">
+          ${Math.round((peopleRaw / maxPerCategory) * 100)}% • Contributes ${peoplePoints} pts
+        </p>
+        <div class="progress" style="height: 10px;">
+          <div class="bg-success" role="progressbar" style="width: ${Math.round((peopleRaw / maxPerCategory) * 100)}%"></div>
         </div>
+      </div>
     </div>
-    <div class="category-card category-data">
-        <div class="">
-            <h6>Data <span class="badge bg-light text-dark">30% weight</span></h6>
-            <p class="mb-1 fw-bold">${dataRaw}/20</p>
-            <p class="small text-muted" style="color:#fff;">${Math.round((dataRaw / maxPerCategory) * 100)}% • Contributes ${dataPoints} pts</p>
-            <div class="progress" style="height: 10px;">
-                <div class=" bg-info" role="progressbar" style="width: ${Math.round((dataRaw / maxPerCategory) * 100)}%"></div>
-            </div>
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="category-card category-data p-3 h-100">
+        <h6>Data <span class="badge bg-light text-dark">30% weight</span></h6>
+        <p class="mb-1 fw-bold">${dataRaw}/20</p>
+        <p class="small text-muted" style="color:#fff;">
+          ${Math.round((dataRaw / maxPerCategory) * 100)}% • Contributes ${dataPoints} pts
+        </p>
+        <div class="progress" style="height: 10px;">
+          <div class="bg-info" role="progressbar" style="width: ${Math.round((dataRaw / maxPerCategory) * 100)}%"></div>
         </div>
+      </div>
     </div>
-    <div class="category-card category-governance" >
-        <div class="">
-            <h6>Governance <span class="badge bg-light text-dark">20% weight</span></h6>
-            <p class="mb-1 fw-bold">${governanceRaw}/20</p>
-            <p class="small text-muted" style="color:#fff;">${Math.round((governanceRaw / maxPerCategory) * 100)}% • Contributes ${governancePoints} pts</p>
-            <div class="progress" style="height: 10px;">
-                <div class=" bg-warning" role="progressbar" style="width: ${Math.round((governanceRaw / maxPerCategory) * 100)}%"></div>
-            </div>
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="category-card category-governance p-3 h-100">
+        <h6>Governance <span class="badge bg-light text-dark">20% weight</span></h6>
+        <p class="mb-1 fw-bold">${governanceRaw}/20</p>
+        <p class="small text-muted" style="color:#fff;">
+          ${Math.round((governanceRaw / maxPerCategory) * 100)}% • Contributes ${governancePoints} pts
+        </p>
+        <div class="progress" style="height: 10px;">
+          <div class="bg-warning" role="progressbar" style="width: ${Math.round((governanceRaw / maxPerCategory) * 100)}%"></div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 
 
     <div class="card bg-light text-dark p-4 mb-4">
