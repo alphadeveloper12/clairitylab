@@ -24,9 +24,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-a3(u6z4e&!0qx7=xclo32&zwv$-a__zr%km550br*pvd154shp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['clairitylab.ai', 'www.clairitylab.ai', '159.89.163.177']
+DEBUG = True
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    '162.243.172.26',
+    'clairitylab.ai',
+    'www.clairitylab.ai'
+]
+USE_X_FORWARDED_HOST = True
 
 load_dotenv()
 SYSTEME_IO_API_KEY = os.getenv('SYSTEME_IO_API_KEY')
@@ -122,7 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
     BASE_DIR / "web/static",
