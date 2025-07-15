@@ -216,7 +216,7 @@ submitBtn.onclick = function (e) {
     <div id="readinessLevel" class="readiness-level level-moderate">${level}</div>
     </div>
 
-<div class="row g-4 text-center">
+<div class="row g-4 text-center" style="margin-bottom: 50px">
     <div class="col-12 col-sm-6 col-lg-3">
       <div class="category-card category-strategy p-3 h-100">
         <h6>Strategy <span class="badge bg-light text-dark">25% weight</span></h6>
