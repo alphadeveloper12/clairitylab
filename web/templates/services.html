@@ -17,7 +17,16 @@
     <link rel="canonical" href="{% url 'services' %}"/>
     <meta name="description"
           content="Unlock AI for Your SME: Simple, Compliant, Impactful ClairityLab empowers mid-sized businesses with tailored AI solutions starting with quick wins and PDPL/E...">
-
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "",
+            "url": "https://clairitylab.ai",
+            "logo": "",
+            "description": "ClairityLab"
+        }
+    </script>
     <meta property="og:url" content="https://clairitylab.ai/services/"/>
     <meta property="og:site_name" content="ClairityLab"/>
     <meta property="og:locale" content="en_US"/>
@@ -37,6 +46,114 @@
     <link rel='dns-prefetch' href='//fonts.googleapis.com'/>
     <link rel='preconnect' href='//i0.wp.com'/>
 
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        window._wpemojiSettings = {
+            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/15.1.0\/72x72\/",
+            "ext": ".png",
+            "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/15.1.0\/svg\/",
+            "svgExt": ".svg",
+            "source": {
+                "concatemoji": "https:\/\/clairitylab.ai\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.1"
+            }
+        };
+        /*! This file is auto-generated */
+        !function (i, n) {
+            var o, s, e;
+
+            function c(e) {
+                try {
+                    var t = {
+                        supportTests: e,
+                        timestamp: (new Date).valueOf()
+                    };
+                    sessionStorage.setItem(o, JSON.stringify(t))
+                } catch (e) {
+                }
+            }
+
+            function p(e, t, n) {
+                e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0);
+                var t = new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data),
+                    r = (e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(n, 0, 0), new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data));
+                return t.every(function (e, t) {
+                    return e === r[t]
+                })
+            }
+
+            function u(e, t, n) {
+                switch (t) {
+                    case "flag":
+                        return n(e, "\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f", "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f") ? !1 : !n(e, "\ud83c\uddfa\ud83c\uddf3", "\ud83c\uddfa\u200b\ud83c\uddf3") && !n(e, "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f", "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");
+                    case "emoji":
+                        return !n(e, "\ud83d\udc26\u200d\ud83d\udd25", "\ud83d\udc26\u200b\ud83d\udd25")
+                }
+                return !1
+            }
+
+            function f(e, t, n) {
+                var r = "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? new OffscreenCanvas(300, 150) : i.createElement("canvas"),
+                    a = r.getContext("2d", {
+                        willReadFrequently: !0
+                    }),
+                    o = (a.textBaseline = "top", a.font = "600 32px Arial", {});
+                return e.forEach(function (e) {
+                    o[e] = t(a, e, n)
+                }), o
+            }
+
+            function t(e) {
+                var t = i.createElement("script");
+                t.src = e, t.defer = !0, i.head.appendChild(t)
+            }
+
+            "undefined" != typeof Promise && (o = "wpEmojiSettingsSupports", s = ["flag", "emoji"], n.supports = {
+                everything: !0,
+                everythingExceptFlag: !0
+            }, e = new Promise(function (e) {
+                i.addEventListener("DOMContentLoaded", e, {
+                    once: !0
+                })
+            }), new Promise(function (t) {
+                var n = function () {
+                    try {
+                        var e = JSON.parse(sessionStorage.getItem(o));
+                        if ("object" == typeof e && "number" == typeof e.timestamp && (new Date).valueOf() < e.timestamp + 604800 && "object" == typeof e.supportTests) return e.supportTests
+                    } catch (e) {
+                    }
+                    return null
+                }();
+                if (!n) {
+                    if ("undefined" != typeof Worker && "undefined" != typeof OffscreenCanvas && "undefined" != typeof URL && URL.createObjectURL && "undefined" != typeof Blob) try {
+                        var e = "postMessage(" + f.toString() + "(" + [JSON.stringify(s), u.toString(), p.toString()].join(",") + "));",
+                            r = new Blob([e], {
+                                type: "text/javascript"
+                            }),
+                            a = new Worker(URL.createObjectURL(r), {
+                                name: "wpTestEmojiSupports"
+                            });
+                        return void (a.onmessage = function (e) {
+                            c(n = e.data), a.terminate(), t(n)
+                        })
+                    } catch (e) {
+                    }
+                    c(n = f(s, u, p))
+                }
+                t(n)
+            }).then(function (e) {
+                for (var t in e) n.supports[t] = e[t], n.supports.everything = n.supports.everything && n.supports[t], "flag" !== t && (n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && n.supports[t]);
+                n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && !n.supports.flag, n.DOMReady = !1, n.readyCallback = function () {
+                    n.DOMReady = !0
+                }
+            }).then(function () {
+                return e
+            }).then(function () {
+                var e;
+                n.supports.everything || (n.readyCallback(), (e = n.source || {}).concatemoji ? t(e.concatemoji) : e.wpemoji && e.twemoji && (t(e.twemoji), t(e.wpemoji)))
+            }))
+        }((window, document), window._wpemojiSettings);
+        /* ]]> */
+    </script>
 
     <style id='wp-emoji-styles-inline-css' type='text/css'>
         img.wp-smiley,
@@ -4652,6 +4769,13 @@
           href='//fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&#038;family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;subset=latin%2Clatin-ext'
           type='text/css' media='all'/>
 
+    <script type="text/javascript" src="https://clairitylab.ai/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"
+            id="jquery-core-js"></script>
+    <script type="text/javascript" src="https://clairitylab.ai/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"
+            id="jquery-migrate-js"></script>
+    <script type="text/javascript"
+            src="https://clairitylab.ai/wp-content/plugins/tnex-addons/assets/js/libs/waypoints.min.js?ver=2.0.5"
+            id="waypoints-js"></script>
     <script type="text/javascript" id="preloader-plus-js-extra">
         /* <![CDATA[ */
         var preloader_plus = {
@@ -4660,7 +4784,12 @@
         };
         /* ]]> */
     </script>
-
+    <script type="text/javascript"
+            src="https://clairitylab.ai/wp-content/plugins/preloader-plus//assets/js/preloader-plus.min.js?ver=2.2.1"
+            id="preloader-plus-js"></script>
+    <script type="text/javascript"
+            src="https://clairitylab.ai/wp-content/plugins/wpcustom-preloader/js/preloader-script.js"
+            id="wpcustom-plugin-preloader-script-js"></script>
     <script type="text/javascript" id="nfd-wonder-blocks-utilities-js-after">
         /* <![CDATA[ */
         (() => {
@@ -4777,6 +4906,9 @@
         })();
         /* ]]> */
     </script>
+    <script type="text/javascript"
+            src="https://clairitylab.ai/wp-content/themes/aizan/assets/js/libs/jarallax.min.js?ver=1.1.0"
+            id="aizan-jarallax-js"></script>
 
     <meta name="generator" content="WordPress 6.8.1"/>
 
@@ -4943,7 +5075,16 @@
             }
         }
     </style>
-
+    <link rel="icon"
+          href="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2023/09/Clarity-lab-Logi.jpg?fit=32%2C32&#038;ssl=1"
+          sizes="32x32"/>
+    <link rel="icon"
+          href="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2023/09/Clarity-lab-Logi.jpg?fit=192%2C192&#038;ssl=1"
+          sizes="192x192"/>
+    <link rel="apple-touch-icon"
+          href="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2023/09/Clarity-lab-Logi.jpg?fit=180%2C180&#038;ssl=1"/>
+    <meta name="msapplication-TileImage"
+          content="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2023/09/Clarity-lab-Logi.jpg?fit=270%2C270&#038;ssl=1"/>
     <style type="text/css" id="wp-custom-css">
         .elementor-element-823cab2 {
             background: #4683B4;
@@ -5067,94 +5208,6 @@
             }
         });
     </script>
-    <style>
-
-
-        .accessment__slider__card {
-            width: 360px;
-            height: 420px;
-            perspective: 1000px;
-            border-radius: 24px;
-        }
-        .assessmenrt__p{
-            padding: 0 100px;
-        }
-
-        .accessment__slider__card-content {
-            width: 100%;
-            height: 100%;
-            border-radius: 24px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1),
-            0 3px 10px rgba(0, 0, 0, 0.07);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 30px;
-            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-            position: relative;
-            background-image: url("{% static 'images/media/phase1.jpg' %}");
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-
-        .accessment__slider__card:hover {
-            transform: rotateY(3deg) rotateX(3deg);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2),
-            0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .accessment__slider__phase-heading {
-            font-size: 28px;
-            font-weight: 700;
-            color: #1a1a2e;
-            margin-bottom: 30px;
-        }
-
-        .accessment__slider__action-button {
-            padding: 14px 24px;
-            border: none;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            background: linear-gradient(135deg, #5e60ce 0%, #4ea8de 100%);
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .accessment__slider__action-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(94, 96, 206, 0.2);
-        }
-
-        .accessment__slider__action-button:active {
-            transform: translateY(0px);
-        }
-
-        @media (max-width: 400px) {
-            .assessmenrt__p{
-                padding: 0!important;
-            }
-            .accessment__slider__card {
-                width: 90%;
-                height: 400px;
-            }
-
-            .accessment__slider__phase-heading {
-                font-size: 24px;
-            }
-
-            .accessment__slider__action-button {
-                font-size: 15px;
-                padding: 12px 20px;
-            }
-        }
-    </style>
     <link href="{% static 'css/index/style.css' %}" rel="stylesheet">
     <script src="{% static 'js/home/main.js' %}" type="text/javascript"></script>
     <script src="{% static 'js/home/1.js' %}" type="text/javascript"></script>
@@ -5800,130 +5853,115 @@
                                             </div>
                                         </div>
                                     </section>
-                                    <div style="background: #AFC3DC; padding: 100px 0">
-                                        <div class="elementor-widget-wrap elementor-element-populated">
+                                    <section
+                                            class="elementor-section elementor-top-section elementor-element elementor-element-af87e0b elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle pxl-row-scroll-none none"
+                                            data-id="af87e0b"
+                                            data-element_type="section"
+                                            data-settings='{"background_background":"classic"}'>
 
-                                            <div class="elementor-element elementor-element-3e08cdc elementor-widget elementor-widget-pxl_heading"
-                                                 data-id="3e08cdc" data-element_type="widget"
-                                                 data-widget_type="pxl_heading.default">
-                                                <div class="elementor-widget-container">
-                                                    <div id="pxl-pxl_heading-3e08cdc-8321"
-                                                         class="pxl-heading pxl-heading--tcustom df-style">
-                                                        <div class="pxl-heading--inner title heading mb-style animationtext clip">
+                                        <div class="elementor-background-overlay"></div>
 
-                                                            <h3 class="pxl-item--title  " data-wow-delay="ms">
-                                                                Your AI Journey Doesn’t Stop Here<br>
-                                                                <span style="font-size: 28px">Take the First Step Toward AI Success with a Free Readiness Assessment</span>
-                                                            </h3>
+                                        <div class="elementor-container elementor-column-gap-default ">
+                                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7358f8c pxl-column-none"
+                                                 data-id="7358f8c" data-element_type="column">
+                                                <div class="elementor-widget-wrap elementor-element-populated">
 
+                                                    <div class="elementor-element elementor-element-3e08cdc elementor-widget elementor-widget-pxl_heading"
+                                                         data-id="3e08cdc" data-element_type="widget"
+                                                         data-widget_type="pxl_heading.default">
+                                                        <div class="elementor-widget-container">
+                                                            <div id="pxl-pxl_heading-3e08cdc-8321"
+                                                                 class="pxl-heading pxl-heading--tcustom df-style">
+                                                                <div class="pxl-heading--inner title heading mb-style animationtext clip">
+
+                                                                    <h3 class="pxl-item--title  " data-wow-delay="ms">
+                                                                        Your AI Journey Doesn’t Stop Here<br>
+                                                                        <span style="font-size: 28px">Take the First Step Toward AI Success with a Free Readiness Assessment</span>
+                                                                    </h3>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elementor-element elementor-element-154700b elementor-widget elementor-widget-text-editor"
+                                                         data-id="154700b" data-element_type="widget"
+                                                         data-widget_type="text-editor.default">
+                                                        <div class="elementor-widget-container">
+                                                            <p>At ClairityLab, we believe every AI journey starts with
+                                                                clarity. Our free AI Readiness Self-Assessment is
+                                                                designed to help mid-sized businesses like yours
+                                                                understand where you stand today—and what’s possible
+                                                                tomorrow. In just a few minutes, you'll receive
+                                                                personalized insights, a professional PDF report, and a
+                                                                clear readiness score to guide your next steps. No tech
+                                                                jargon, no pressure—just real value to ignite your AI
+                                                                strategy.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elementor-element elementor-element-3657e61 elementor-widget__width-inherit elementor-align-center elementor-align-center elementor-widget elementor-widget-pxl_button"
+                                                         data-id="3657e61" data-element_type="widget"
+                                                         data-widget_type="pxl_button.default">
+                                                        <div class="elementor-widget-container">
+                                                            <div id="pxl-pxl_button-3657e61-1814"
+                                                                 class="pxl-button pxl-atc-link " data-wow-delay="ms">
+                                                                <a href="{% url 'assessment_form' %}"
+                                                                   class="btn pxl-icon-active btn-text-nanuk btn-default  pxl-icon--right"
+                                                                   data-wow-delay="ms"
+                                                                   data-target=".pxl-page-popup-template-0">
+               <span class="pxl--btn-text" data-text="Take Assessment">
+    <span data-text="T">T</span><span data-text="a">a</span><span data-text="k">k</span><span data-text="e">e</span>
+    <span data-text="A">A</span><span data-text="s">s</span><span data-text="s">s</span><span
+                       data-text="e">e</span><span data-text="s">s</span><span data-text="s">s</span><span
+                       data-text="m">m</span><span data-text="e">e</span><span data-text="n">n</span><span
+                       data-text="t">t</span>
+</span>
+
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="elementor-element elementor-element-154700b elementor-widget elementor-widget-text-editor"
-                                                 data-id="154700b" data-element_type="widget"
-                                                 data-widget_type="text-editor.default">
-                                                <div class="elementor-widget-container">
-                                                    <p style="color:#000;" class="assessmenrt__p">At ClairityLab, we believe every AI journey starts with
-                                                        clarity. Our free AI Readiness Self-Assessment is
-                                                        designed to help mid-sized businesses like yours
-                                                        understand where you stand today—and what’s possible
-                                                        tomorrow. In just a few minutes, you'll receive
-                                                        personalized insights, a professional PDF report, and a
-                                                        clear readiness score to guide your next steps. No tech
-                                                        jargon, no pressure—just real value to ignite your AI
-                                                        strategy.</p>
-                                                </div>
-                                            </div>
                                         </div>
-                                        <div style="display: flex; justify-content: center; align-items: center; margin-top: 50px">
-                                            <div class="accessment__slider__card">
-                                                <div class="accessment__slider__card-content"
-                                                     >
-
-                                                    <a href="{% url 'assessment_form' %}" class="accessment__slider__action-button">
-                                                        Take Assessment
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-{#                                    <section#}
-{#                                            class="elementor-section elementor-top-section elementor-element elementor-element-af87e0b elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle pxl-row-scroll-none none"#}
-{#                                            data-id="af87e0b"#}
-{#                                            data-element_type="section"#}
-{#                                            data-settings='{"background_background":"classic"}'>#}
-{##}
-{#                                        <div class="elementor-background-overlay"></div>#}
-{##}
-{#                                        <div class="elementor-container elementor-column-gap-default ">#}
-{#                                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7358f8c pxl-column-none"#}
-{#                                                 data-id="7358f8c" data-element_type="column">#}
-{#                                                <div class="elementor-widget-wrap elementor-element-populated">#}
-{##}
-{#                                                    <div class="elementor-element elementor-element-3e08cdc elementor-widget elementor-widget-pxl_heading"#}
-{#                                                         data-id="3e08cdc" data-element_type="widget"#}
-{#                                                         data-widget_type="pxl_heading.default">#}
-{#                                                        <div class="elementor-widget-container">#}
-{#                                                            <div id="pxl-pxl_heading-3e08cdc-8321"#}
-{#                                                                 class="pxl-heading pxl-heading--tcustom df-style">#}
-{#                                                                <div class="pxl-heading--inner title heading mb-style animationtext clip">#}
-{##}
-{#                                                                    <h3 class="pxl-item--title  " data-wow-delay="ms">#}
-{#                                                                        Your AI Journey Doesn’t Stop Here<br>#}
-{#                                                                        <span style="font-size: 28px">Take the First Step Toward AI Success with a Free Readiness Assessment</span>#}
-{#                                                                    </h3>#}
-{##}
-{#                                                                </div>#}
-{#                                                            </div>#}
-{#                                                        </div>#}
-{#                                                    </div>#}
-{#                                                    <div class="elementor-element elementor-element-154700b elementor-widget elementor-widget-text-editor"#}
-{#                                                         data-id="154700b" data-element_type="widget"#}
-{#                                                         data-widget_type="text-editor.default">#}
-{#                                                        <div class="elementor-widget-container">#}
-{#                                                            <p>At ClairityLab, we believe every AI journey starts with#}
-{#                                                                clarity. Our free AI Readiness Self-Assessment is#}
-{#                                                                designed to help mid-sized businesses like yours#}
-{#                                                                understand where you stand today—and what’s possible#}
-{#                                                                tomorrow. In just a few minutes, you'll receive#}
-{#                                                                personalized insights, a professional PDF report, and a#}
-{#                                                                clear readiness score to guide your next steps. No tech#}
-{#                                                                jargon, no pressure—just real value to ignite your AI#}
-{#                                                                strategy.</p>#}
-{#                                                        </div>#}
-{#                                                    </div>#}
-{#                                                    <div class="elementor-element elementor-element-3657e61 elementor-widget__width-inherit elementor-align-center elementor-align-center elementor-widget elementor-widget-pxl_button"#}
-{#                                                         data-id="3657e61" data-element_type="widget"#}
-{#                                                         data-widget_type="pxl_button.default">#}
-{#                                                        <div class="elementor-widget-container">#}
-{#                                                            <div id="pxl-pxl_button-3657e61-1814"#}
-{#                                                                 class="pxl-button pxl-atc-link " data-wow-delay="ms">#}
-{#                                                                <a href="{% url 'assessment_form' %}"#}
-{#                                                                   class="btn pxl-icon-active btn-text-nanuk btn-default  pxl-icon--right"#}
-{#                                                                   data-wow-delay="ms"#}
-{#                                                                   data-target=".pxl-page-popup-template-0">#}
-{#               <span class="pxl--btn-text" data-text="Take Assessment">#}
-{#    <span data-text="T">T</span><span data-text="a">a</span><span data-text="k">k</span><span data-text="e">e</span>#}
-{#    <span data-text="A">A</span><span data-text="s">s</span><span data-text="s">s</span><span#}
-{#                       data-text="e">e</span><span data-text="s">s</span><span data-text="s">s</span><span#}
-{#                       data-text="m">m</span><span data-text="e">e</span><span data-text="n">n</span><span#}
-{#                       data-text="t">t</span>#}
-{#</span>#}
-{##}
-{#                                                                </a>#}
-{#                                                            </div>#}
-{#                                                        </div>#}
-{#                                                    </div>#}
-{#                                                </div>#}
-{#                                            </div>#}
-{#                                        </div>#}
-{#                                    </section>#}
+                                    </section>
+                                    {% include 'blogList.html' %}
                                     <section
                                             class="elementor-section elementor-top-section elementor-element elementor-element-c257aab elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none"
                                             data-id="c257aab" data-element_type="section">
 
 
+                                        <div class="elementor-container elementor-column-gap-default ">
+                                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-0830d12 pxl-column-none"
+                                                 data-id="0830d12" data-element_type="column">
+                                                <div class="elementor-widget-wrap elementor-element-populated">
+
+                                                    <div class="elementor-element elementor-element-fd3fbab elementor-widget elementor-widget-html"
+                                                         data-id="fd3fbab" data-element_type="widget"
+                                                         data-widget_type="html.default">
+                                                        <div class="elementor-widget-container">
+                                                            <script>
+                                                                document.addEventListener('DOMContentLoaded', function () {
+                                                                    const excludedContainer1 = document.querySelector('.elementor-element-81ef803');
+                                                                    const excludedContainer2 = document.getElementById('menu-menu-primary-2');
+
+                                                                    document.querySelectorAll('a').forEach(function (link) {
+                                                                        // Skip links that are inside either of the excluded containers
+                                                                        if (
+                                                                            (!excludedContainer1 || !excludedContainer1.contains(link)) &&
+                                                                            (!excludedContainer2 || !excludedContainer2.contains(link))
+                                                                        ) {
+                                                                            link.setAttribute('target', '_blank');
+                                                                        }
+                                                                    });
+                                                                });
+                                                            </script>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </section>
                                 </div>
                                 </body>
@@ -5938,7 +5976,7 @@
     <!-- #main -->
 
     {% include 'footer.html' %}
-
+    <a class="pxl-scroll-top" href="#"><i class="caseicon-long-arrow-right-three"></i></a>
 </div>
 <!-- #wapper -->
 <script type="speculationrules">
