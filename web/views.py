@@ -35,6 +35,10 @@ def index(request):
     return render(request, 'index.html')
 
 
+def custom_404(request, exception=None):
+    return render(request, '404.html', status=404)
+
+
 def about(request):
     return render(request, 'about.html')
 
@@ -50,17 +54,22 @@ def credentials(request):
 def blog(request):
     return render(request, 'blog.html')
 
+
 def blog1(request):
     return render(request, 'blog1.html')
+
 
 def blog2(request):
     return render(request, 'blog2.html')
 
+
 def blog3(request):
     return render(request, 'blog3.html')
 
+
 def blog4(request):
     return render(request, 'blog4.html')
+
 
 def contact(request):
     return render(request, 'contact.html')

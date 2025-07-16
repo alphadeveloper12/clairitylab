@@ -76,6 +76,7 @@ TEMPLATES = [
         },
     },
 ]
+HANDLER404 = 'web.views.custom_404'
 
 WSGI_APPLICATION = 'clairityLab.wsgi.application'
 CACHES = {
