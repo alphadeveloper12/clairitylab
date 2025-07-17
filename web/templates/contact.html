@@ -4788,7 +4788,8 @@
                                                          data-id="360efe8" data-element_type="widget"
                                                          data-widget_type="icon-list.default">
                                                         <div class="elementor-widget-container">
-                                                            <ul class="elementor-icon-list-items" style="list-style: none;">
+                                                            <ul class="elementor-icon-list-items"
+                                                                style="list-style: none;">
                                                                 <li class="elementor-icon-list-item">
                                                                             <span class="elementor-icon-list-icon">
 							<i aria-hidden="true" class="fas fa-map-marker-alt"></i>						</span>
@@ -4844,8 +4845,7 @@
                                                                            aria-atomic="true"></p>
                                                                         <ul></ul>
                                                                     </div>
-                                                                    <form action=""
-                                                                          method="post"
+                                                                    <form id="contactForm"
                                                                           class="custom-form needs-validation"
                                                                           novalidate>
                                                                         <div class="container p-4 rounded">
@@ -4887,9 +4887,9 @@
                                                                                          data-sitekey="6Le9mjgrAAAAADSebmDvNiszJhBKC8cbamaQ0ijs"></div>
                                                                                 </div>
 
-                                                                                <!-- Submit Button -->
+                                                                                <!-- Custom Button -->
                                                                                 <div class="col-lg-12">
-                                                                                    <button type="submit"
+                                                                                    <button id="connectBtn"
                                                                                             class="btn btn-primary w-100">
                                                                                         Connect
                                                                                     </button>
@@ -4903,6 +4903,39 @@
                                                                     <script src="https://www.google.com/recaptcha/api.js"
                                                                             async defer></script>
 
+                                                                    <script>
+                                                                        document.getElementById('connectBtn').addEventListener('click', function (e) {
+                                                                            e.preventDefault();
+
+                                                                            const form = document.getElementById('contactForm');
+                                                                            if (!form.checkValidity()) {
+                                                                                form.classList.add('was-validated');
+                                                                                return;
+                                                                            }
+
+                                                                            grecaptcha.ready(function () {
+                                                                                grecaptcha.execute('6Le9mjgrAAAAADSebmDvNiszJhBKC8cbamaQ0ijs', {action: 'submit'}).then(function (token) {
+                                                                                    const email = document.querySelector('[name="email"]').value;
+                                                                                    const message = document.querySelector('[name="message"]').value;
+
+                                                                                    fetch('/api/connect-request/', {
+                                                                                        method: 'POST',
+                                                                                        headers: {'Content-Type': 'application/json'},
+                                                                                        body: JSON.stringify({
+                                                                                            email: email,
+                                                                                            message: message,
+                                                                                            'g-recaptcha-response': token
+                                                                                        })
+                                                                                    })
+                                                                                        .then(res => res.json())
+                                                                                        .then(data => alert(data.message || data.error))
+                                                                                        .catch(err => alert('Something went wrong!'));
+                                                                                });
+                                                                            });
+                                                                        });
+                                                                    </script>
+
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4911,30 +4944,7 @@
                                             </div>
                                         </div>
                                     </section>
-                                    <script>
-                                        document.querySelector('form').addEventListener('submit', function (e) {
-                                            e.preventDefault();
 
-                                            grecaptcha.ready(function () {
-                                                grecaptcha.execute('YOUR_SITE_KEY', {action: 'submit'}).then(function (token) {
-                                                    const email = document.querySelector('[name="your-email"]').value;
-                                                    const message = document.querySelector('[name="your-message"]').value;
-
-                                                    fetch('/api/connect-request/', {
-                                                        method: 'POST',
-                                                        headers: {'Content-Type': 'application/json'},
-                                                        body: JSON.stringify({
-                                                            email: email,
-                                                            message: message,
-                                                            'g-recaptcha-response': token
-                                                        })
-                                                    })
-                                                        .then(res => res.json())
-                                                        .then(data => alert(data.message || data.error));
-                                                });
-                                            });
-                                        });
-                                    </script>
 
                                     <section
                                             class="elementor-section elementor-top-section elementor-element elementor-element-ae564f4 elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default pxl-row-scroll-none pxl-full-content-with-space-none none"
