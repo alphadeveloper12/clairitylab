@@ -27,6 +27,8 @@
             "description": "ClairityLab"
         }
     </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <meta property="og:url" content="https://clairitylab.ai/contact-us/"/>
     <meta property="og:site_name" content="ClairityLab"/>
     <meta property="og:locale" content="en_US"/>
@@ -4796,11 +4798,11 @@
                                                                 <a class="elementor-repeater-item-3bdcf7a ps-top"
                                                                    href="https://www.instagram.com/clairitylab/">
                                                                     <i aria-hidden="true"
-                                                                       class="flaticon flaticon-instagram"></i> </a>
+                                                                       class="fab fa-instagram"></i> </a>
                                                                 <a class="elementor-repeater-item-a16096c ps-top"
                                                                    href="https://www.linkedin.com/in/okkafraile/">
                                                                     <i aria-hidden="true"
-                                                                       class="flaticon flaticon-linkedin"></i> </a>
+                                                                       class="fab fa-linkedin"></i> </a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4892,6 +4894,8 @@
                                                                         </div>
 
                                                                     </form>
+                                                                    <script src="https://www.google.com/recaptcha/api.js?render=your-site-key"></script>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4900,6 +4904,31 @@
                                             </div>
                                         </div>
                                     </section>
+                                    <script>
+                                        document.querySelector('form').addEventListener('submit', function (e) {
+                                            e.preventDefault();
+
+                                            grecaptcha.ready(function () {
+                                                grecaptcha.execute('YOUR_SITE_KEY', {action: 'submit'}).then(function (token) {
+                                                    const email = document.querySelector('[name="your-email"]').value;
+                                                    const message = document.querySelector('[name="your-message"]').value;
+
+                                                    fetch('/api/connect-request/', {
+                                                        method: 'POST',
+                                                        headers: {'Content-Type': 'application/json'},
+                                                        body: JSON.stringify({
+                                                            email: email,
+                                                            message: message,
+                                                            'g-recaptcha-response': token
+                                                        })
+                                                    })
+                                                        .then(res => res.json())
+                                                        .then(data => alert(data.message || data.error));
+                                                });
+                                            });
+                                        });
+                                    </script>
+
                                     <section
                                             class="elementor-section elementor-top-section elementor-element elementor-element-ae564f4 elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default pxl-row-scroll-none pxl-full-content-with-space-none none"
                                             data-id="ae564f4" data-element_type="section"

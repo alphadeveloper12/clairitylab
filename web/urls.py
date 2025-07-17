@@ -21,4 +21,6 @@ urlpatterns = [
     path('accessment/summary/<int:assessment_id>/', summary, name='summary'),
     path('add_contact/', add_contact_view, name='add-contact'),
     path('api/create-clickup-task/', create_clickup_task, name='create_clickup_task'),
+    path('api/contact/connect/', connect_request, name='connect_request'),
+
 ]
