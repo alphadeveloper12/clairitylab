@@ -4386,85 +4386,8 @@ jQuery(window).on('load', function () {
         }))
     };
 
-    function p(e, t = {}) {
-        if (wpcf7.blocked) return d(e), void n(e, "submitting");
-        const c = new FormData(e);
-        t.submitter && t.submitter.name && c.append(t.submitter.name, t.submitter.value);
-        const o = {
-            contactFormId: e.wpcf7.id,
-            pluginVersion: e.wpcf7.pluginVersion,
-            contactFormLocale: e.wpcf7.locale,
-            unitTag: e.wpcf7.unitTag,
-            containerPostId: e.wpcf7.containerPost,
-            status: e.wpcf7.status,
-            inputs: Array.from(c, (e => {
-                const t = e[0], a = e[1];
-                return !t.match(/^_/) && {name: t, value: a}
-            })).filter((e => !1 !== e)),
-            formData: c
-        };
-        r({
-            endpoint: `contact-forms/${e.wpcf7.id}/feedback`,
-            method: "POST",
-            body: c,
-            wpcf7: {endpoint: "feedback", form: e, detail: o}
-        }).then((t => {
-            const r = n(e, t.status);
-            return o.status = t.status, o.apiResponse = t, ["invalid", "unaccepted", "spam", "aborted"].includes(r) ? a(e, r, o) : ["sent", "failed"].includes(r) && a(e, `mail${r}`, o), a(e, "submit", o), t
-        })).then((t => {
-            t.posted_data_hash && (e.querySelector('input[name="_wpcf7_posted_data_hash"]').value = t.posted_data_hash), "mail_sent" === t.status && (e.reset(), e.wpcf7.resetOnMailSent = !0), t.invalid_fields && t.invalid_fields.forEach((t => {
-                s(e, t.field, t.message)
-            })), e.wpcf7.parent.querySelector('.screen-reader-response [role="status"]').insertAdjacentText("beforeend", t.message), e.querySelectorAll(".wpcf7-response-output").forEach((e => {
-                e.innerText = t.message
-            }))
-        })).catch((e => console.error(e)))
-    }
 
-    r.use(((e, t) => {
-        if (e.wpcf7 && "feedback" === e.wpcf7.endpoint) {
-            const {form: t, detail: r} = e.wpcf7;
-            d(t), a(t, "beforesubmit", r), n(t, "submitting")
-        }
-        return t(e)
-    }));
-    const d = e => {
-        e.querySelectorAll(".wpcf7-form-control-wrap").forEach((t => {
-            t.dataset.name && i(e, t.dataset.name)
-        })), e.wpcf7.parent.querySelector('.screen-reader-response [role="status"]').innerText = "", e.querySelectorAll(".wpcf7-response-output").forEach((e => {
-            e.innerText = ""
-        }))
-    };
 
-    function f(e) {
-        const t = new FormData(e), c = {
-            contactFormId: e.wpcf7.id,
-            pluginVersion: e.wpcf7.pluginVersion,
-            contactFormLocale: e.wpcf7.locale,
-            unitTag: e.wpcf7.unitTag,
-            containerPostId: e.wpcf7.containerPost,
-            status: e.wpcf7.status,
-            inputs: Array.from(t, (e => {
-                const t = e[0], a = e[1];
-                return !t.match(/^_/) && {name: t, value: a}
-            })).filter((e => !1 !== e)),
-            formData: t
-        };
-        r({
-            endpoint: `contact-forms/${e.wpcf7.id}/refill`,
-            method: "GET",
-            wpcf7: {endpoint: "refill", form: e, detail: c}
-        }).then((t => {
-            e.wpcf7.resetOnMailSent ? (delete e.wpcf7.resetOnMailSent, n(e, "mail_sent")) : n(e, "init"), c.apiResponse = t, a(e, "reset", c)
-        })).catch((e => console.error(e)))
-    }
-
-    r.use(((e, t) => {
-        if (e.wpcf7 && "refill" === e.wpcf7.endpoint) {
-            const {form: t, detail: a} = e.wpcf7;
-            d(t), n(t, "resetting")
-        }
-        return t(e)
-    }));
     const u = (e, t) => {
         for (const a in t) {
             const n = t[a];
