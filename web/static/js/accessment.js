@@ -272,12 +272,12 @@ submitBtn.onclick = function (e) {
 
 
     <div class="card bg-light text-dark p-4 mb-4">
-        <h5>Your Weighted Assessment Analysis</h5>
+        <h5 style="color: #000!important;">Your Weighted Assessment Analysis</h5>
         <p class="small">
             Your organization shows good potential for AI adoption. Your weighted score indicates solid foundations with room for strategic improvements, particularly in areas with higher impact weights.
         </p>
 
-        <h6 class="mt-4">Prioritized Recommendations</h6>
+        <h6 class="mt-4" style="color: #000!important;">Prioritized Recommendations</h6>
         <ul class="ps-3">
             <li>Strengthen data infrastructure and analytics capabilities (highest impact)</li>
             <li>Refine AI strategy with specific, measurable use cases</li>

@@ -1,5 +1,11 @@
 {% load static %}
 <!-- Font Awesome CDN (latest version) -->
+<!-- Bootstrap CSS -->
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
 <header id="pxl-header-elementor" class="is-sticky">
@@ -59,15 +65,10 @@
                                                                    aria-current="page"><span>Services<i
                                                                 ></i></span></a>
                                                             </li>
-                                                            <li class="menu-item menu-item-has-children {% if request.resolver_match.url_name == 'assessment' %}current_page_item current-menu-item{% endif %}">
-                                                                <a><span>assessment<i
+                                                            <li class="menu-item">
+                                                                <a href="" data-bs-target="#assessmentModal" data-bs-toggle="modal"
+                                                                   aria-current="page"><span>Assessment<i
                                                                 ></i></span></a>
-                                                                <ul class="sub-menu">
-                                                                    <li class="menu-item {% if request.resolver_match.url_name == 'assessment' %}current_page_item current-menu-item{% endif %}">
-                                                                        <a href="{% url 'assessment_form' %}"><span>Phase 1<i
-                                                                        ></i></span></a>
-                                                                    </li>
-                                                                </ul>
                                                             </li>
                                                             <li class="menu-item {% if request.resolver_match.url_name == 'credentials' %}current_page_item current-menu-item{% endif %}">
                                                                 <a href="{% url 'credentials' %}"><span>Credentials<i
@@ -82,7 +83,7 @@
                                                                 ></i></span></a>
                                                             </li>
                                                             <li class="menu-item menu-item-has-children">
-                                                                <a><span>Language<i
+                                                                <a href=""><span>Language<i
                                                                 ></i></span></a>
                                                                 <ul class="sub-menu">
                                                                     <li class="menu-item">
@@ -181,15 +182,10 @@
                                                                    aria-current="page"><span>Services<i
                                                                 ></i></span></a>
                                                             </li>
-                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3691 {% if request.resolver_match.url_name == 'assessment' %}current-menu-item current_page_item{% endif %}">
-                                                                <a><span>Assessment<i
+                                                            <li class="menu-item">
+                                                                <a href="" data-bs-target="#assessmentModal" data-bs-toggle="modal"
+                                                                   aria-current="page"><span>Assessment<i
                                                                 ></i></span></a>
-                                                                <ul class="sub-menu">
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4875 {% if request.resolver_match.url_name == 'assessment' %}current-menu-item current_page_item{% endif %}">
-                                                                        <a href="{% url 'assessment_form' %}"><span>Phase 1<i
-                                                                        ></i></span></a>
-                                                                    </li>
-                                                                </ul>
                                                             </li>
 
 
@@ -209,7 +205,7 @@
                                                             </li>
 
                                                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4395">
-                                                                <a><span>Language<i
+                                                                <a href=""><span>Language<i
                                                                 ></i></span></a>
                                                                 <ul class="sub-menu">
                                                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4396">
@@ -251,10 +247,9 @@
             </div>
         </div>
     </div>
-    <div id="responsive-header-mobile" class="style-">
-        <div id="responsive-header-main" class="responsive-header-main">
-            <div class="container">
-                <div class="row">
+    <div id="responsive-header-mobile">
+        <div id="responsive-header-main" class="responsive-header-main" style="background: #000; display: flex">
+
 
                     <div class="responsive-header-branding">
                         <a href="{% url 'home' %}" title="ClairityLab" rel="home" style="padding: 10px">
@@ -274,7 +269,8 @@
                         <div style="display: flex; padding: 20px; justify-content: space-between; margin-right: 20px;padding-top: 0; padding-left: 10px">
                             <div class="responsive-logo-mobile">
                                 <a href="{% url 'home' %}" title="ClairityLab" rel="home">
-                                    <img style="width: 200px" src="{% static 'images/media/Logo-Moble.jpg' %}" alt="ClairityLab"/>
+                                    <img style="width: 200px" src="{% static 'images/media/Logo-Moble.jpg' %}"
+                                         alt="ClairityLab"/>
                                 </a>
                             </div>
 
@@ -300,7 +296,7 @@
                                     <a href="/services/" aria-current="page"><span>Services</span></a>
                                 </li>
                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3534 ">
-                                    <a href="/assessment/" aria-current="page"><span>Assessment</span></a>
+                                    <a data-bs-toggle="modal" data-bs-target="#assessmentModal" aria-current="page"><span>Assessment</span></a>
                                 </li>
 
                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4202 ">
@@ -323,8 +319,6 @@
                     <div class="responsive-header-menu-backdrop"></div>
                 </div>
             </div>
-        </div>
-    </div>
 
 </header>
 <script>
@@ -343,3 +337,98 @@
     });
 </script>
 
+<!-- Bootstrap Modal -->
+<div class="modal" data-bs-backdrop="static" data-bs-keyboard="false" id="assessmentModal" tabindex="-1" aria-labelledby="assessmentModalLabel" aria-hidden="true" style="background: linear-gradient(to right, #4682B4, #5A9BD6, #A7C6ED);">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content text-light" style="background: rgba(255, 255, 255, 0.1); border: none">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="assessmentModalLabel"></h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="container py-3 fade-in">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12">
+
+                            <!-- Intro Card -->
+                            <div id="startScreen" class="mb-4">
+                                <h3 class="card-title text-center mb-3">🎯 AI Readiness Assessment</h3>
+                                <p>Discover your organization's readiness for AI adoption with our advanced weighted
+                                    scoring system.</p>
+                                <div class="card mt-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title" style="color: #a5b4fc; margin-bottom: 20px">Weighted
+                                            Scoring System</h5>
+                                        <p style="color: #fff; margin-bottom: 20px">Our assessment uses strategic
+                                            weighting to better reflect real-world AI implementation priorities:</p>
+                                        <ul class="start_screen_ul list-group-flush mb-3"
+                                            style="display: flex; justify-content: space-between; padding-left: 0">
+                                            <li><strong>Data:</strong><br> 30%</li>
+                                            <li><strong>Strategy:</strong><br> 25%</li>
+                                            <li><strong>People:</strong><br> 25%</li>
+                                            <li><strong>Governance:</strong><br> 20%</li>
+                                        </ul>
+                                        <p style="color: #fff">Data receives the highest weight as it forms the
+                                            foundation for all successful AI initiatives.</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; justify-content: center">
+                                    <button id="startBtn" class="mt-3">Start Assessment</button>
+                                </div>
+                            </div>
+
+                            <!-- Quiz Section -->
+                            <div id="quizSection" class="d-none">
+                                <div class="progress mb-4">
+                                    <div class="progress-bar" id="progressBar" role="progressbar"
+                                         style="width: 0%"></div>
+                                </div>
+                                <div class="card shadow card-hover">
+                                    <div class="card-body">
+                                        <form id="quizForm">
+                                            <div id="question-container" class="mb-4"></div>
+                                        </form>
+                                        <div id="loadingMessage" class="text-center mt-3 text-secondary d-none">
+                                            Submitting your answers...
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="navigationControls"
+                                     class="d-flex justify-content-between align-items-center mt-4 px-3">
+                                    <button type="button" id="prevBtn" class="previous__btn btn btn-secondary" disabled>
+                                        Previous
+                                    </button>
+                                    <div class="text-center" style="width: 100%;">
+                                        <div id="questionTracker" class="text-white fw-bold mb-1"></div>
+                                        <div class="text-light small question__number" id="question__number"></div>
+                                    </div>
+                                    <div>
+                                        <button type="button" id="nextBtn" class="next__btn btn btn-primary">Next
+                                        </button>
+                                        <button type="button" class="d-none" id="submitBtn">
+                                            <span class="spinner-border spinner-border-sm me-2 d-none"
+                                                  id="spinner"></span>
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<script>
+    const addContactUrl = "{% url 'add-contact' %}";
+    const addClickUp = "{% url 'create_clickup_task' %}";
+</script>
+<script src="{% static 'js/accessment.js' %}"></script>
