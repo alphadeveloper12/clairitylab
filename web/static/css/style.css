@@ -1,4 +1,13 @@
 
+body {
+    background: linear-gradient(to right, #4682B4, #5A9BD6, #A7C6ED);
+    color: white; /* Change text color to white */
+    display: grid;
+    align-items: center;
+    height: 100vh;
+
+}
+
 .previous__btn {
     background: rgba(255, 255, 255, 0.2);
     color: white;
@@ -129,7 +138,6 @@ input[type="radio"] {
     background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white background */
     border: none; /* Remove border */
     border-radius: 20px; /* Rounded corners */
-    padding: 20px;
 }
 
 
@@ -196,6 +204,7 @@ input[type="radio"] {
     padding: 20px;
     border-left: 4px solid;
     position: relative;
+    width: 26%;
 }
 
 .category-strategy {
@@ -249,33 +258,3 @@ input[type="radio"] {
     transition: transform 0.2s;
     margin-top: 30px;
 }
-
-.custom-modal {
-        position: fixed;
-        z-index: 1050;
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(to right, #4682B4, #5A9BD6, #A7C6ED);
-    }
-
-    .custom-modal .modal-dialog {
-        max-width: 800px;
-        width: 90%;
-        animation: fadeIn 0.3s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
