@@ -101,6 +101,7 @@ input[type="radio"] {
     gap: 15px;
     padding-left: 30px;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 #emailInput::placeholder {
@@ -135,7 +136,7 @@ input[type="radio"] {
 }
 
 .card {
-    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white background */
+    background-color: #000D1B; /* Slightly transparent white background */
     border: none; /* Remove border */
     border-radius: 20px; /* Rounded corners */
 }
@@ -204,7 +205,6 @@ input[type="radio"] {
     padding: 20px;
     border-left: 4px solid;
     position: relative;
-    width: 26%;
 }
 
 .category-strategy {

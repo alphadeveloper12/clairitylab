@@ -47,13 +47,14 @@
                                                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-3522">
                                                                 <a href="{% url 'home' %}"><span>Home</span></a>
                                                             </li>
-                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3691">
-                                                                <a href="{% url 'about' %}"><span>About</span></a>
-                                                                <ul class="sub-menu">
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4875">
-                                                                        <a href="https://clairitylab.ai/industries/"><span>Industries</span></a>
-                                                                    </li>
-                                                                </ul>
+
+                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-19 current_page_item menu-item-3534">
+                                                                <a href="{% url 'about' %}"
+                                                                   aria-current="page"><span>About</span></a>
+                                                            </li>
+                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-19 current_page_item menu-item-3534">
+                                                                <a href="{% url 'industries' %}"
+                                                                   aria-current="page"><span>Industries</span></a>
                                                             </li>
                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-19 current_page_item menu-item-3534">
                                                                 <a href="{% url 'services' %}"
@@ -68,29 +69,29 @@
                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3533">
                                                                 <a href="{% url 'contact' %}"><span>Contact</span></a>
                                                             </li>
-                                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4395">
-                                                                <a><span>Language</span></a>
-                                                                <ul class="sub-menu">
-                                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4396">
-                                                                        <a href='#'
-                                                                           class='nturl notranslate ar Arabic single-language flag'
-                                                                           title='Arabic'><span
-                                                                                class='flag size24'></span>العربية</a>
-                                                                    </li>
-                                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4397">
-                                                                        <a href='#'
-                                                                           class='nturl notranslate en united-states single-language flag'
-                                                                           title='English'><span
-                                                                                class='flag size24'></span>English</a>
-                                                                    </li>
-                                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4398">
-                                                                        <a href='#'
-                                                                           class='nturl notranslate de German single-language flag'
-                                                                           title='German'><span
-                                                                                class='flag size24'></span>German</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
+{#                                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4395">#}
+{#                                                                <a><span>Language</span></a>#}
+{#                                                                <ul class="sub-menu">#}
+{#                                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4396">#}
+{#                                                                        <a href='#'#}
+{#                                                                           class='nturl notranslate ar Arabic single-language flag'#}
+{#                                                                           title='Arabic'><span#}
+{#                                                                                class='flag size24'></span>العربية</a>#}
+{#                                                                    </li>#}
+{#                                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4397">#}
+{#                                                                        <a href='#'#}
+{#                                                                           class='nturl notranslate en united-states single-language flag'#}
+{#                                                                           title='English'><span#}
+{#                                                                                class='flag size24'></span>English</a>#}
+{#                                                                    </li>#}
+{#                                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4398">#}
+{#                                                                        <a href='#'#}
+{#                                                                           class='nturl notranslate de German single-language flag'#}
+{#                                                                           title='German'><span#}
+{#                                                                                class='flag size24'></span>German</a>#}
+{#                                                                    </li>#}
+{#                                                                </ul>#}
+{#                                                            </li>#}
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -182,7 +183,7 @@
                                                             </svg>
                                                         </div>
                                                         <a>
-                                                            <h5 class="pxl-item-title el-empty">
+                                                            <h5 style="margin-bottom: 0px!important;" class="pxl-item-title el-empty">
                                                                 info@clairitylab.ai </h5>
                                                         </a>
                                                     </div>
@@ -218,7 +219,7 @@
                                                             </svg>
                                                         </div>
                                                         <a>
-                                                            <h5 class="pxl-item-title el-empty">Dubai, UAE</h5>
+                                                            <h5 style="margin-bottom: 0px!important;" class="pxl-item-title el-empty">Dubai, UAE</h5>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -244,8 +245,8 @@
 
                                                         </div>
                                                         <a>
-                                                            <h5 class="pxl-item-title el-empty">
-                                                                +971 0585854222</h5>
+                                                            <h5 style="margin-bottom: 0!important;" class="pxl-item-title el-empty">
+                                                                +971.58.58.54.222</h5>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -360,7 +361,7 @@
                             <div class="elementor-container elementor-column-gap-extended ">
                                 <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3bcac994 pxl-column-none"
                                      data-id="3bcac994" data-element_type="column">
-                                    <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div class="elementor-widget-wrap elementor-element-populated" style="display: grid; justify-content: center">
 
                                         <div class="elementor-element elementor-element-68387724 elementor-widget__width-auto elementor-widget-mobile__width-inherit elementor-widget elementor-widget-pxl_icon_box"
                                              data-id="68387724" data-element_type="widget"
@@ -377,7 +378,7 @@
                                                             </svg>
                                                         </div>
                                                         <a>
-                                                            <h5 class="pxl-item-title el-empty">
+                                                            <h5 style="margin-bottom: 0!important;" class="pxl-item-title el-empty">
                                                                 info@clairitylab.ai </h5>
                                                         </a>
                                                     </div>
@@ -401,7 +402,7 @@
 
                                                         </div>
                                                         <a>
-                                                            <h5 class="pxl-item-title el-empty">Dubai, UAE</h5>
+                                                            <h5 style="margin-bottom: 0!important;" class="pxl-item-title el-empty">Dubai, UAE</h5>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -425,8 +426,8 @@
                                                             </svg>
                                                         </div>
                                                         <a>
-                                                            <h5 class="pxl-item-title el-empty">
-                                                                +971 0585854222</h5>
+                                                            <h5 style="margin-bottom: 0!important;" class="pxl-item-title el-empty">
+                                                                +971.58.58.54.222</h5>
                                                         </a>
                                                     </div>
                                                 </div>

@@ -49,7 +49,7 @@
         <div class="col-lg-8">
 
             <!-- Intro Card -->
-            <a style="display: " href="{% url 'home' %}"><img style="width: 200px; display: table; margin: 10px auto" src="{% static 'images/media/Header-Logo-2.webp' %}" alt="logo"></a>
+            <a style="display: " href="{% url 'home' %}"><img style="width: 200px; display: table; margin: 10px auto; border-radius: 50px" src="{% static 'images/media/Header-Logo-2.webp' %}" alt="logo"></a>
             <div id="startScreen" class=" mb-4">
 
 
@@ -128,6 +128,7 @@
 <script>
     const addContactUrl = "{% url 'add-contact' %}";
     const addClickUp = "{% url 'create_clickup_task' %}";
+    const servicesUrl = "{% url 'services' %}";
 </script>
 <script src="{% static 'js/accessment.js' %}"></script>
 
