@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.http import JsonResponse
-from .models import Assessment
+# from .models import Assessment
 import json
 from django.views.decorators.csrf import csrf_exempt
 from dotenv import load_dotenv
@@ -12,6 +12,8 @@ import requests
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from .models import *  # Import your model
+
 
 # Load environment variables from .env file
 load_dotenv()
@@ -96,27 +98,6 @@ def assessment_form(request):
     return render(request, 'assessment_form.html')
 
 
-@csrf_exempt
-def submit_assessment(request):
-    print(API_KEY)
-    print('::::::::::::::::::::::::')
-    if request.method == 'POST':
-        data = json.loads(request.body)
-        email = data.get('email')
-        answers = data.get('answers')
-        score = calculate_score(answers)
-
-        assessment = Assessment.objects.create(email=email, answers=answers, score=score)
-        # send_readiness_email(email, assessment.id)
-        return JsonResponse({'redirect_url': f'summary/{assessment.id}/'})
-    return JsonResponse({'error': 'Invalid method'}, status=400)
-
-
-def summary(request, assessment_id):
-    assessment = Assessment.objects.get(pk=assessment_id)
-    return render(request, 'summary.html', {'assessment': assessment})
-
-
 def calculate_score(answers):
     return sum(answers.values())  # simple score logic
 
@@ -185,8 +166,7 @@ def create_clickup_task(request):
         try:
             data = json.loads(request.body.decode('utf-8'))
 
-            # Extract required fields
-            name = data.get('name', 'Anonymous')
+            # Extract required fields (skip `name`)
             email = data.get('email')
             score = data.get('score')
             strategy = data.get('strategy')
@@ -198,7 +178,20 @@ def create_clickup_task(request):
             if not all([email, score, strategy, people, data_score, governance]):
                 return JsonResponse({'error': 'Missing one or more required fields.'}, status=400)
 
-            # Build task description (used for both ClickUp and Email)
+            # ✅ Save to Database
+            try:
+                AIReadinessLead.objects.create(
+                    email=email,
+                    score=float(score),
+                    strategy=int(strategy),
+                    people=int(people),
+                    data_score=int(data_score),
+                    governance=int(governance)
+                )
+            except Exception as e:
+                return JsonResponse({'error': 'Failed to save to DB', 'exception': str(e)}, status=500)
+
+            # 📝 Prepare task description
             task_description = (
                 f"📩 Email: {email}\n"
                 f"📊 Overall Score: {score}/20\n\n"
@@ -208,7 +201,7 @@ def create_clickup_task(request):
                 f"🛡️ Governance: {governance}/20\n"
             )
 
-            # ✅ Send Email via Postmark SMTP
+            # ✅ Send Email
             try:
                 msg = MIMEMultipart()
                 msg['From'] = sender_email
@@ -221,19 +214,15 @@ def create_clickup_task(request):
                     server.login(smtp_user, smtp_password)
                     server.sendmail(sender_email, receiver_email, msg.as_string())
             except Exception as e:
-                return JsonResponse({
-                    'error': 'Failed to send email via Postmark',
-                    'exception': str(e)
-                }, status=500)
+                return JsonResponse({'error': 'Failed to send email', 'exception': str(e)}, status=500)
 
-            # ✅ Create ClickUp task (unchanged)
+            # ✅ Create ClickUp task
             task_payload = {
                 "name": f"AI Readiness Lead - {email}",
                 "description": task_description,
                 "status": "to do",
                 "priority": 3
             }
-
             url = f'https://api.clickup.com/api/v2/list/{CLICKUP_LIST_ID}/task'
             headers = {
                 "Authorization": CLICKUP_ACCESS_TOKEN,
@@ -243,26 +232,22 @@ def create_clickup_task(request):
 
             if response.status_code in [200, 201]:
                 return JsonResponse({
-                    'message': '✅ Task created and email sent successfully!',
+                    'message': '✅ Task created, email sent, and data saved!',
                     'clickup_response': response.json()
                 }, status=201)
             else:
-                return JsonResponse({
-                    'error': '❌ ClickUp API error',
-                    'details': response.text
-                }, status=400)
+                return JsonResponse({'error': 'ClickUp API error', 'details': response.text}, status=400)
 
         except Exception as e:
-            return JsonResponse({
-                'error': 'Server error',
-                'exception': str(e)
-            }, status=500)
+            return JsonResponse({'error': 'Server error', 'exception': str(e)}, status=500)
 
     return JsonResponse({"error": "Only POST method allowed"}, status=405)
+
 
 @csrf_exempt
 def connect_request(request):
     if request.method == "POST":
+        print(request.body)
         try:
             data = json.loads(request.body.decode("utf-8"))
 
@@ -316,3 +301,25 @@ def connect_request(request):
             return JsonResponse({"error": "Server error", "exception": str(e)}, status=500)
 
     return JsonResponse({"error": "Only POST method allowed"}, status=405)
+
+
+
+@csrf_exempt
+def contact_message_api(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body.decode('utf-8'))
+            email = data.get('email')
+            message = data.get('message')
+
+            if not email or not message:
+                return JsonResponse({'error': 'Both email and message are required.'}, status=400)
+
+            ContactMessage.objects.create(email=email, message=message)
+
+            return JsonResponse({'message': 'Message saved successfully.'}, status=201)
+
+        except Exception as e:
+            return JsonResponse({'error': 'Invalid data.', 'details': str(e)}, status=500)
+
+    return JsonResponse({'error': 'Only POST requests are allowed.'}, status=405)

@@ -17,10 +17,9 @@ urlpatterns = [
     path('cookies-policy/', cookies, name='cookies'),
     path('industries/', industries, name='industries'),
     path('assessment/', assessment_form, name='assessment_form'),
-    path('submit/', submit_assessment, name='submit_assessment'),
-    path('accessment/summary/<int:assessment_id>/', summary, name='summary'),
     path('add_contact/', add_contact_view, name='add-contact'),
     path('api/create-clickup-task/', create_clickup_task, name='create_clickup_task'),
     path('api/contact/connect/', connect_request, name='connect_request'),
+    path('api/contact/', contact_message_api, name='contact_message_api'),
 
 ]
