@@ -269,7 +269,7 @@ def contact_message_api(request):
             try:
                 msg = MIMEMultipart()
                 msg['From'] = sender_email
-                msg['To'] = receiver_email
+                msg['To'] = 'info@clairitylab.ai'
                 msg['Subject'] = email_subject
                 msg.attach(MIMEText(email_body, 'plain'))
 
