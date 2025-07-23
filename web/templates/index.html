@@ -1778,8 +1778,8 @@
                                                                            aria-atomic="true"></p>
                                                                         <ul></ul>
                                                                     </div>
-                                                                    <form action="" method="post"
-                                                                          class="wpcf7-form"
+                                                                    <form method="post"
+                                                                          id="contactForm"
                                                                           aria-label="Contact form"
                                                                           novalidate="novalidate"
                                                                           data-status="init"
@@ -1796,7 +1796,7 @@
                                                                                         <span class="wpcf7-form-control-wrap your-email"
                                                                                               data-name="your-email">
                         <input size="40" maxlength="400"
-                               class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email"
+                               id="email"
                                aria-required="true" aria-invalid="false"
                                placeholder="Your Email" value="" type="email"
                                name="your-email">
@@ -1812,8 +1812,8 @@
                                                                                         <span class="wpcf7-form-control-wrap your-message"
                                                                                               data-name="your-message">
                         <textarea cols="40" rows="10" maxlength="2000"
-                                  class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required"
-                                  id="your-message" aria-required="true" aria-invalid="false"
+
+                                  id="message" aria-required="true" aria-invalid="false"
                                   placeholder="Your Message"
                                   name="your-message"></textarea>
                     </span>
@@ -1848,6 +1848,8 @@
                                                                                                disabled>
                                                                                     </p>
                                                                                 </div>
+                                                                                <div id="formMessage"
+                                                                                     class="text-center mt-2"></div>
 
                                                                             </div>
                                                                         </div>
@@ -1867,17 +1869,23 @@
                                                                             document.getElementById("submitBtn").disabled = true;
                                                                         }
 
+                                                                        function showFormMessage(message, type = 'error') {
+                                                                            const messageDiv = document.getElementById("formMessage");
+                                                                            messageDiv.innerHTML = message;
+                                                                            messageDiv.style.color = type === 'success' ? 'green' : 'red';
+                                                                        }
+
                                                                         function validateRecaptcha() {
                                                                             const response = grecaptcha.getResponse();
                                                                             if (response.length === 0) {
-                                                                                alert("Please complete the reCAPTCHA.");
+                                                                                showFormMessage("Please complete the reCAPTCHA.");
                                                                                 return false;
                                                                             }
                                                                             return true;
                                                                         }
 
                                                                         async function submitContactForm(event) {
-                                                                            event.preventDefault();  // prevent default form submission
+                                                                            event.preventDefault();
 
                                                                             if (!validateRecaptcha()) {
                                                                                 return;
@@ -1887,7 +1895,7 @@
                                                                             const message = document.getElementById("message").value;
 
                                                                             if (!email || !message) {
-                                                                                alert("Please fill in all fields.");
+                                                                                showFormMessage("Please fill in all fields.");
                                                                                 return;
                                                                             }
 
@@ -1906,20 +1914,19 @@
                                                                                 const data = await response.json();
 
                                                                                 if (response.ok) {
-                                                                                    alert("Message submitted successfully!");
+                                                                                    showFormMessage("Message submitted successfully!", 'success');
                                                                                     document.getElementById("contactForm").reset();
-                                                                                    grecaptcha.reset();  // reset reCAPTCHA
-                                                                                    disableSubmit();     // disable submit again until reCAPTCHA is solved
+                                                                                    grecaptcha.reset();
+                                                                                    disableSubmit();
                                                                                 } else {
-                                                                                    alert("Error: " + data.error);
+                                                                                    showFormMessage("Error: " + data.error);
                                                                                 }
                                                                             } catch (error) {
-                                                                                alert("Something went wrong. Please try again.");
+                                                                                showFormMessage("Something went wrong. Please try again.");
                                                                                 console.error(error);
                                                                             }
                                                                         }
 
-                                                                        // attach the submit handler to the form
                                                                         document.addEventListener("DOMContentLoaded", function () {
                                                                             document.getElementById("contactForm").addEventListener("submit", submitContactForm);
                                                                         });

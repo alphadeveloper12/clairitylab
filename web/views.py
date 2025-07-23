@@ -244,63 +244,7 @@ def create_clickup_task(request):
     return JsonResponse({"error": "Only POST method allowed"}, status=405)
 
 
-@csrf_exempt
-def connect_request(request):
-    if request.method == "POST":
-        print(request.body)
-        try:
-            data = json.loads(request.body.decode("utf-8"))
 
-            # ✅ Extract form data
-            email = data.get("email")
-            message = data.get("message")
-            recaptcha_response = data.get("g-recaptcha-response")
-
-            # ✅ Validate presence of required fields
-            if not all([email, message, recaptcha_response]):
-                return JsonResponse(
-                    {"error": "Missing email, message, or reCAPTCHA response"},
-                    status=400,
-                )
-
-            # ✅ Step 1: Verify reCAPTCHA v2
-            verify_url = "https://www.google.com/recaptcha/api/siteverify"
-            verify_payload = {
-                "secret": RECAPTCHA_SECRET_KEY,
-                "response": recaptcha_response,
-            }
-
-            recaptcha_result = requests.post(verify_url, data=verify_payload).json()
-            if not recaptcha_result.get("success"):
-                return JsonResponse({"error": "reCAPTCHA verification failed"}, status=403)
-
-            # ✅ Step 2: Build and send the email
-            subject = f"Connect request - {email}"
-            body = f"📩 Email: {email}\n\n📝 Message:\n{message}"
-
-            try:
-                msg = MIMEMultipart()
-                msg["From"] = sender_email
-                msg["To"] = receiver_email
-                msg["Subject"] = subject
-                msg.attach(MIMEText(body, "plain"))
-
-                with smtplib.SMTP(smtp_server, smtp_port) as server:
-                    server.starttls()
-                    server.login(smtp_user, smtp_password)
-                    server.sendmail(sender_email, receiver_email, msg.as_string())
-            except Exception as e:
-                return JsonResponse(
-                    {"error": "Failed to send email via Postmark", "exception": str(e)},
-                    status=500,
-                )
-
-            return JsonResponse({"message": "✅ Email sent successfully!"}, status=200)
-
-        except Exception as e:
-            return JsonResponse({"error": "Server error", "exception": str(e)}, status=500)
-
-    return JsonResponse({"error": "Only POST method allowed"}, status=405)
 
 
 
@@ -315,9 +259,29 @@ def contact_message_api(request):
             if not email or not message:
                 return JsonResponse({'error': 'Both email and message are required.'}, status=400)
 
+            # ✅ Save to DB
             ContactMessage.objects.create(email=email, message=message)
 
-            return JsonResponse({'message': 'Message saved successfully.'}, status=201)
+            # 📝 Prepare email
+            email_subject = "New Contact Request"
+            email_body = f"📩 Email: {email}\n\n📝 Message:\n{message}"
+
+            try:
+                msg = MIMEMultipart()
+                msg['From'] = sender_email
+                msg['To'] = receiver_email
+                msg['Subject'] = email_subject
+                msg.attach(MIMEText(email_body, 'plain'))
+
+                with smtplib.SMTP(smtp_server, smtp_port) as server:
+                    server.starttls()
+                    server.login(smtp_user, smtp_password)
+                    server.sendmail(sender_email, receiver_email, msg.as_string())
+
+            except Exception as e:
+                return JsonResponse({'error': 'Message saved, but failed to send email', 'exception': str(e)}, status=500)
+
+            return JsonResponse({'message': 'Message saved and email sent successfully.'}, status=201)
 
         except Exception as e:
             return JsonResponse({'error': 'Invalid data.', 'details': str(e)}, status=500)

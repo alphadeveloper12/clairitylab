@@ -4845,93 +4845,157 @@
                                                                            aria-atomic="true"></p>
                                                                         <ul></ul>
                                                                     </div>
-                                                                    <form id="contactForm"
-                                                                          class="custom-form needs-validation"
-                                                                          novalidate>
-                                                                        <div class="container p-4 rounded">
-                                                                            <div class="row g-3">
+                                                                    <form method="post"
+                                                                          id="contactForm"
+                                                                          aria-label="Contact form"
+                                                                          novalidate="novalidate"
+                                                                          data-status="init"
+                                                                          onsubmit="return validateRecaptcha();">
+                                                                        {% csrf_token %}
 
-                                                                                <!-- Email Field -->
-                                                                                <div class="col-lg-12">
-                                                                                    <label for="email"
-                                                                                           class="form-label">Email</label>
-                                                                                    <input type="email" id="email"
-                                                                                           name="email"
-                                                                                           class="form-control"
-                                                                                           placeholder="Your Email"
-                                                                                           required maxlength="400">
-                                                                                    <div class="invalid-feedback">Please
-                                                                                        enter a valid email address.
-                                                                                    </div>
+                                                                        <div class="wrap-ctf4">
+                                                                            <div class="row">
+
+                                                                                <!-- Your Email -->
+                                                                                <div class="input-filled col-lg-12">
+                                                                                    <p>
+                                                                                        <label for="your-email">Email</label><br>
+                                                                                        <span class="wpcf7-form-control-wrap your-email"
+                                                                                              data-name="your-email">
+                        <input size="40" maxlength="400"
+                               id="email"
+                               aria-required="true" aria-invalid="false"
+                               placeholder="Your Email" value="" type="email"
+                               name="your-email">
+                    </span>
+                                                                                    </p>
                                                                                 </div>
 
-                                                                                <!-- Message Field -->
-                                                                                <div class="col-lg-12">
-                                                                                    <label for="message"
-                                                                                           class="form-label">Write Your
-                                                                                        Message</label>
-                                                                                    <textarea id="message"
-                                                                                              name="message"
-                                                                                              class="form-control"
-                                                                                              placeholder="Your Message"
-                                                                                              rows="6" required
-                                                                                              maxlength="2000"></textarea>
-                                                                                    <div class="invalid-feedback">Please
-                                                                                        write your message.
-                                                                                    </div>
+                                                                                <!-- Your Message -->
+                                                                                <div class="input-filled col-lg-12">
+                                                                                    <p>
+                                                                                        <label for="your-message">Write
+                                                                                            Your Message</label><br>
+                                                                                        <span class="wpcf7-form-control-wrap your-message"
+                                                                                              data-name="your-message">
+                        <textarea cols="40" rows="10" maxlength="2000"
+
+                                  id="message" aria-required="true" aria-invalid="false"
+                                  placeholder="Your Message"
+                                  name="your-message"></textarea>
+                    </span>
+                                                                                    </p>
                                                                                 </div>
 
                                                                                 <!-- reCAPTCHA -->
-                                                                                <div class="col-lg-12">
-                                                                                    <div class="g-recaptcha"
-                                                                                         data-sitekey="6LdbmDgrAAAAAMl7S7TXmhHBMwaZD9lmT4YT-9h2"></div>
+                                                                                <div class="input-filled col-lg-12">
+                <span class="wpcf7-form-control-wrap recaptcha" data-name="recaptcha">
+                    <div class="g-recaptcha"
+                         data-sitekey="6Le9mjgrAAAAADSebmDvNiszJhBKC8cbamaQ0ijs"
+                         data-callback="enableSubmit"
+                         data-expired-callback="disableSubmit"
+                         data-error-callback="disableSubmit"></div>
+                    <noscript>
+                        <div class="grecaptcha-noscript">
+                            <iframe src="https://www.google.com/recaptcha/api/fallback?k=6Le9mjgrAAAAADSebmDvNiszJhBKC8cbamaQ0ijs"
+                                    frameborder="0" scrolling="no" width="310" height="430"></iframe>
+                            <textarea name="g-recaptcha-response" rows="3" cols="40"></textarea>
+                        </div>
+                    </noscript>
+                </span>
                                                                                 </div>
 
-                                                                                <!-- Custom Button -->
-                                                                                <div class="col-lg-12">
-                                                                                    <button id="connectBtn"
-                                                                                            class="btn btn-primary w-100">
-                                                                                        Connect
-                                                                                    </button>
+                                                                                <!-- Submit Button -->
+                                                                                <div class="input-filled col-lg-12">
+                                                                                    <p>
+                                                                                        <input class="wpcf7-form-control wpcf7-submit has-spinner"
+                                                                                               id="submitBtn"
+                                                                                               type="submit"
+                                                                                               value="Connect"
+                                                                                               disabled>
+                                                                                    </p>
                                                                                 </div>
+                                                                                <div id="formMessage"
+                                                                                     class="text-center mt-2"></div>
 
                                                                             </div>
                                                                         </div>
                                                                     </form>
 
-                                                                    <!-- reCAPTCHA Script -->
+                                                                    <!-- reCAPTCHA script -->
                                                                     <script src="https://www.google.com/recaptcha/api.js"
                                                                             async defer></script>
 
+                                                                    <!-- Custom JS -->
                                                                     <script>
-                                                                        document.getElementById('connectBtn').addEventListener('click', function (e) {
-                                                                            e.preventDefault();
+                                                                        function enableSubmit() {
+                                                                            document.getElementById("submitBtn").disabled = false;
+                                                                        }
 
-                                                                            const form = document.getElementById('contactForm');
-                                                                            if (!form.checkValidity()) {
-                                                                                form.classList.add('was-validated');
+                                                                        function disableSubmit() {
+                                                                            document.getElementById("submitBtn").disabled = true;
+                                                                        }
+
+                                                                        function showFormMessage(message, type = 'error') {
+                                                                            const messageDiv = document.getElementById("formMessage");
+                                                                            messageDiv.innerHTML = message;
+                                                                            messageDiv.style.color = type === 'success' ? 'green' : 'red';
+                                                                        }
+
+                                                                        function validateRecaptcha() {
+                                                                            const response = grecaptcha.getResponse();
+                                                                            if (response.length === 0) {
+                                                                                showFormMessage("Please complete the reCAPTCHA.");
+                                                                                return false;
+                                                                            }
+                                                                            return true;
+                                                                        }
+
+                                                                        async function submitContactForm(event) {
+                                                                            event.preventDefault();
+
+                                                                            if (!validateRecaptcha()) {
                                                                                 return;
                                                                             }
 
-                                                                            grecaptcha.ready(function () {
-                                                                                grecaptcha.execute('6LdbmDgrAAAAAMl7S7TXmhHBMwaZD9lmT4YT-9h2', {action: 'submit'}).then(function (token) {
-                                                                                    const email = document.querySelector('[name="email"]').value;
-                                                                                    const message = document.querySelector('[name="message"]').value;
+                                                                            const email = document.getElementById("email").value;
+                                                                            const message = document.getElementById("message").value;
 
-                                                                                    fetch('/api/connect-request/', {
-                                                                                        method: 'POST',
-                                                                                        headers: {'Content-Type': 'application/json'},
-                                                                                        body: JSON.stringify({
-                                                                                            email: email,
-                                                                                            message: message,
-                                                                                            'g-recaptcha-response': token
-                                                                                        })
+                                                                            if (!email || !message) {
+                                                                                showFormMessage("Please fill in all fields.");
+                                                                                return;
+                                                                            }
+
+                                                                            try {
+                                                                                const response = await fetch('/api/contact/', {
+                                                                                    method: 'POST',
+                                                                                    headers: {
+                                                                                        'Content-Type': 'application/json',
+                                                                                    },
+                                                                                    body: JSON.stringify({
+                                                                                        email: email,
+                                                                                        message: message,
                                                                                     })
-                                                                                        .then(res => res.json())
-                                                                                        .then(data => alert(data.message || data.error))
-                                                                                        .catch(err => alert('Something went wrong!'));
                                                                                 });
-                                                                            });
+
+                                                                                const data = await response.json();
+
+                                                                                if (response.ok) {
+                                                                                    showFormMessage("Message submitted successfully!", 'success');
+                                                                                    document.getElementById("contactForm").reset();
+                                                                                    grecaptcha.reset();
+                                                                                    disableSubmit();
+                                                                                } else {
+                                                                                    showFormMessage("Error: " + data.error);
+                                                                                }
+                                                                            } catch (error) {
+                                                                                showFormMessage("Something went wrong. Please try again.");
+                                                                                console.error(error);
+                                                                            }
+                                                                        }
+
+                                                                        document.addEventListener("DOMContentLoaded", function () {
+                                                                            document.getElementById("contactForm").addEventListener("submit", submitContactForm);
                                                                         });
                                                                     </script>
 
