@@ -19,7 +19,7 @@ from .models import *  # Import your model
 load_dotenv()
 smtp_server = 'smtp.postmarkapp.com'
 smtp_port = 2525
-smtp_user = '2e6d54f1-833b-4260-86d2-1cb16b32c50e'  # Server API token
+smtp_user = '26be39ba-3e1b-4868-9a31-f81d7f61b6e0'  # Server API token
 smtp_password = os.getenv("Postmark_password")
 sender_email = 'Okka.fraile@clairitylab.ai'  # Must be verified
 receiver_email = 'Okka.fraile@clairitylab.ai'  # You can change this if needed
@@ -201,7 +201,10 @@ def create_clickup_task(request):
                 f"🛡️ Governance: {governance}/20\n"
             )
 
-            # ✅ Send Email
+            email_status = None
+            clickup_status = None
+
+            # ✅ Send Email (Do not stop if fails)
             try:
                 msg = MIMEMultipart()
                 msg['From'] = sender_email
@@ -213,35 +216,44 @@ def create_clickup_task(request):
                     server.starttls()
                     server.login(smtp_user, smtp_password)
                     server.sendmail(sender_email, receiver_email, msg.as_string())
+
+                email_status = "Email sent successfully."
             except Exception as e:
-                return JsonResponse({'error': 'Failed to send email', 'exception': str(e)}, status=500)
+                email_status = f"Email failed: {str(e)}"
 
-            # ✅ Create ClickUp task
-            task_payload = {
-                "name": f"AI Readiness Lead - {email}",
-                "description": task_description,
-                "status": "to do",
-                "priority": 3
-            }
-            url = f'https://api.clickup.com/api/v2/list/{CLICKUP_LIST_ID}/task'
-            headers = {
-                "Authorization": CLICKUP_ACCESS_TOKEN,
-                "Content-Type": "application/json"
-            }
-            response = requests.post(url, headers=headers, json=task_payload)
+            # ✅ Create ClickUp task (Do not stop if fails)
+            try:
+                task_payload = {
+                    "name": f"AI Readiness Lead - {email}",
+                    "description": task_description,
+                    "status": "to do",
+                    "priority": 3
+                }
+                url = f'https://api.clickup.com/api/v2/list/{CLICKUP_LIST_ID}/task'
+                headers = {
+                    "Authorization": CLICKUP_ACCESS_TOKEN,
+                    "Content-Type": "application/json"
+                }
+                response = requests.post(url, headers=headers, json=task_payload)
 
-            if response.status_code in [200, 201]:
-                return JsonResponse({
-                    'message': '✅ Task created, email sent, and data saved!',
-                    'clickup_response': response.json()
-                }, status=201)
-            else:
-                return JsonResponse({'error': 'ClickUp API error', 'details': response.text}, status=400)
+                if response.status_code in [200, 201]:
+                    clickup_status = "ClickUp task created successfully."
+                else:
+                    clickup_status = f"ClickUp API error: {response.text}"
+            except Exception as e:
+                clickup_status = f"ClickUp failed: {str(e)}"
+
+            return JsonResponse({
+                'message': 'Operation completed.',
+                'email_status': email_status,
+                'clickup_status': clickup_status
+            }, status=201)
 
         except Exception as e:
             return JsonResponse({'error': 'Server error', 'exception': str(e)}, status=500)
 
     return JsonResponse({"error": "Only POST method allowed"}, status=405)
+
 
 
 
