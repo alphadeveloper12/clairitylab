@@ -20,7 +20,7 @@ load_dotenv()
 smtp_server = 'smtp.postmarkapp.com'
 smtp_port = 2525
 smtp_user = '2e6d54f1-833b-4260-86d2-1cb16b32c50e'  # Server API token
-smtp_password = '2e6d54f1-833b-4260-86d2-1cb16b32c50e'
+smtp_password = os.getenv("Postmark_password")
 sender_email = 'Okka.fraile@clairitylab.ai'  # Must be verified
 receiver_email = 'Okka.fraile@clairitylab.ai'  # You can change this if needed
 API_KEY = os.getenv("SYSTEM_API_KEY")
