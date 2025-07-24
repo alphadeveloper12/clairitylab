@@ -1,5 +1,15 @@
 {% load static %}
+<style>
 
+
+    @media (min-width: 768px) {
+        .footer__icons {
+            position: absolute;
+            left: 150px;
+            top: 35px;
+        }
+    }
+</style>
 {#</style>#}
 <footer id="pxl-footer-elementor">
     <div class="footer-elementor-inner">
@@ -60,6 +70,15 @@
                                                                 <a href="{% url 'services' %}"
                                                                    aria-current="page"><span>Services</span></a>
                                                             </li>
+                                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4395">
+                                                                <a><span>Assessment</span></a>
+                                                                <ul class="sub-menu">
+                                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4396">
+                                                                        <a href='{% url 'assessment_form' %}'>Ai
+                                                                            Readiness</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4202">
                                                                 <a href="{% url 'credentials' %}"><span>Credentials</span></a>
                                                             </li>
@@ -69,29 +88,7 @@
                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3533">
                                                                 <a href="{% url 'contact' %}"><span>Contact</span></a>
                                                             </li>
-{#                                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4395">#}
-{#                                                                <a><span>Language</span></a>#}
-{#                                                                <ul class="sub-menu">#}
-{#                                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4396">#}
-{#                                                                        <a href='#'#}
-{#                                                                           class='nturl notranslate ar Arabic single-language flag'#}
-{#                                                                           title='Arabic'><span#}
-{#                                                                                class='flag size24'></span>العربية</a>#}
-{#                                                                    </li>#}
-{#                                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4397">#}
-{#                                                                        <a href='#'#}
-{#                                                                           class='nturl notranslate en united-states single-language flag'#}
-{#                                                                           title='English'><span#}
-{#                                                                                class='flag size24'></span>English</a>#}
-{#                                                                    </li>#}
-{#                                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4398">#}
-{#                                                                        <a href='#'#}
-{#                                                                           class='nturl notranslate de German single-language flag'#}
-{#                                                                           title='German'><span#}
-{#                                                                                class='flag size24'></span>German</a>#}
-{#                                                                    </li>#}
-{#                                                                </ul>#}
-{#                                                            </li>#}
+
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -101,7 +98,7 @@
                                 </div>
                                 <div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-bdd8d00 pxl-column-none"
                                      data-id="bdd8d00" data-element_type="column">
-                                    <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div class="elementor-widget-wrap elementor-element-populated footer__icons">
 
                                         <div class="elementor-element elementor-element-a65ce65 elementor-shape-rounded elementor-grid-0 e-grid-align-center elementor-widget elementor-widget-social-icons"
                                              data-id="a65ce65" data-element_type="widget"
@@ -183,7 +180,8 @@
                                                             </svg>
                                                         </div>
                                                         <a>
-                                                            <h5 style="margin-bottom: 0px!important;" class="pxl-item-title el-empty">
+                                                            <h5 style="margin-bottom: 0px!important;"
+                                                                class="pxl-item-title el-empty">
                                                                 info@clairitylab.ai </h5>
                                                         </a>
                                                     </div>
@@ -219,7 +217,8 @@
                                                             </svg>
                                                         </div>
                                                         <a>
-                                                            <h5 style="margin-bottom: 0px!important;" class="pxl-item-title el-empty">Dubai, UAE</h5>
+                                                            <h5 style="margin-bottom: 0px!important;"
+                                                                class="pxl-item-title el-empty">Dubai, UAE</h5>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -245,7 +244,8 @@
 
                                                         </div>
                                                         <a>
-                                                            <h5 style="margin-bottom: 0!important;" class="pxl-item-title el-empty">
+                                                            <h5 style="margin-bottom: 0!important;"
+                                                                class="pxl-item-title el-empty">
                                                                 +971.58.58.54.222</h5>
                                                         </a>
                                                     </div>
@@ -361,7 +361,8 @@
                             <div class="elementor-container elementor-column-gap-extended ">
                                 <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3bcac994 pxl-column-none"
                                      data-id="3bcac994" data-element_type="column">
-                                    <div class="elementor-widget-wrap elementor-element-populated" style="display: grid; justify-content: center">
+                                    <div class="elementor-widget-wrap elementor-element-populated"
+                                         style="display: grid; justify-content: center">
 
                                         <div class="elementor-element elementor-element-68387724 elementor-widget__width-auto elementor-widget-mobile__width-inherit elementor-widget elementor-widget-pxl_icon_box"
                                              data-id="68387724" data-element_type="widget"
@@ -378,7 +379,8 @@
                                                             </svg>
                                                         </div>
                                                         <a>
-                                                            <h5 style="margin-bottom: 0!important;" class="pxl-item-title el-empty">
+                                                            <h5 style="margin-bottom: 0!important;"
+                                                                class="pxl-item-title el-empty">
                                                                 info@clairitylab.ai </h5>
                                                         </a>
                                                     </div>
@@ -402,7 +404,8 @@
 
                                                         </div>
                                                         <a>
-                                                            <h5 style="margin-bottom: 0!important;" class="pxl-item-title el-empty">Dubai, UAE</h5>
+                                                            <h5 style="margin-bottom: 0!important;"
+                                                                class="pxl-item-title el-empty">Dubai, UAE</h5>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -426,7 +429,8 @@
                                                             </svg>
                                                         </div>
                                                         <a>
-                                                            <h5 style="margin-bottom: 0!important;" class="pxl-item-title el-empty">
+                                                            <h5 style="margin-bottom: 0!important;"
+                                                                class="pxl-item-title el-empty">
                                                                 +971.58.58.54.222</h5>
                                                         </a>
                                                     </div>
