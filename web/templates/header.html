@@ -65,7 +65,8 @@
                                                                 ></i></span></a>
                                                                 <ul class="sub-menu">
                                                                     <li class="menu-item {% if request.resolver_match.url_name == 'assessment' %}current_page_item current-menu-item{% endif %}">
-                                                                        <a href="{% url 'assessment_form' %}" target="_blank"><span>AI Readiness<i
+                                                                        <a href="{% url 'assessment_form' %}"
+                                                                           target="_blank"><span>AI Readiness<i
                                                                         ></i></span></a>
                                                                     </li>
                                                                 </ul>
@@ -188,7 +189,8 @@
                                                                 ></i></span></a>
                                                                 <ul class="sub-menu">
                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4875 {% if request.resolver_match.url_name == 'assessment' %}current-menu-item current_page_item{% endif %}">
-                                                                        <a href="{% url 'assessment_form' %}" target="_blank"><span>AI Readiness<i
+                                                                        <a href="{% url 'assessment_form' %}"
+                                                                           target="_blank"><span>AI Readiness<i
                                                                         ></i></span></a>
                                                                     </li>
                                                                 </ul>
@@ -494,19 +496,20 @@
 
 <script>
     window.onload = function () {
-        const alreadySubmitted = sessionStorage.getItem("assessmentSubmitted");
+        const popupClosed = localStorage.getItem("popupClosed");
 
-        // Only show popup if not submitted
-        if (!alreadySubmitted) {
+        // Show popup only if "popupClosed" is not set
+        if (!popupClosed) {
             setTimeout(() => {
                 const popup = document.getElementById("popup");
                 if (popup) popup.style.display = "flex";
-            }, 300); // Adjust to match preloader
+            }, 300);
         }
     };
 
     function closePopup() {
         document.getElementById("popup").style.display = "none";
+        localStorage.setItem("popupClosed", "true"); // Store flag in localStorage
     }
 
     function handleCTA() {
@@ -514,4 +517,5 @@
         window.location.href = "{% url 'assessment_form' %}";
     }
 </script>
+
 
