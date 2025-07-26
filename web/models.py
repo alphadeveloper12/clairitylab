@@ -31,7 +31,6 @@ def blog_pdf_upload_path(instance, filename):
 
 class Blog(models.Model):
     title = models.CharField(max_length=255, unique=True)
-    small_description = models.TextField(max_length=500)
     image = models.ImageField(upload_to=blog_image_upload_path, blank=True, null=True)
     pdf = models.FileField(upload_to=blog_pdf_upload_path, blank=True, null=True)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blogs')

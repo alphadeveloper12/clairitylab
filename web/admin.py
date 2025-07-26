@@ -23,14 +23,11 @@ class ContactMessageAdmin(admin.ModelAdmin):
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
     list_display = ('title', 'created_by', 'created_at', 'image_preview')
-    search_fields = ('title', 'small_description', 'created_by__username')
+    search_fields = ('title','created_by__username')
     list_filter = ('created_by', 'created_at')
     readonly_fields = ('image_preview', 'created_at', 'updated_at')
 
     fieldsets = (
-        ('Basic Info', {
-            'fields': ('title', 'small_description', 'created_by')
-        }),
         ('Media', {
             'fields': ('image', 'pdf', 'image_preview')
         }),
