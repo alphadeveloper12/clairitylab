@@ -4528,7 +4528,7 @@
                                         <div class="pxl-heading--inner title heading mb-style animationtext clip">
 
                                             <h3 class="pxl-item--title  " data-wow-delay="ms">
-                                               {{ blog.title }}
+                                                {{ blog.title }}
                                                 <div class="before-heading">
                                                     <svg width="39" height="46" viewBox="0 0 39 46" fill="none"
                                                          xmlns="http://www.w3.org/2000/svg">
@@ -4565,15 +4565,14 @@
     </div>
     <div id="pxl-main">
         <div class="container">
-            <div >
-                <div id="pxl-content-area" >
+            <div>
+                <div id="pxl-content-area">
                     <main id="pxl-content-main">
                         <article id="pxl-post-3925"
                                  class="pxl---post post-3925 post type-post status-publish format-standard has-post-thumbnail hentry category-ai">
 
                             <div class="pxl-item--holder">
-                                <div class="pxl-item--categorie"><a href="https://clairitylab.ai/category/ai/"
-                                                                    rel="tag">AI</a></div>
+
                                 <div class="pxl-item-meta">
                                     <span class="pxl-item--author"><img alt=""
                                                                         src="https://secure.gravatar.com/avatar/0cbe258513389c3a295cb1ad248041c04f2d0980d9bc9c5e65ed6a92023e41db?s=100&amp;d=mm&amp;r=g"
@@ -4581,81 +4580,82 @@
                                                                         class="avatar avatar-100 photo"
                                                                         height="100" width="100" decoding="async"
                                                                         loading="lazy">
-</body>
+
 <a
         href="https://clairitylab.ai/author/clairity-lab/"
         title="Posts by Clairity Lab" rel="author">{{ blog.created_by }}</a></span>
-<span class="pxl-item--date">{{ blog.created_at|date:"M d, Y" }}</span>
-<span class="pxl-item--comment" href="#comments"><i
-        class="flaticon flaticon-chat-1"></i>&nbsp;No Comments</span>
+                                    <span class="pxl-item--date">{{ blog.created_at|date:"M d, Y" }}</span>
+                                    <span class="pxl-item--comment" href="#comments"><i
+                                            class="flaticon flaticon-chat-1"></i>&nbsp;No Comments</span>
 
-</div>
-<div class="pxl-item--content clearfix">
+                                </div>
+                                <div class="pxl-item--content clearfix">
 
-    <embed src="{{ blog.pdf.url }}" type="application/pdf" width="100%" height="1000px"/>
+                                    <embed src="{{ blog.pdf.url }}" type="application/pdf" width="100%"
+                                           height="1000px"/>
 
 
-</div>
-</div>
-</article>
-<!-- #post -->
-<div class="pxl--post-footer">
-    <div class="pxl--social">
-        <span class="title-share">Share This Post:</span>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- #post -->
+                        <div class="pxl--post-footer">
+                            <div class="pxl--social">
+                                <span class="title-share">Share This Post:</span>
 
-        <a class="fb-social" title="Facebook" target="_blank"
-           style="display: flex;justify-content: center; align-items: center"
-           href="http://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
-                <path d="M15.12 8.5H13V7c0-0.6 0.4-0.8 0.7-0.8h1.3V4.1h-1.8c-2 0-3.2 1.2-3.2 3.3v1.1H8v2.4h2v7.2h3V10.9h2l0.3-2.4z"
-                      fill="#fff"/>
-            </svg>
+                                <a class="fb-social" title="Facebook" target="_blank"
+                                   style="display: flex;justify-content: center; align-items: center"
+                                   href="http://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+                                        <path d="M15.12 8.5H13V7c0-0.6 0.4-0.8 0.7-0.8h1.3V4.1h-1.8c-2 0-3.2 1.2-3.2 3.3v1.1H8v2.4h2v7.2h3V10.9h2l0.3-2.4z"
+                                              fill="#fff"/>
+                                    </svg>
 
-        </a>
+                                </a>
 
-        <a class="tw-social" title="Twitter" target="_blank"
-           style="display: flex;justify-content: center; align-items: center"
-           href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ post.title|urlencode }}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.4.36a9.09 9.09 0 0 1-2.88 1.1A4.52 4.52 0 0 0 16.11 0c-2.5 0-4.51 2.05-4.51 4.58 0 .36.04.7.11 1.03A12.94 12.94 0 0 1 1.64.88a4.57 4.57 0 0 0-.61 2.31 4.6 4.6 0 0 0 2.01 3.82A4.42 4.42 0 0 1 .96 6.4v.06c0 2.2 1.54 4.03 3.59 4.45a4.41 4.41 0 0 1-2.04.08c.58 1.84 2.27 3.18 4.27 3.22A9.06 9.06 0 0 1 0 19.54 12.79 12.79 0 0 0 6.92 21c8.3 0 12.85-7.03 12.85-13.14 0-.2 0-.41-.01-.61A9.34 9.34 0 0 0 23 3z"
-                      fill="#fff"/>
-            </svg>
+                                <a class="tw-social" title="Twitter" target="_blank"
+                                   style="display: flex;justify-content: center; align-items: center"
+                                   href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ post.title|urlencode }}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.4.36a9.09 9.09 0 0 1-2.88 1.1A4.52 4.52 0 0 0 16.11 0c-2.5 0-4.51 2.05-4.51 4.58 0 .36.04.7.11 1.03A12.94 12.94 0 0 1 1.64.88a4.57 4.57 0 0 0-.61 2.31 4.6 4.6 0 0 0 2.01 3.82A4.42 4.42 0 0 1 .96 6.4v.06c0 2.2 1.54 4.03 3.59 4.45a4.41 4.41 0 0 1-2.04.08c.58 1.84 2.27 3.18 4.27 3.22A9.06 9.06 0 0 1 0 19.54 12.79 12.79 0 0 0 6.92 21c8.3 0 12.85-7.03 12.85-13.14 0-.2 0-.41-.01-.61A9.34 9.34 0 0 0 23 3z"
+                                              fill="#fff"/>
+                                    </svg>
 
-        </a>
+                                </a>
 
-        <a class="pin-social" title="Pinterest" target="_blank"
-           style="display: flex;justify-content: center; align-items: center"
-           href="http://pinterest.com/pin/create/button/?url={{ request.build_absolute_uri }}&media={{ post.image.url }}&description={{ post.title|urlencode }}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path fill="#fff"
-                      d="M12 0C5.37 0 0 5.37 0 12c0 4.99 3.05 9.24 7.39 11 0-.84-.01-1.91.21-2.85.24-.99 1.56-6.67 1.56-6.67s-.4-.8-.4-1.97c0-1.85 1.07-3.24 2.4-3.24 1.13 0 1.68.85 1.68 1.87 0 1.14-.73 2.84-1.11 4.42-.32 1.33.67 2.41 1.98 2.41 2.37 0 3.95-3.04 3.95-6.63 0-2.74-1.85-4.79-5.22-4.79-3.81 0-6.19 2.84-6.19 6.01 0 1.1.42 2.28.95 2.92.1.12.12.23.09.35-.1.38-.33 1.2-.38 1.36-.06.24-.19.29-.45.18-1.67-.78-2.7-3.2-2.7-5.14 0-4.19 3.04-8.04 8.77-8.04 4.6 0 8.18 3.28 8.18 7.68 0 4.58-2.88 8.27-6.88 8.27-1.34 0-2.6-.69-3.03-1.5 0 0-.72 2.86-.9 3.56-.27.97-1 2.19-1.49 2.94C9.83 23.85 10.88 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/>
-            </svg>
+                                <a class="pin-social" title="Pinterest" target="_blank"
+                                   style="display: flex;justify-content: center; align-items: center"
+                                   href="http://pinterest.com/pin/create/button/?url={{ request.build_absolute_uri }}&media={{ post.image.url }}&description={{ post.title|urlencode }}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path fill="#fff"
+                                              d="M12 0C5.37 0 0 5.37 0 12c0 4.99 3.05 9.24 7.39 11 0-.84-.01-1.91.21-2.85.24-.99 1.56-6.67 1.56-6.67s-.4-.8-.4-1.97c0-1.85 1.07-3.24 2.4-3.24 1.13 0 1.68.85 1.68 1.87 0 1.14-.73 2.84-1.11 4.42-.32 1.33.67 2.41 1.98 2.41 2.37 0 3.95-3.04 3.95-6.63 0-2.74-1.85-4.79-5.22-4.79-3.81 0-6.19 2.84-6.19 6.01 0 1.1.42 2.28.95 2.92.1.12.12.23.09.35-.1.38-.33 1.2-.38 1.36-.06.24-.19.29-.45.18-1.67-.78-2.7-3.2-2.7-5.14 0-4.19 3.04-8.04 8.77-8.04 4.6 0 8.18 3.28 8.18 7.68 0 4.58-2.88 8.27-6.88 8.27-1.34 0-2.6-.69-3.03-1.5 0 0-.72 2.86-.9 3.56-.27.97-1 2.19-1.49 2.94C9.83 23.85 10.88 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/>
+                                    </svg>
 
-        </a>
+                                </a>
 
-        <a class="lin-social" title="LinkedIn" target="_blank"
-           style="display: flex;justify-content: center; align-items: center"
-           href="http://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{ post.title|urlencode }}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-                <path fill="#fff"
-                      d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm8 0h4.7v2.18h.07c.65-1.24 2.23-2.55 4.6-2.55C21.3 7.63 24 10 24 14.33V24h-5v-8.33c0-2.03-.03-4.64-3-4.64-3 0-3.46 2.24-3.46 4.5V24H8V8z"/>
-            </svg>
+                                <a class="lin-social" title="LinkedIn" target="_blank"
+                                   style="display: flex;justify-content: center; align-items: center"
+                                   href="http://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{ post.title|urlencode }}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                                        <path fill="#fff"
+                                              d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm8 0h4.7v2.18h.07c.65-1.24 2.23-2.55 4.6-2.55C21.3 7.63 24 10 24 14.33V24h-5v-8.33c0-2.03-.03-4.64-3-4.64-3 0-3.46 2.24-3.46 4.5V24H8V8z"/>
+                                    </svg>
 
-        </a>
+                                </a>
+                            </div>
+                        </div>
+
+                    </main>
+                </div>
+                {#                <div id="pxl-sidebar-area" class="pxl-sidebar-area pxl-sidebar-blog col-12 col-lg-4">#}
+                {#                    {% include 'blogleft.html' %}#}
+                {#                </div>#}
+            </div>
+        </div>
     </div>
-</div>
+    <!-- #main -->
 
-</main>
-</div>
-{#                <div id="pxl-sidebar-area" class="pxl-sidebar-area pxl-sidebar-blog col-12 col-lg-4">#}
-{#                    {% include 'blogleft.html' %}#}
-{#                </div>#}
-</div>
-</div>
-</div>
-<!-- #main -->
-
-{% include 'footer.html' %}
+    {% include 'footer.html' %}
 
 </div>
 <!-- #wapper -->
