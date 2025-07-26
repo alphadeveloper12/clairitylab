@@ -28,6 +28,9 @@ class BlogAdmin(admin.ModelAdmin):
     readonly_fields = ('image_preview', 'created_at', 'updated_at')
 
     fieldsets = (
+        ('Blog Info', {
+            'fields': ('title', 'created_by')
+        }),
         ('Media', {
             'fields': ('image', 'pdf', 'image_preview')
         }),
