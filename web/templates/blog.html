@@ -4568,135 +4568,38 @@
                                                                     <div class="pxl-swiper-container" dir="ltr"
                                                                          data-settings='{"slide_direction":"horizontal","slide_percolumn":"1","slide_percolumnfill":"1","slide_mode":"slide","slides_to_show":"3","slides_to_show_xxl":"3","slides_to_show_lg":"3","slides_to_show_md":"3","slides_to_show_sm":"2","slides_to_show_xs":"1","slides_to_scroll":"1","slides_gutter":30,"arrow":"false","pagination":"false","pagination_type":"bullets","autoplay":"false","pause_on_hover":"true","pause_on_interaction":"true","delay":5000,"loop":"true","speed":500}'>
                                                                         <div class="pxl-swiper-wrapper">
-                                                                            <div class="pxl-swiper-slide">
-                                                                                <div class="pxl-item--inner "
-                                                                                     data-wow-duration="1.2s">
-                                                                                    <div class="pxl-item--featured">
-                                                                                        <a href="https://clairitylab.ai/unlocking-africas-gen-ai-potential-why-smes-must-not-be-left-behind/"><img
-                                                                                                loading="lazy"
-                                                                                                decoding="async"
-                                                                                                class=""
-                                                                                                src="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2025/05/financial-advisor-works-revenue-balance-with-annual-statistics-scaled-820x540.jpg"
-                                                                                                width="820" height="540"
-                                                                                                alt="Financial advisor works on revenue balance with annual statistics, trying to create new report for CEO before risking income in global investments. Male accountant evaluating legal insurance."
-                                                                                                title="Financial advisor works on revenue balance with annual statistics"
-                                                                                                loading="lazy"></a>
-                                                                                    </div>
-                                                                                    <div class="pxl-item--holder">
-                                                                                        <div class="pxl-item-meta">
-                                                                                            <span class="pxl-item--categorie"><a
-                                                                                                    href="https://clairitylab.ai/category/ai/"
-                                                                                                    rel="tag">AI</a></span>
-                                                                                            <span class="pxl-item--date">May,21 2025</span>
+                                                                            {% for blog in blogs %}
+                                                                                <div class="pxl-swiper-slide">
+                                                                                    <div class="pxl-item--inner "
+                                                                                         data-wow-duration="1.2s">
+                                                                                        <div class="pxl-item--featured">
+                                                                                            <a href="{% url 'blog_detail' blog.id %}"><img
+                                                                                                    loading="lazy"
+                                                                                                    decoding="async"
+                                                                                                    class=""
+                                                                                                    src="{{ blog.image.url }}"
+                                                                                                    width="820"
+                                                                                                    height="540"
+                                                                                                    alt="{{ blog.title }}"
+                                                                                                    title="Financial advisor works on revenue balance with annual statistics"
+                                                                                                    loading="lazy"></a>
                                                                                         </div>
-                                                                                        <h5 class="pxl-item--title"><a
-                                                                                                href="https://clairitylab.ai/unlocking-africas-gen-ai-potential-why-smes-must-not-be-left-behind/">Unlocking
-                                                                                            Africas Gen AI Potential Why
-                                                                                            SMEs Must Not Be Left
-                                                                                            Behind</a></h5>
-                                                                                        <div class="item--content">
-                                                                                        </div>
+                                                                                        <div class="pxl-item--holder">
+                                                                                            <div class="pxl-item-meta">
 
+                                                                                                <span class="pxl-item--date">{{ blog.created_at|date:"M d, Y" }}</span>
+                                                                                            </div>
+                                                                                            <h5 class="pxl-item--title">
+                                                                                                <a
+                                                                                                        href="{% url 'blog_detail' blog.id %}">Unlocking
+                                                                                                   {{ blog.title }}</a></h5>
+                                                                                            <div class="item--content">
+                                                                                            </div>
+
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
-                                                                            </div>
-                                                                            <div class="pxl-swiper-slide">
-                                                                                <div class="pxl-item--inner "
-                                                                                     data-wow-duration="1.2s">
-                                                                                    <div class="pxl-item--featured">
-                                                                                        <a href="https://clairitylab.ai/humanizing-ai-how-clairitylab-empowers-smes-in-the-digital-era/"><img
-                                                                                                loading="lazy"
-                                                                                                decoding="async"
-                                                                                                class=""
-                                                                                                src="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2025/05/gradient-ai-cloud-with-broken-pieces-scaled-820x540.jpg"
-                                                                                                width="820" height="540"
-                                                                                                alt="ourMindset1"
-                                                                                                title="ourMindset1"
-                                                                                                loading="lazy"></a>
-                                                                                    </div>
-                                                                                    <div class="pxl-item--holder">
-                                                                                        <div class="pxl-item-meta">
-                                                                                            <span class="pxl-item--categorie"><a
-                                                                                                    href="https://clairitylab.ai/category/ai/"
-                                                                                                    rel="tag">AI</a></span>
-                                                                                            <span class="pxl-item--date">May,09 2025</span>
-                                                                                        </div>
-                                                                                        <h5 class="pxl-item--title"><a
-                                                                                                href="https://clairitylab.ai/humanizing-ai-how-clairitylab-empowers-smes-in-the-digital-era/">Humanizing
-                                                                                            AI: How ClairityLab Empowers
-                                                                                            SMEs in the Digital Era</a>
-                                                                                        </h5>
-                                                                                        <div class="item--content">
-                                                                                        </div>
-
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="pxl-swiper-slide">
-                                                                                <div class="pxl-item--inner "
-                                                                                     data-wow-duration="1.2s">
-                                                                                    <div class="pxl-item--featured">
-                                                                                        <a href="https://clairitylab.ai/ethical-ai-use-in-smes-building-trust-in-gcc-and-europe/"><img
-                                                                                                loading="lazy"
-                                                                                                decoding="async"
-                                                                                                class=""
-                                                                                                src="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2025/05/environment-education-day-concept-scaled-820x540.jpg"
-                                                                                                width="820" height="540"
-                                                                                                alt="Ethical AI"
-                                                                                                title="Ethical AI"
-                                                                                                loading="lazy"></a>
-                                                                                    </div>
-                                                                                    <div class="pxl-item--holder">
-                                                                                        <div class="pxl-item-meta">
-                                                                                            <span class="pxl-item--categorie"><a
-                                                                                                    href="https://clairitylab.ai/category/ai/"
-                                                                                                    rel="tag">AI</a></span>
-                                                                                            <span class="pxl-item--date">May,06 2025</span>
-                                                                                        </div>
-                                                                                        <h5 class="pxl-item--title"><a
-                                                                                                href="https://clairitylab.ai/ethical-ai-use-in-smes-building-trust-in-gcc-and-europe/">Ethical
-                                                                                            AI Use in SMEs Building
-                                                                                            Trust in GCC and Europe</a>
-                                                                                        </h5>
-                                                                                        <div class="item--content">
-                                                                                        </div>
-
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="pxl-swiper-slide">
-                                                                                <div class="pxl-item--inner "
-                                                                                     data-wow-duration="1.2s">
-                                                                                    <div class="pxl-item--featured">
-                                                                                        <a href="https://clairitylab.ai/overcoming-ai-adoption-barriers-affordable-ai-solutions-for-smes-in-gcc-and-europe/"><img
-                                                                                                loading="lazy"
-                                                                                                decoding="async"
-                                                                                                class=""
-                                                                                                src="https://i0.wp.com/clairitylab.ai/wp-content/uploads/2025/05/cartoon-ai-robot-scene-scaled-820x540.jpg"
-                                                                                                width="820" height="540"
-                                                                                                alt="AI Adoption"
-                                                                                                title="AI Adoption"
-                                                                                                loading="lazy"></a>
-                                                                                    </div>
-                                                                                    <div class="pxl-item--holder">
-                                                                                        <div class="pxl-item-meta">
-                                                                                            <span class="pxl-item--categorie"><a
-                                                                                                    href="https://clairitylab.ai/category/ai/"
-                                                                                                    rel="tag">AI</a></span>
-                                                                                            <span class="pxl-item--date">May,06 2025</span>
-                                                                                        </div>
-                                                                                        <h5 class="pxl-item--title"><a
-                                                                                                href="https://clairitylab.ai/overcoming-ai-adoption-barriers-affordable-ai-solutions-for-smes-in-gcc-and-europe/">Overcoming
-                                                                                            AI Adoption Barriers
-                                                                                            Affordable AI Solutions for
-                                                                                            SMEs in GCC and Europe</a>
-                                                                                        </h5>
-                                                                                        <div class="item--content">
-                                                                                        </div>
-
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
+                                                                            {% endfor %}
                                                                         </div>
                                                                     </div>
                                                                 </div>

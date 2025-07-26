@@ -55,7 +55,8 @@ def credentials(request):
 
 
 def blog(request):
-    return render(request, 'blog.html')
+    blogs = Blog.objects.all()
+    return render(request, 'blog.html', {'blogs': blogs})
 
 
 def blog1(request):
