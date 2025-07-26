@@ -4565,8 +4565,8 @@
     </div>
     <div id="pxl-main">
         <div class="container">
-            <div class="row pxl-content-wrap pxl-has-sidebar pxl-sidebar-right">
-                <div id="pxl-content-area" class="pxl-content-area pxl-content-blog col-12 col-lg-8">
+            <div >
+                <div id="pxl-content-area" >
                     <main id="pxl-content-main">
                         <article id="pxl-post-3925"
                                  class="pxl---post post-3925 post type-post status-publish format-standard has-post-thumbnail hentry category-ai">
@@ -4584,8 +4584,8 @@
 </body>
 <a
         href="https://clairitylab.ai/author/clairity-lab/"
-        title="Posts by Clairity Lab" rel="author">Clairity Lab</a></span>
-<span class="pxl-item--date">May 06,2025</span>
+        title="Posts by Clairity Lab" rel="author">{{ blog.created_by }}</a></span>
+<span class="pxl-item--date">{{ blog.created_at|date:"M d, Y" }}</span>
 <span class="pxl-item--comment" href="#comments"><i
         class="flaticon flaticon-chat-1"></i>&nbsp;No Comments</span>
 
