@@ -1,9 +1,6 @@
+
 from django.shortcuts import render
-from django.shortcuts import render, redirect
-from django.core.mail import send_mail
 from django.http import JsonResponse
-# from .models import Assessment
-import json
 from django.views.decorators.csrf import csrf_exempt
 from dotenv import load_dotenv
 import os
@@ -13,6 +10,8 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from .models import *  # Import your model
+from django.shortcuts import render, get_object_or_404
+
 
 
 # Load environment variables from .env file
@@ -35,7 +34,8 @@ TAG_MAP = {
 
 
 def index(request):
-    return render(request, 'index.html')
+    blogs = Blog.objects.all()
+    return render(request, 'index.html', {'blogs': blogs})
 
 
 def custom_404(request, exception=None):
@@ -299,3 +299,12 @@ def contact_message_api(request):
             return JsonResponse({'error': 'Invalid data.', 'details': str(e)}, status=500)
 
     return JsonResponse({'error': 'Only POST requests are allowed.'}, status=405)
+
+
+
+
+
+
+def blog_detail(request, blog_id):
+    blog = get_object_or_404(Blog, pk=blog_id)
+    return render(request, 'blog1.html', {'blog': blog})

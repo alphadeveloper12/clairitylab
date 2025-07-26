@@ -20,5 +20,6 @@ urlpatterns = [
     path('add_contact/', add_contact_view, name='add-contact'),
     path('api/create-clickup-task/', create_clickup_task, name='create_clickup_task'),
     path('api/contact/', contact_message_api, name='contact_message_api'),
+    path('blogs/<int:blog_id>/', blog_detail, name='blog_detail'),
 
 ]

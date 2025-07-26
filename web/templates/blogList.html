@@ -1,171 +1,74 @@
 {% load static %}
+
 <section
-                                            class="elementor-section elementor-top-section elementor-element elementor-element-823cab2 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none"
-                                            data-id="823cab2"
-                                            data-element_type="section"
-                                            data-settings='{"stretch_section":"section-stretched"}'>
+        class="elementor-section elementor-top-section elementor-element elementor-element-823cab2 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default pxl-row-scroll-none none"
+        data-id="823cab2"
+        data-element_type="section"
+        data-settings='{"stretch_section":"section-stretched"}'>
 
 
-                                        <div class="elementor-container elementor-column-gap-extended ">
-                                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-785cc49 pxl-column-none"
-                                                 data-id="785cc49" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated">
+    <div class="elementor-container elementor-column-gap-extended ">
+        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-785cc49 pxl-column-none"
+             data-id="785cc49" data-element_type="column">
+            <div class="elementor-widget-wrap elementor-element-populated">
 
-                                                    <div class="elementor-element elementor-element-6b36873 e-transform elementor-invisible elementor-widget elementor-widget-heading"
-                                                         data-id="6b36873" data-element_type="widget"
-                                                         data-settings='{"_animation":"fadeInLeft","_transform_skewX_effect":{"unit":"px","size":"","sizes":[]},"_transform_skewX_effect_laptop":{"unit":"deg","size":"","sizes":[]},"_transform_skewX_effect_tablet":{"unit":"deg","size":"","sizes":[]},"_transform_skewX_effect_mobile":{"unit":"deg","size":"","sizes":[]},"_transform_skewY_effect":{"unit":"px","size":"","sizes":[]},"_transform_skewY_effect_laptop":{"unit":"deg","size":"","sizes":[]},"_transform_skewY_effect_tablet":{"unit":"deg","size":"","sizes":[]},"_transform_skewY_effect_mobile":{"unit":"deg","size":"","sizes":[]}}'
-                                                         data-widget_type="heading.default">
-                                                        <div class="elementor-widget-container">
-                                                            <h1 class="elementor-heading-title elementor-size-default">
-                                                                Our Blogs</h1>
-                                                        </div>
+                <div class="elementor-element elementor-element-6b36873 e-transform elementor-invisible elementor-widget elementor-widget-heading"
+                     data-id="6b36873" data-element_type="widget"
+                     data-settings='{"_animation":"fadeInLeft","_transform_skewX_effect":{"unit":"px","size":"","sizes":[]},"_transform_skewX_effect_laptop":{"unit":"deg","size":"","sizes":[]},"_transform_skewX_effect_tablet":{"unit":"deg","size":"","sizes":[]},"_transform_skewX_effect_mobile":{"unit":"deg","size":"","sizes":[]},"_transform_skewY_effect":{"unit":"px","size":"","sizes":[]},"_transform_skewY_effect_laptop":{"unit":"deg","size":"","sizes":[]},"_transform_skewY_effect_tablet":{"unit":"deg","size":"","sizes":[]},"_transform_skewY_effect_mobile":{"unit":"deg","size":"","sizes":[]}}'
+                     data-widget_type="heading.default">
+                    <div class="elementor-widget-container">
+                        <h1 class="elementor-heading-title elementor-size-default">
+                            Our Blogs</h1>
+                    </div>
+                </div>
+                <div class="elementor-element elementor-element-8cec81f post-layout-post-1 elementor-widget elementor-widget-pxl_post_carousel"
+                     data-id="8cec81f" data-element_type="widget"
+                     data-widget_type="pxl_post_carousel.default">
+                    <div class="elementor-widget-container">
+
+                        <div class="pxl-swiper-sliders pxl-post-carousel pxl-post-carousel1 pxl-swiper-boxshadow pxl-blog-style1 pxl-post-style1">
+                            <div class="pxl-carousel-inner">
+                                <div class="pxl-swiper-container" dir="ltr"
+                                     data-settings='{"slide_direction":"horizontal","slide_percolumn":"1","slide_percolumnfill":"1","slide_mode":"slide","slides_to_show":"3","slides_to_show_xxl":"3","slides_to_show_lg":"3","slides_to_show_md":"2","slides_to_show_sm":"2","slides_to_show_xs":"1","slides_to_scroll":"1","slides_gutter":30,"arrow":"false","pagination":"false","pagination_type":"bullets","autoplay":"false","pause_on_hover":"true","pause_on_interaction":"true","delay":5000,"loop":"true","speed":500}'>
+                                    <div class="pxl-swiper-wrapper">
+                                        {% for blog in blogs %}
+                                            <div class="pxl-swiper-slide">
+                                                <div class="pxl-item--inner "
+                                                     data-wow-duration="1.2s">
+                                                    <div class="pxl-item--featured">
+                                                        <a href="{% url 'blog_detail' blog.id %}"><img
+                                                                loading="lazy"
+                                                                decoding="async"
+                                                                class=""
+                                                                src="{{ blog.image.url }}"
+                                                                width="820" height="540"
+                                                                alt="Financial advisor works on revenue balance with annual statistics, trying to create new report for CEO before risking income in global investments. Male accountant evaluating legal insurance."
+                                                                title="Financial advisor works on revenue balance with annual statistics"
+                                                                loading="lazy"></a>
                                                     </div>
-                                                    <div class="elementor-element elementor-element-8cec81f post-layout-post-1 elementor-widget elementor-widget-pxl_post_carousel"
-                                                         data-id="8cec81f" data-element_type="widget"
-                                                         data-widget_type="pxl_post_carousel.default">
-                                                        <div class="elementor-widget-container">
-
-                                                            <div class="pxl-swiper-sliders pxl-post-carousel pxl-post-carousel1 pxl-swiper-boxshadow pxl-blog-style1 pxl-post-style1">
-                                                                <div class="pxl-carousel-inner">
-                                                                    <div class="pxl-swiper-container" dir="ltr"
-                                                                         data-settings='{"slide_direction":"horizontal","slide_percolumn":"1","slide_percolumnfill":"1","slide_mode":"slide","slides_to_show":"3","slides_to_show_xxl":"3","slides_to_show_lg":"3","slides_to_show_md":"2","slides_to_show_sm":"2","slides_to_show_xs":"1","slides_to_scroll":"1","slides_gutter":30,"arrow":"false","pagination":"false","pagination_type":"bullets","autoplay":"false","pause_on_hover":"true","pause_on_interaction":"true","delay":5000,"loop":"true","speed":500}'>
-                                                                        <div class="pxl-swiper-wrapper">
-                                                                            <div class="pxl-swiper-slide">
-                                                                                <div class="pxl-item--inner "
-                                                                                     data-wow-duration="1.2s">
-                                                                                    <div class="pxl-item--featured">
-                                                                                        <a href="{% url 'blog4' %}"><img
-                                                                                                loading="lazy"
-                                                                                                decoding="async"
-                                                                                                class=""
-                                                                                                src="{% static 'images/media/financial-advisor-works-revenue-balance-with-annual-statistics-scaled-820x540.webp' %}"
-                                                                                                width="820" height="540"
-                                                                                                alt="Financial advisor works on revenue balance with annual statistics, trying to create new report for CEO before risking income in global investments. Male accountant evaluating legal insurance."
-                                                                                                title="Financial advisor works on revenue balance with annual statistics"
-                                                                                                loading="lazy"></a>
-                                                                                    </div>
-                                                                                    <div class="pxl-item--holder">
-                                                                                        <div class="pxl-item-meta">
+                                                    <div class="pxl-item--holder">
+                                                        <div class="pxl-item-meta">
                                                                                             <span class="pxl-item--categorie"><a
                                                                                                     href="https://clairitylab.ai/category/ai/"
                                                                                                     rel="tag">AI</a></span>
-                                                                                            <span class="pxl-item--date">May,21 2025</span>
-                                                                                        </div>
-                                                                                        <h5 class="pxl-item--title"><a
-                                                                                                href="{% url 'blog4' %}">Unlocking
-                                                                                            Africas Gen AI Potential Why
-                                                                                            SMEs Must Not Be Left
-                                                                                            Behind</a></h5>
-                                                                                        <div class="item--content">
-                                                                                        </div>
-
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="pxl-swiper-slide">
-                                                                                <div class="pxl-item--inner "
-                                                                                     data-wow-duration="1.2s">
-                                                                                    <div class="pxl-item--featured">
-                                                                                        <a href="{% url 'blog3' %}"><img
-                                                                                                loading="lazy"
-                                                                                                decoding="async"
-                                                                                                class=""
-                                                                                                src="{% static 'images/media/gradient-ai-cloud-with-broken-pieces-scaled-820x540.webp' %}"
-                                                                                                width="820" height="540"
-                                                                                                alt="ourMindset1"
-                                                                                                title="ourMindset1"
-                                                                                                loading="lazy"></a>
-                                                                                    </div>
-                                                                                    <div class="pxl-item--holder">
-                                                                                        <div class="pxl-item-meta">
-                                                                                            <span class="pxl-item--categorie"><a
-                                                                                                    href="https://clairitylab.ai/category/ai/"
-                                                                                                    rel="tag">AI</a></span>
-                                                                                            <span class="pxl-item--date">May,09 2025</span>
-                                                                                        </div>
-                                                                                        <h5 class="pxl-item--title"><a
-                                                                                                href="{% url 'blog3' %}">Humanizing
-                                                                                            AI: How ClairityLab Empowers
-                                                                                            SMEs in the Digital Era</a>
-                                                                                        </h5>
-                                                                                        <div class="item--content">
-                                                                                        </div>
-
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="pxl-swiper-slide">
-                                                                                <div class="pxl-item--inner "
-                                                                                     data-wow-duration="1.2s">
-                                                                                    <div class="pxl-item--featured">
-                                                                                        <a href="{% url 'blog2' %}"><img
-                                                                                                loading="lazy"
-                                                                                                decoding="async"
-                                                                                                class=""
-                                                                                                src="{% static 'images/media/environment-education-day-concept-scaled-820x540.webp' %}"
-                                                                                                width="820" height="540"
-                                                                                                alt="Ethical AI"
-                                                                                                title="Ethical AI"
-                                                                                                loading="lazy"></a>
-                                                                                    </div>
-                                                                                    <div class="pxl-item--holder">
-                                                                                        <div class="pxl-item-meta">
-                                                                                            <span class="pxl-item--categorie"><a
-                                                                                                    href="https://clairitylab.ai/category/ai/"
-                                                                                                    rel="tag">AI</a></span>
-                                                                                            <span class="pxl-item--date">May,06 2025</span>
-                                                                                        </div>
-                                                                                        <h5 class="pxl-item--title"><a
-                                                                                                href="{% url 'blog2' %}">Ethical
-                                                                                            AI Use in SMEs Building
-                                                                                            Trust in GCC and Europe</a>
-                                                                                        </h5>
-                                                                                        <div class="item--content">
-                                                                                        </div>
-
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="pxl-swiper-slide">
-                                                                                <div class="pxl-item--inner "
-                                                                                     data-wow-duration="1.2s">
-                                                                                    <div class="pxl-item--featured">
-                                                                                        <a href="{% url 'blog1' %}"><img
-                                                                                                loading="lazy"
-                                                                                                decoding="async"
-                                                                                                class=""
-                                                                                                src="{% static 'images/media/cartoon-ai-robot-scene-scaled-820x540.webp' %}"
-                                                                                                width="820" height="540"
-                                                                                                alt="AI Adoption"
-                                                                                                title="AI Adoption"
-                                                                                                loading="lazy"></a>
-                                                                                    </div>
-                                                                                    <div class="pxl-item--holder">
-                                                                                        <div class="pxl-item-meta">
-                                                                                            <span class="pxl-item--categorie"><a
-                                                                                                    href="https://clairitylab.ai/category/ai/"
-                                                                                                    rel="tag">AI</a></span>
-                                                                                            <span class="pxl-item--date">May,06 2025</span>
-                                                                                        </div>
-                                                                                        <h5 class="pxl-item--title"><a
-                                                                                                href="{% url 'blog1' %}">Overcoming
-                                                                                            AI Adoption Barriers
-                                                                                            Affordable AI Solutions for
-                                                                                            SMEs in GCC and Europe</a>
-                                                                                        </h5>
-                                                                                        <div class="item--content">
-                                                                                        </div>
-
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                            <span class="pxl-item--date">{{ blog.created_at|date:"M d, Y" }}</span>
                                                         </div>
+                                                        <h5 class="pxl-item--title"><a
+                                                                href="{% url 'blog_detail' blog.id %}">{{ blog.title }}</a></h5>
+                                                        <div class="item--content">
+                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </section>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
