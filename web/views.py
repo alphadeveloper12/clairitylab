@@ -1,4 +1,3 @@
-
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -11,8 +10,6 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from .models import *  # Import your model
 from django.shortcuts import render, get_object_or_404
-
-
 
 # Load environment variables from .env file
 load_dotenv()
@@ -29,8 +26,11 @@ CLICKUP_LIST_ID = os.getenv("CLICKUP_LIST_ID")
 RECAPTCHA_SECRET_KEY = os.getenv("6LdbmDgrAAAAANW0s1qugIk1t10Cpw0u5Xi9pWd_")
 # Tag name to ID mapping
 TAG_MAP = {
-    "stage-1": 1543668
+    "skill-beginner": 1591393,
+    "skill-intermediate": 1591394,
+    "skill-advanced": 1591395
 }
+
 
 
 def index(request):
@@ -135,25 +135,28 @@ def add_contact_view(request):
         try:
             data = json.loads(request.body)
             email = data.get("email")
+            tag_name = data.get("tag_name")  # 👈 Accept dynamic tag_name
 
-            if not email:
-                return JsonResponse({"error": "Email is required"}, status=400)
+            if not email or not tag_name:
+                return JsonResponse({"error": "Email and tag_name are required"}, status=400)
 
-            tag_id = TAG_MAP.get(TAG_NAME)
+            tag_id = TAG_MAP.get(tag_name)
             if not tag_id:
-                return JsonResponse({"error": "Tag not found"}, status=400)
+                return JsonResponse({"error": f"Tag '{tag_name}' not found"}, status=400)
 
             contact_id, error = create_contact(email)
-
             if not contact_id:
-                print("Contact creation failed:", error)  # 👈 Add this
+                print("Contact creation failed:", error)
                 return JsonResponse({"error": f"Failed to create contact: {error}"}, status=400)
 
             success, error = assign_tag(contact_id, tag_id)
             if not success:
                 return JsonResponse({"error": f"Failed to assign tag: {error}"}, status=400)
 
-            return JsonResponse({"message": "Contact added and tagged successfully", "contact_id": contact_id})
+            return JsonResponse({
+                "message": f"Contact added and tagged with '{tag_name}' successfully",
+                "contact_id": contact_id
+            })
 
         except json.JSONDecodeError:
             return JsonResponse({"error": "Invalid JSON"}, status=400)
@@ -256,11 +259,6 @@ def create_clickup_task(request):
     return JsonResponse({"error": "Only POST method allowed"}, status=405)
 
 
-
-
-
-
-
 @csrf_exempt
 def contact_message_api(request):
     if request.method == 'POST':
@@ -292,7 +290,8 @@ def contact_message_api(request):
                     server.sendmail(sender_email, receiver_email, msg.as_string())
 
             except Exception as e:
-                return JsonResponse({'error': 'Message saved, but failed to send email', 'exception': str(e)}, status=500)
+                return JsonResponse({'error': 'Message saved, but failed to send email', 'exception': str(e)},
+                                    status=500)
 
             return JsonResponse({'message': 'Message saved and email sent successfully.'}, status=201)
 
@@ -300,10 +299,6 @@ def contact_message_api(request):
             return JsonResponse({'error': 'Invalid data.', 'details': str(e)}, status=500)
 
     return JsonResponse({'error': 'Only POST requests are allowed.'}, status=405)
-
-
-
-
 
 
 def blog_detail(request, blog_id):

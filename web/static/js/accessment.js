@@ -130,20 +130,7 @@ submitBtn.onclick = function (e) {
         const email = emailInput.value;
 
         // Send email to contact API
-        fetch(addContactUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({email: email})
-        })
-            .then(response => response.json())
-            .then(data => {
-                window.contactApiMessage = data.message || data.error || 'No response from server';
-            })
-            .catch(error => {
-                window.contactApiMessage = 'Request failed: ' + error.message;
-            });
+
 
         // Dummy value for email step
         answers[currentQuestion] = email;
@@ -199,9 +186,36 @@ submitBtn.onclick = function (e) {
             });
 
         let level = '';
-        if (weightedScore <= 11.0) level = '🔴 Beginner';
-        else if (weightedScore <= 16.0) level = '🟠 Intermediate';
-        else level = '🟢 Advanced';
+        let tag_name = '';
+
+        if (weightedScore <= 11.0) {
+            level = '🔴 Beginner';
+            tag_name = 'skill-beginner';
+        } else if (weightedScore <= 16.0) {
+            level = '🟠 Intermediate';
+            tag_name = 'skill-intermediate';
+        } else {
+            level = '🟢 Advanced';
+            tag_name = 'skill-advanced';
+        }
+
+        fetch(addContactUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: email,
+                tag_name: tag_name  // 👈 dynamically set based on score
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            window.contactApiMessage = data.message || data.error || 'No response from server';
+        })
+        .catch(error => {
+            window.contactApiMessage = 'Request failed: ' + error.message;
+        });
 
         // Dynamic analysis content
         let analysisTitle = '';
