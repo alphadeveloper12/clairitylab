@@ -26,10 +26,12 @@ CLICKUP_LIST_ID = os.getenv("CLICKUP_LIST_ID")
 RECAPTCHA_SECRET_KEY = os.getenv("6LdbmDgrAAAAANW0s1qugIk1t10Cpw0u5Xi9pWd_")
 # Tag name to ID mapping
 TAG_MAP = {
-    "skill-beginner": 1591393,
-    "skill-intermediate": 1591394,
-    "skill-advanced": 1591395
+    "AI Readiness Beginner": 1599366,
+    "AI Readiness Intermediate": 1599367,
+    "AI Readiness Advanced": 1599368
 }
+
+
 
 
 
