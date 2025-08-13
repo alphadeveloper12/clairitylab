@@ -190,13 +190,13 @@ submitBtn.onclick = function (e) {
 
         if (weightedScore <= 11.0) {
             level = '🔴 Beginner';
-            tag_name = 'skill-beginner';
+            tag_name = 'AI Readiness Beginner';
         } else if (weightedScore <= 16.0) {
             level = '🟠 Intermediate';
-            tag_name = 'skill-intermediate';
+            tag_name = 'AI Readiness Intermediate';
         } else {
             level = '🟢 Advanced';
-            tag_name = 'skill-advanced';
+            tag_name = 'AI Readiness Advanced';
         }
 
         fetch(addContactUrl, {
