@@ -1,5 +1,49 @@
 {% load static %}
 <!-- Font Awesome CDN (latest version) -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.single-language.flag').forEach(function (langLink) {
+        langLink.addEventListener('click', async function (e) {
+            e.preventDefault();
+
+            // Get target language code (must be ISO like 'en', 'de', 'ar')
+            let selectedLang = this.classList[2]; // Example: 'ar', 'en', 'de'
+            console.log("Switching to language:", selectedLang);
+
+            // Get the HTML content to translate (body innerHTML here)
+            let htmlContent = document.body.innerHTML;
+
+            try {
+                let res = await fetch('https://translate-pa.googleapis.com/v1/translateHtml', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Replace with your token
+                    },
+                    body: JSON.stringify({
+                        html: htmlContent,
+                        targetLanguage: selectedLang
+                    })
+                });
+
+                if (!res.ok) throw new Error("Translation API error");
+
+                let data = await res.json();
+
+                // Google returns translated HTML in data.translatedHtml
+                if (data.translatedHtml) {
+                    document.body.innerHTML = data.translatedHtml;
+                } else {
+                    console.error("No translated HTML found in response", data);
+                }
+
+            } catch (err) {
+                console.error("Error translating page:", err);
+            }
+        });
+    });
+});
+</script>
 
 
 <header id="pxl-header-elementor" class="is-sticky">
