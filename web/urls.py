@@ -1,5 +1,8 @@
 from django.urls import path
 from .views import *
+from django.views.static import serve
+from django.conf import settings
+
 
 urlpatterns = [
     path('', index, name='home'),
@@ -21,5 +24,10 @@ urlpatterns = [
     path('api/create-clickup-task/', create_clickup_task, name='create_clickup_task'),
     path('api/contact/', contact_message_api, name='contact_message_api'),
     path('blogs/<int:blog_id>/', blog_detail, name='blog_detail'),
+    path(
+        "google231cd1ac976a81b9.html",
+        serve,
+        {"path": "google231cd1ac976a81b9.html", "document_root": os.path.join(settings.BASE_DIR, "staticfiles")},
+    ),
 
 ]
